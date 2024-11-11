@@ -8,7 +8,9 @@ using namespace std;
 
 class Token {
 
-    enum Type { SUM, MINUS, PLUS, DIV };
+public:
+
+    enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR};
 
     Type type;
     string TypeText;

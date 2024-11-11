@@ -4,4 +4,9 @@ project(CompiladoresProyecto)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(CompiladoresProyecto main.cpp
-        Token.cpp)
+        Token.cpp
+        Scanner.cpp
+        Exp.cpp
+        Parser.cpp
+        Parser.cpp
+        Parser.cpp)

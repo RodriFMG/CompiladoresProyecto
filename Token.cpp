@@ -19,7 +19,10 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::PLUS: os << "TOKEN(PLUS)"; break;
         case Token::MINUS: os << "TOKEN(MINUS)"; break;
         case Token::DIV: os << "TOKEN(DIV)"; break;
-        case Token::SUM: os << "TOKEN(SUM)"; break;
+        case Token::MUL: os << "TOKEN(MUL)"; break;
+        case Token::END: os << "TOKEN(END)"; break;
+        case Token::ERR: os << "TOKEN(ERR)"; break;
+        case Token::NUM: os << "TOKEN(NUM)"; break;
         default:
             os<<"Token(UNKNOW)"; break;
     }

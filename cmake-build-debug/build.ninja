@@ -56,7 +56,28 @@ build CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: CXX_COMPILER__Compilador
   TARGET_COMPILE_PDB = CMakeFiles\CompiladoresProyecto.dir\
   TARGET_PDB = CompiladoresProyecto.pdb
 
-build CMakeFiles\CompiladoresProyecto.dir\Tokens.cpp.obj: CXX_COMPILER__CompiladoresProyecto_unscanned_Debug C$:\Users\RODRIGO\CompiladoresProyecto\Tokens.cpp || cmake_object_order_depends_target_CompiladoresProyecto
+build CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj: CXX_COMPILER__CompiladoresProyecto_unscanned_Debug C$:\Users\RODRIGO\CompiladoresProyecto\Token.cpp || cmake_object_order_depends_target_CompiladoresProyecto
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
+  OBJECT_DIR = CMakeFiles\CompiladoresProyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\CompiladoresProyecto.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CompiladoresProyecto.dir\
+  TARGET_PDB = CompiladoresProyecto.pdb
+
+build CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj: CXX_COMPILER__CompiladoresProyecto_unscanned_Debug C$:\Users\RODRIGO\CompiladoresProyecto\Scanner.cpp || cmake_object_order_depends_target_CompiladoresProyecto
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
+  OBJECT_DIR = CMakeFiles\CompiladoresProyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\CompiladoresProyecto.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CompiladoresProyecto.dir\
+  TARGET_PDB = CompiladoresProyecto.pdb
+
+build CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj: CXX_COMPILER__CompiladoresProyecto_unscanned_Debug C$:\Users\RODRIGO\CompiladoresProyecto\Exp.cpp || cmake_object_order_depends_target_CompiladoresProyecto
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
+  OBJECT_DIR = CMakeFiles\CompiladoresProyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\CompiladoresProyecto.dir
+  TARGET_COMPILE_PDB = CMakeFiles\CompiladoresProyecto.dir\
+  TARGET_PDB = CompiladoresProyecto.pdb
+
+build CMakeFiles\CompiladoresProyecto.dir\Parser.cpp.obj: CXX_COMPILER__CompiladoresProyecto_unscanned_Debug C$:\Users\RODRIGO\CompiladoresProyecto\Parser.cpp || cmake_object_order_depends_target_CompiladoresProyecto
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
   OBJECT_DIR = CMakeFiles\CompiladoresProyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\CompiladoresProyecto.dir
@@ -71,7 +92,7 @@ build CMakeFiles\CompiladoresProyecto.dir\Tokens.cpp.obj: CXX_COMPILER__Compilad
 #############################################
 # Link the executable CompiladoresProyecto.exe
 
-build CompiladoresProyecto.exe: CXX_EXECUTABLE_LINKER__CompiladoresProyecto_Debug CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj CMakeFiles\CompiladoresProyecto.dir\Tokens.cpp.obj
+build CompiladoresProyecto.exe: CXX_EXECUTABLE_LINKER__CompiladoresProyecto_Debug CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj CMakeFiles\CompiladoresProyecto.dir\Parser.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
