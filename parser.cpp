@@ -98,5 +98,19 @@ Exp *Parser::ParseFactor() {
     if(match(Token::NUM)){
         return new NumberExp(stoi(previous->TypeText));
     }
+    else if(match(Token::PI)){
+        Exp* exp = ParseExpression();
+
+        if(!match(Token::PD)){
+            cout << " Error, caracter "<< previous->TypeText <<" incorrecto, debio seguir un )  (ParseFactor)";
+            exit(0);
+        }
+
+        return exp;
+
+    }
+
+    cout << "Error: se esperaba un número o identificador. (ParseFactor)" << endl;
+    exit(0);
 
 }

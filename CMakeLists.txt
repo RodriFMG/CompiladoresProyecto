@@ -7,6 +7,4 @@ add_executable(CompiladoresProyecto main.cpp
         Token.cpp
         Scanner.cpp
         Exp.cpp
-        Parser.cpp
-        Parser.cpp
         Parser.cpp)

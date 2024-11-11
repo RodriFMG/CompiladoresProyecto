@@ -130,7 +130,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Parser.cpp",
+			"path" : "parser.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -18,16 +18,22 @@ Token *Scanner::NextToken() {
 
     if(isdigit(c)){
 
+        while (current < input.length() && isdigit(input[current])) ++current;
+
+        token = new Token(Token::NUM, input, first, current-first);
+
     }
     else if(isalpha(c)){
 
     }
-    else if(strchr("+-/*", c)){
+    else if(strchr("+-/*()", c)){
         switch (c) {
             case '+': token = new Token(Token::PLUS, c); break;
             case '-': token = new Token(Token::MINUS, c); break;
             case '*': token = new Token(Token::MUL, c); break;
             case '/': token = new Token(Token::DIV, c); break;
+            case '(': token = new Token(Token::PI, c); break;
+            case ')': token = new Token(Token::PD, c); break;
             default :
                 token = new Token(Token::ERR, c);
                 cout<< "No debería poder llegar acá";

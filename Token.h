@@ -10,7 +10,8 @@ class Token {
 
 public:
 
-    enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR};
+    enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR,
+            PD, PI};
 
     Type type;
     string TypeText;

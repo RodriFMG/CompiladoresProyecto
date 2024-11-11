@@ -23,6 +23,8 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::END: os << "TOKEN(END)"; break;
         case Token::ERR: os << "TOKEN(ERR)"; break;
         case Token::NUM: os << "TOKEN(NUM)"; break;
+        case Token::PI: os << "TOKEN(PI)"; break;
+        case Token::PD: os << "TOKEN(PD)"; break;
         default:
             os<<"Token(UNKNOW)"; break;
     }

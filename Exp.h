@@ -52,7 +52,7 @@ class Program {
 
     Program(Exp* r);
     int accept();
-    ~Program()
+    ~Program();
 
 };
 
