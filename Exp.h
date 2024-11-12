@@ -91,11 +91,6 @@ public:
 
 };
 
-class IfStatement : public Stm{
-
-
-};
-
 class StmList{
 public:
     list<Stm*> stms;
@@ -106,6 +101,18 @@ public:
     void add(Stm* stm);
 
 };
+
+class IfStatement : public Stm{
+public:
+    list<Exp*> conditions;
+    list<StmList*> conditionBodies;
+
+    IfStatement(list<Exp*> conditions_, list<StmList*> conditionBodies_);
+    int accept(Visitor* visitor) override;
+    ~IfStatement() noexcept override;
+
+};
+
 
 class Program {
 public:

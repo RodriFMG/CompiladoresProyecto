@@ -27,6 +27,11 @@ int PrinteoStatement::accept(Visitor *visitor) {
     return 0;
 }
 
+int IfStatement::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
 int StmList::accept(Visitor *visitor) {
     visitor->visit(this);
     return 0;
@@ -87,6 +92,38 @@ void PrintVisitor::visit(PrinteoStatement *s) {
 
 }
 
+void PrintVisitor::visit(IfStatement *s) {
+
+    list<Exp*>::iterator itExp;
+    list<StmList*>::iterator itStmList;
+
+    // La cantidad de s->conditions, será siempre uno menos que s->conditionBodies (por el else)
+    // lo cual, cuando de leer s->conditions, solo quedará el s->conditionBody del else.
+    for(itExp = s->conditions.begin(), itStmList = s->conditionBodies.begin();
+    itExp != s->conditions.end(); ++itExp, ++itStmList){
+
+        if(itExp == s->conditions.begin()){
+            cout<<"if "; (*itExp)->accept(this); cout<<" then\nbegin\n";
+            (*itStmList)->accept(this); cout<<"\n";
+            cout<<"end\n";
+        }
+        else{
+            cout<<"else if "; (*itExp)->accept(this); cout <<" then\nbegin\n";
+            (*itStmList)->accept(this); cout<<"\n";
+            cout<<"end\n";
+        }
+
+    }
+
+    // Esto siempre y cuando va a cumplir cuando se declare else.
+    if(itStmList != s->conditionBodies.end()){
+        cout<<"else\nbegin\n";
+        (*itStmList)->accept(this);
+        cout<<"\nend\n";
+    }
+
+}
+
 int PrintVisitor::visit(BinaryExp *e) {
 
     e->left->accept(this);
@@ -120,7 +157,9 @@ void EvalVisitor::visit(Program *p) {
 
 void EvalVisitor::visit(StmList *sl) {
 
-    for(Stm* stm : sl->stms) stm->accept(this);
+    for(Stm* stm : sl->stms){
+        stm->accept(this);
+    }
 
 }
 
@@ -141,6 +180,31 @@ void EvalVisitor::visit(PrinteoStatement *s) {
     else{
         cout<<"No debería llegar acá (EvalVisitor - PrinteoStatement)\n";
         exit(0);
+    }
+
+}
+
+void EvalVisitor::visit(IfStatement *s) {
+
+    // ver PrintVisitor de IfStatement.
+
+    list<Exp*>::iterator itExp;
+    list<StmList*>::iterator itStmList;
+    bool else_or_not = true;
+
+    for(itExp = s->conditions.begin(), itStmList = s->conditionBodies.begin();
+        itExp != s->conditions.end(); ++itExp, ++itStmList){
+
+        if((*itExp)->accept(this)){
+            (*itStmList)->accept(this);
+            else_or_not = false;
+            break;
+        }
+
+    }
+
+    if(s->conditions.size() != s->conditionBodies.size()){
+        if(else_or_not) (*itStmList)->accept(this);
     }
 
 }

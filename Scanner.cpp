@@ -29,8 +29,14 @@ Token *Scanner::NextToken() {
 
         string word = input.substr(first, current-first);
 
+
         if(word == "WriteLn") token = new Token(Token::WriteLn, word, 0, word.length());
         else if(word == "Write") token = new Token(Token::Write, word, 0, word.length());
+        else if(word == "if") token = new Token(Token::IF, word, 0, word.length());
+        else if(word == "then") token = new Token(Token::THEN, word, 0, word.length());
+        else if(word == "else") token = new Token(Token::ELSE, word, 0, word.length());
+        else if(word == "begin") token = new Token(Token::BEGINIF, word, 0, word.length());
+        else if(word == "end") token = new Token(Token::ENDIF, word, 0, word.length());
         else token = new Token(Token::ID, word, 0, word.length());
 
     }

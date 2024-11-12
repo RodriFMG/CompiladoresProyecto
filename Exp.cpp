@@ -1,5 +1,7 @@
 #include "Exp.h"
 
+#include <utility>
+
 Exp::~Exp() noexcept = default;
 
 NumberExp::NumberExp(int v) : value(v){}
@@ -30,6 +32,12 @@ PrinteoStatement::PrinteoStatement(string TypePrint_, Exp *exp_) : TypePrint(std
 PrinteoStatement::~PrinteoStatement() noexcept {
     delete exp;
 
+}
+
+IfStatement::IfStatement(list<Exp *> conditions_, list<StmList*> conditionBodies_) : conditions(std::move(conditions_)), conditionBodies(std::move(conditionBodies_)){}
+IfStatement::~IfStatement() noexcept {
+    for(Exp* condition : conditions) delete condition;
+    for(StmList* condicional : conditionBodies) delete condicional;
 }
 
 StmList::StmList() : stms() {}

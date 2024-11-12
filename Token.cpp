@@ -36,6 +36,15 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::LT: os << "TOKEN(LT)"; break;
         case Token::DE: os << "TOKEN(DE)"; break;
         case Token::DT: os << "TOKEN(DT)"; break;
+        case Token::IF: os << "TOKEN(ID)"; break;
+        case Token::THEN: os << "TOKEN(THEN)"; break;
+        case Token::ELSE: os << "TOKEN(ELSE)"; break;
+        case Token::BEGINIF: os << "TOKEN(BEGINIF)"; break;
+        case Token::ENDIF: os << "TOKEN(ENDIF)"; break;
+        case Token::FOR: os << "TOKEN(FOR)"; break;
+        case Token::TO: os << "TOKEN(TO)"; break;
+        case Token::DOWNTO: os << "TOKEN(DOWNTO)"; break;
+        case Token::DO: os << "TOKEN(DO)"; break;
         default:
             os<<"Token(UNKNOW)"; break;
     }

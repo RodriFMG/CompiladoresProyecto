@@ -12,12 +12,20 @@ public:
 
     enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR,
             PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC,
-            LE, LT, DE, DT};
+            LE, LT, DE, DT,
+            IF, THEN, ELSE, BEGINIF, ENDIF,
+            FOR, TO, DOWNTO, DO};
 
     //LE <
     //LT <=
     //DE >
     //DT >=
+
+    // TO aumenta en 1 en 1 el for
+    // DOWNTO disminuye en 1 en 1 el for
+
+    //BEGINIF para todas las sentencias que tengan BEGIN y END
+    //ENDIF
 
     // ASSIGN :=
     // TypeDCL :

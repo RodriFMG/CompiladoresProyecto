@@ -74,7 +74,9 @@ StmList* Parser::ParseStatementList(){
     stmList->add(ParseStatement());
 
     // Modificar esto si quiero que todas las sentencias terminen en ;
-    while(match(Token::PC)) stmList->add(ParseStatement());
+    while(match(Token::PC)) {
+        stmList->add(ParseStatement());
+    }
 
     return stmList;
 }
@@ -122,6 +124,76 @@ Stm *Parser::ParseStatement() {
 
         s = new PrinteoStatement(TypePrint, e);
 
+    }
+    else if(match(Token::IF)){
+
+        list<Exp*> expList;
+        list<StmList*> stmList;
+
+        expList.push_back(ParseCExpression());
+
+        if(!match(Token::THEN)){
+            cout << "Se esperaba el Token THEN, pero se encontró: "<<current->TypeText << " (ParseStatement - IF)";
+            exit(0);
+        }
+        if(!match(Token::BEGINIF)){
+            cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF)";
+            exit(0);
+        }
+
+        stmList.push_back(ParseStatementList());
+
+        if(!match(Token::ENDIF)){
+            cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF)";
+            exit(0);
+        }
+
+        while (match(Token::ELSE)){
+
+            if(match(Token::IF)){
+
+                expList.push_back(ParseCExpression());
+
+                if(!match(Token::THEN)){
+                    cout << "Se esperaba el Token THEN, pero se encontró: "<<current->TypeText << " (ParseStatement - IF - while)";
+                    exit(0);
+                }
+
+                if(!match(Token::BEGINIF)){
+                    cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - While)";
+                    exit(0);
+                }
+
+                stmList.push_back(ParseStatementList());
+
+
+                if(!match(Token::ENDIF)){
+                    cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - While)";
+                    exit(0);
+                }
+            }
+            else{
+                if(!match(Token::BEGINIF)){
+                    cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - else)";
+                    exit(0);
+                }
+
+                stmList.push_back(ParseStatementList());
+
+                if(!match(Token::ENDIF)){
+                    cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - else)";
+                    exit(0);
+                }
+                break;
+            }
+        }
+
+        s = new IfStatement(expList, stmList);
+
+    }
+    else{
+        cout << "Error: Se esperaba un identificador o 'print', pero se encontró: " << *current << endl;
+        exit(1);
     }
 
 
