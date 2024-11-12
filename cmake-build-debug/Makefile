@@ -238,6 +238,30 @@ parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\parser.cpp.s
 .PHONY : parser.cpp.s
 
+visitor.obj: visitor.cpp.obj
+.PHONY : visitor.obj
+
+# target to build an object file
+visitor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj
+.PHONY : visitor.cpp.obj
+
+visitor.i: visitor.cpp.i
+.PHONY : visitor.i
+
+# target to preprocess a source file
+visitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i
+.PHONY : visitor.cpp.i
+
+visitor.s: visitor.cpp.s
+.PHONY : visitor.s
+
+# target to generate assembly for a file
+visitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s
+.PHONY : visitor.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -262,6 +286,9 @@ help:
 	@echo ... parser.obj
 	@echo ... parser.i
 	@echo ... parser.s
+	@echo ... visitor.obj
+	@echo ... visitor.i
+	@echo ... visitor.s
 .PHONY : help
 
 

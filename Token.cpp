@@ -25,6 +25,14 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::NUM: os << "TOKEN(NUM)"; break;
         case Token::PI: os << "TOKEN(PI)"; break;
         case Token::PD: os << "TOKEN(PD)"; break;
+        case Token::ID: os << "TOKEN(ID)"; break;
+        case Token::TypeDCL: os << "TOKEN(DOSPUNTOS)"; break;
+        case Token::ASSIGN: os << "TOKEN(ASSIGN)"; break;
+        case Token::EQ: os << "TOKEN(EQ)"; break;
+        case Token::Write: os <<"TOKEN(WRITE)"; break;
+        case Token::WriteLn: os << "TOKEN(WRITELN)"; break;
+        case Token::PC: os << "TOKEN(PC)"; break;
+
         default:
             os<<"Token(UNKNOW)"; break;
     }

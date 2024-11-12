@@ -25,8 +25,16 @@ Token *Scanner::NextToken() {
     }
     else if(isalpha(c)){
 
+        while (current < input.length() && isalpha(input[current])) ++current;
+
+        string word = input.substr(first, current-first);
+
+        if(word == "WriteLn") token = new Token(Token::WriteLn, word, 0, word.length());
+        else if(word == "Write") token = new Token(Token::Write, word, 0, word.length());
+        else token = new Token(Token::ID, word, 0, word.length());
+
     }
-    else if(strchr("+-/*()", c)){
+    else if(strchr("+-/*():=;", c)){
         switch (c) {
             case '+': token = new Token(Token::PLUS, c); break;
             case '-': token = new Token(Token::MINUS, c); break;
@@ -34,6 +42,16 @@ Token *Scanner::NextToken() {
             case '/': token = new Token(Token::DIV, c); break;
             case '(': token = new Token(Token::PI, c); break;
             case ')': token = new Token(Token::PD, c); break;
+            case ':': {
+                if(current + 1 < input.length()  && input[current+1] == '='){
+                    ++current;
+                    token = new Token(Token::ASSIGN, input, first, current-first);
+                }
+                else token = new Token(Token::TypeDCL, c);
+                break;
+            }
+            case '=': token = new Token(Token::EQ, c); break;
+            case ';': token = new Token(Token::PC, c); break;
             default :
                 token = new Token(Token::ERR, c);
                 cout<< "No debería poder llegar acá";
@@ -48,4 +66,27 @@ Token *Scanner::NextToken() {
 
     return token;
 
+}
+
+void Scanner::reset() {
+    first = 0;
+    current = 0;
+}
+
+Scanner::~Scanner() {}
+
+void test_scanner(Scanner* scanner) {
+    Token* current;
+    cout << "Iniciando Scanner:" << endl<< endl;
+    while ((current = scanner->NextToken())->type != Token::END) {
+        if (current->type == Token::ERR) {
+            cout << "Error en scanner - carácter inválido: " << current->TypeText << endl;
+            break;
+        } else {
+            cout << *current << endl;
+        }
+        delete current;
+    }
+    cout << "TOKEN(END)" << endl;
+    delete current;
 }

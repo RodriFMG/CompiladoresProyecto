@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/RODRIGO/CompilaChistes/Token.cpp" "CMakeFiles/CompiladoresProyecto.dir/Token.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/Token.cpp.obj.d"
   "C:/Users/RODRIGO/CompilaChistes/main.cpp" "CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj.d"
   "C:/Users/RODRIGO/CompilaChistes/parser.cpp" "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj.d"
+  "C:/Users/RODRIGO/CompilaChistes/visitor.cpp" "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

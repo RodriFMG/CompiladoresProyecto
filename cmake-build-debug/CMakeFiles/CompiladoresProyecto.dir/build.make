@@ -158,13 +158,34 @@ CMakeFiles\CompiladoresProyecto.dir\parser.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\parser.cpp.s /c C:\Users\RODRIGO\CompilaChistes\parser.cpp
 <<
 
+CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
+CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: C:\Users\RODRIGO\CompilaChistes\visitor.cpp
+CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaChistes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaChistes\visitor.cpp
+<<
+
+CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.i"
+	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaChistes\visitor.cpp
+<<
+
+CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.s"
+	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s /c C:\Users\RODRIGO\CompilaChistes\visitor.cpp
+<<
+
 # Object files for target CompiladoresProyecto
 CompiladoresProyecto_OBJECTS = \
 "CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj" \
 "CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj" \
 "CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj" \
 "CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj"
+"CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj" \
+"CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj"
 
 # External object files for target CompiladoresProyecto
 CompiladoresProyecto_EXTERNAL_OBJECTS =
@@ -174,9 +195,10 @@ CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj
+CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\build.make
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CompiladoresProyecto.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable CompiladoresProyecto.exe"
 	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\CompiladoresProyecto.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\CompiladoresProyecto.dir\objects1.rsp @<<
  /out:CompiladoresProyecto.exe /implib:CompiladoresProyecto.lib /pdb:C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\CompiladoresProyecto.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj.d"
   "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj"
   "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj.d"
+  "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj"
+  "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj.d"
   "CompiladoresProyecto.exe"
   "CompiladoresProyecto.exe.manifest"
   "CompiladoresProyecto.lib"

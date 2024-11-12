@@ -113,6 +113,12 @@
 		<Unit filename="C:/Users/RODRIGO/CompilaChistes/parser.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
+		<Unit filename="C:/Users/RODRIGO/CompilaChistes/visitor.cpp">
+			<Option target="CompiladoresProyecto"/>
+		</Unit>
+		<Unit filename="C:/Users/RODRIGO/CompilaChistes/visitor.h">
+			<Option target="CompiladoresProyecto"/>
+		</Unit>
 		<Unit filename="C:/Users/RODRIGO/CompilaChistes/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

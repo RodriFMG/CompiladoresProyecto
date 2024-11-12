@@ -11,7 +11,13 @@ class Token {
 public:
 
     enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR,
-            PD, PI};
+            PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC};
+
+    // ASSIGN :=
+    // TypeDCL :
+    // EQ = (para condiciones)
+    // WriteLn imprime con salto de linea
+    // Write imprime sin salto de linea
 
     Type type;
     string TypeText;

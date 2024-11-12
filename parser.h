@@ -17,6 +17,10 @@ private:
 public:
 
     Parser(Scanner* scanner1);
+
+    Program* ParseProgram();
+    StmList* ParseStatementList();
+    Stm* ParseStatement();
     Exp* ParseExpression();
     Exp* ParseTerm();
     Exp* ParseFactor();

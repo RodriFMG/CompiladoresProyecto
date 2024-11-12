@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <string>
+#include <list>
+#include "visitor.h"
 using namespace std;
 
 enum BinaryOp {
@@ -17,7 +19,7 @@ class Exp {
 public:
 
     virtual ~Exp() = 0;
-    virtual int accept() = 0;
+    virtual int accept(Visitor* visitor) = 0;
     static string BinaryToChar(BinaryOp op);
 
 };
@@ -28,7 +30,7 @@ public:
     int value;
 
     explicit NumberExp(int v);
-    int accept() override;
+    int accept(Visitor* visitor) override;
     ~NumberExp() override;
 
 };
@@ -40,18 +42,73 @@ public:
     BinaryOp op;
 
     BinaryExp(Exp* l, BinaryOp o, Exp* r);
-    int accept() override;
+    int accept(Visitor* visitor) override;
     ~BinaryExp() override;
 
 
 };
 
+class IdentifierExp : public Exp{
+public:
+
+    string id;
+
+    explicit IdentifierExp(string id_);
+    int accept(Visitor* visitor) override;
+    ~IdentifierExp() override;
+
+};
+
+class Stm{
+public:
+
+    virtual int accept(Visitor* visitor) = 0;
+    virtual ~Stm() = 0;
+
+};
+
+
+class AssignStatement : public Stm{
+public:
+
+    string id;
+    Exp* exp;
+
+    AssignStatement(string id_, Exp* exp_);
+    int accept(Visitor* visitor) override;
+    ~AssignStatement() override;
+
+};
+
+class PrinteoStatement : public Stm{
+public:
+
+    string TypePrint;
+    Exp* exp;
+    PrinteoStatement(string TypePrint_, Exp* exp_);
+    int accept(Visitor* visitor) override;
+    ~PrinteoStatement() override;
+
+};
+
+class StmList{
+public:
+    list<Stm*> stms;
+    StmList();
+    int accept(Visitor* visitor);
+    ~StmList();
+
+    void add(Stm* stm);
+
+};
+
 class Program {
+public:
 
-    Exp* result;
+    StmList* sl;
 
-    Program(Exp* r);
-    int accept();
+    explicit Program(StmList* sl_);
+    int accept(Visitor* visitor);
     ~Program();
 
 };

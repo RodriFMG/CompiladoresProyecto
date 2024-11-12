@@ -22,5 +22,7 @@ public:
 
 };
 
+void test_scanner(Scanner* scanner);
+
 
 #endif //COMPILADORESPROYECTO_SCANNER_H

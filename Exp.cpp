@@ -1,5 +1,9 @@
 #include "Exp.h"
 
+#include <utility>
+
+Exp::~Exp() noexcept {}
+
 NumberExp::NumberExp(int v) : value(v){}
 NumberExp::~NumberExp() noexcept {}
 
@@ -9,11 +13,38 @@ BinaryExp::~BinaryExp() noexcept {
     delete right;
 }
 
-Program::Program(Exp *r) : result(r) {}
+Program::Program(StmList* sl_) : sl(sl_) {}
 Program::~Program() {
-    delete result;
+
+    for(Stm* stm : sl->stms){
+        delete stm;
+    }
+
 }
 
+IdentifierExp::IdentifierExp(std::string id_) : id(std::move(id_)){}
+IdentifierExp::~IdentifierExp() noexcept {}
+
+Stm::~Stm() noexcept {}
+
+AssignStatement::AssignStatement(std::string id_, Exp *exp_) : id(std::move(id_)), exp(exp_){}
+AssignStatement::~AssignStatement() noexcept {
+    delete exp;
+}
+
+PrinteoStatement::PrinteoStatement(string TypePrint_, Exp *exp_) : TypePrint(std::move(TypePrint_)), exp(exp_){}
+PrinteoStatement::~PrinteoStatement() noexcept {
+    delete exp;
+}
+
+StmList::StmList() = default;
+StmList::~StmList() {
+    for(Stm* stm : stms) delete stm;
+}
+
+void StmList::add(Stm *stm) {
+    stms.push_back(stm);
+}
 
 string Exp::BinaryToChar(BinaryOp op) {
 
