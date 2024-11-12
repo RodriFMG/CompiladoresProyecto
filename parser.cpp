@@ -56,27 +56,214 @@ bool Parser::isAtEnd() {
     return (current->type == Token::END);
 }
 
-Program* Parser::ParseProgram(){
+// Parse de VarDec y VarDecList
 
-    StmList* stmList = ParseStatementList();
+VarDec* Parser::ParseVarDec() {
+    VarDec* vd = NULL;
+    // En Pascal, las variables se declaran con `var` seguido de nombres y tipos de variables
+    std::list<std::string> vars;
+    if (match(Token::ID)){
+        vars.push_back(previous->TypeText);
 
-    return new Program(stmList);
+        while (match(Token::COMA)) {
+            if (!match(Token::ID)) {
+                std::cout << "Error: se esperaba un identificador después de ',' en la declaración de variables.\n";
+                exit(1);
+            }
+            vars.push_back(previous->TypeText);
+        }
 
+        // Después de las variables, debería venir el token TypeDCL (que representa `:` en Pascal)
+        if (!match(Token::TypeDCL)) {
+            std::cout << "Error: se esperaba ':' después de los identificadores en la declaración de variables.\n";
+            exit(1);
+        }
+
+        // Luego del `:` esperamos el tipo de dato (INTEGER o LONGINT)
+        if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
+            std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT) después de ':'.\n";
+            exit(1);
+        }
+        std::string type = previous->TypeText;
+
+        if (!match(Token::PC)) {
+            std::cout << "Error: se esperaba ';' al final de la declaración de variables.\n";
+            exit(1);
+        }
+        vd = new VarDec(type, vars);
+    }
+
+    return vd;
 }
 
-StmList* Parser::ParseStatementList(){
+VarDecList* Parser::ParseVarDecList() {
+    VarDecList* vdl = new VarDecList();
+    // Verifica si hay un `var` opcionalmente
+    if (match(Token::VAR)) {
+        VarDec* varDec = ParseVarDec();
+
+        while (varDec != nullptr) {
+            vdl->add(varDec);
+            varDec = ParseVarDec();
+        }
+    }
+    else if(match(Token::ID)){
+        std::cout << "Error: se esperaba 'var' al principio de la declaración de variables.\n";
+        exit(1);
+    }
+    else{
+        vdl->vardecs.clear();
+    }
+    return vdl;
+}
+
+// Parse de Body
+
+Body* Parser::ParseBody() {
+    VarDecList* vdl = ParseVarDecList();
+    StmList* sl = ParseStatementList();
+
+    return new Body(vdl, sl);
+}
+
+// Parse de FunDec y FunDecList
+
+FunDec* Parser::ParseFunDec() {
+    FunDec* fd = NULL;
+    if (match(Token::FUNCTION)){
+        if (!match(Token::ID)) {
+            std::cout << "Error: se esperaba un nombre de función después de 'function'.\n";
+            exit(1);
+        }
+        std::string fname = previous->TypeText;
+
+        if (!match(Token::PI)) {
+            std::cout << "Error: se esperaba '(' después del nombre de la función.\n";
+            exit(1);
+        }
+
+        std::list<std::string> paramNames;
+        std::list<std::string> paramTypes;
+
+        if (!check(Token::PD)) {  // Si no hay ')', procesamos los parámetros
+
+            do {
+                if (!match(Token::ID)) {
+                    std::cout << "Error: se esperaba un nombre de parámetro.\n";
+                    exit(1);
+                }
+                paramNames.push_back(previous->TypeText);
+            } while (match(Token::COMA));
+
+            if (!match(Token::TypeDCL)) {
+                std::cout << "Error: se esperaba ':' después de los nombres de los parámetros.\n";
+                exit(1);
+            }
+
+            if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
+                std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT) después de ':'.\n";
+                exit(1);
+            }
+            std::string paramType = previous->TypeText;
+
+            for (size_t i = 0; i < paramNames.size(); i++) {
+                paramTypes.push_back(paramType);
+            }
+        }
+
+        if (!match(Token::PD)) {
+            std::cout << "Error: se esperaba ')' después de la lista de parámetros.\n";
+            exit(1);
+        }
+
+        if (!match(Token::TypeDCL)) {
+            std::cout << "Error: se esperaba ':' después de los parámetros.\n";
+            exit(1);
+        }
+
+        if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
+            std::cout << "Error: se esperaba un tipo de datos de retorno válido (INTEGER o LONGINT).\n";
+            exit(1);
+        }
+        std::string rtype = previous->TypeText;
+
+
+
+        if(!match(Token::PC)){
+            std::cout << "Error: se esperaba ';' después del tipo de datos de retorno.\n";
+            exit(1);
+        }
+
+        Body* body = ParseBody();
+
+        fd = new FunDec(fname, paramTypes, paramNames, rtype, body);
+
+        if(!match(Token::PC)){
+            std::cout << "Error: se esperaba ';' después del tipo de datos de retorno.\n";
+            exit(1);
+        }
+    }
+    return fd;
+}
+
+
+FunDecList* Parser::ParseFunDecList() {
+    FunDecList* fdl = new FunDecList();
+    FunDec* funDec = ParseFunDec();
+    while (funDec != nullptr) {
+        fdl->add(funDec);
+        funDec = ParseFunDec();
+    }
+    return fdl;
+}
+
+// Parse del Programa
+
+Program* Parser::ParseProgram() {
+    FunDecList* funDecs = ParseFunDecList();
+    VarDecList* varDecs = ParseVarDecList();
+    StmList* stmList = ParseStatementList();
+
+    if(!match(Token::PUNTO)){
+        std::cout << "Error: se esperaba '.' al final del programa" << current->TypeText<<endl;
+        exit(1);
+    }
+    return new Program(varDecs, funDecs, stmList);
+}
+
+
+StmList* Parser::ParseStatementList() {
+    if (!match(Token::BEGIN)) {
+        std::cout << "Error: se esperaba 'begin', pero se encontro:" << current->TypeText<<endl;
+        exit(1);
+    }
 
     StmList* stmList = new StmList();
 
     stmList->add(ParseStatement());
 
-    // Modificar esto si quiero que todas las sentencias terminen en ;
-    while(match(Token::PC)) {
+    if (!match(Token::PC)) {
+        std::cout << "Error: se esperaba ';' después de la primera sentencia en el bloque 'begin ... end'.\n";
+        exit(1);
+    }
+
+    while (check(Token::ID) || check(Token::IF) || check(Token::WHILE) || check(Token::FOR) || check(Token::Write) || check(Token::WriteLn)) {
         stmList->add(ParseStatement());
+
+        if (!match(Token::PC)) {
+            std::cout << "Error: se esperaba ';' después de la sentencia en el bloque 'begin ... end'.\n";
+            exit(1);
+        }
+    }
+
+    if (!match(Token::ENDP)) {
+        std::cout << "Error: se esperaba 'end'";
+        exit(1);
     }
 
     return stmList;
 }
+
 
 Stm *Parser::ParseStatement() {
 
@@ -85,27 +272,42 @@ Stm *Parser::ParseStatement() {
 
     if(current == NULL){
         cout << "Error:  Token actual es NULL (ParseStatement)" << endl;
-        exit(0);
+        exit(1);
     }
 
     if(match(Token::ID)){
-
         string lex = previous->TypeText;
+        if(match(Token::ASSIGN)){
 
-        if(!match(Token::ASSIGN)){
-            cout << "Error: Se esperaba una asignación de tipo := (ParseStatement)"<<endl;
-            exit(0);
+            e = ParseCExpression();
+            s = new AssignStatement(lex, e);
+        }
+        else if (match(Token::PI)){
+            list<Exp*> args;
+            if (!check(Token::PD)){
+                args.push_back(ParseCExpression());
+                while (match(Token::COMA)){
+                    args.push_back(ParseCExpression());
+                }
+            }
+            if (!match(Token::PD)){
+                cout << "Falta paréntesis derecho, pero se encontro:" << current->TypeText<<endl;
+                exit(1);
+            }
+            s = new FCallStatement(lex, args);
+        }
+        else {
+            cout << "Error: Se esperaba una asignación de tipo := (ParseStatement), pero se encontro:" << current->TypeText<<endl;
+            exit(1);
         }
 
-        e = ParseCExpression();
 
-        s = new AssignStatement(lex, e);
     }
     else if(match(Token::Write) || match(Token::WriteLn)){
 
         string TypePrint;
-        if(previous->type == Token::WriteLn) TypePrint = "WriteLn";
-        else if(previous->type == Token::Write) TypePrint = "Write";
+        if(previous->type == Token::WriteLn) TypePrint = "writeln";
+        else if(previous->type == Token::Write) TypePrint = "write";
 
         if(match(Token::PI)){
             e = ParseCExpression();
@@ -131,17 +333,9 @@ Stm *Parser::ParseStatement() {
             cout << "Se esperaba el Token THEN, pero se encontró: "<<current->TypeText << " (ParseStatement - IF)";
             exit(0);
         }
-        if(!match(Token::BEGINIF)){
-            cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF)";
-            exit(0);
-        }
 
         stmList.push_back(ParseStatementList()); // maybe hay que poner el ;
 
-        if(!match(Token::ENDIF)){
-            cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF)";
-            exit(0);
-        }
 
         while (match(Token::ELSE)){
 
@@ -154,31 +348,14 @@ Stm *Parser::ParseStatement() {
                     exit(0);
                 }
 
-                if(!match(Token::BEGINIF)){
-                    cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - While)";
-                    exit(0);
-                }
 
                 stmList.push_back(ParseStatementList());
 
-
-                if(!match(Token::ENDIF)){
-                    cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - While)";
-                    exit(0);
-                }
             }
             else{
-                if(!match(Token::BEGINIF)){
-                    cout << "Se esperaba el token BEGINIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - else)";
-                    exit(0);
-                }
 
                 stmList.push_back(ParseStatementList());
 
-                if(!match(Token::ENDIF)){
-                    cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF - else)";
-                    exit(0);
-                }
                 break;
             }
         }
@@ -216,17 +393,9 @@ Stm *Parser::ParseStatement() {
             exit(0);
         }
 
-        if(!match(Token::BEGINIF)){
-            cout<<"Se esperaba el Token BEGINIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
-            exit(0);
-        }
 
         StmList* stms = ParseStatementList();
 
-        if(!match(Token::ENDIF)){
-            cout<<"Se esperaba el Token ENDIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
-            exit(0);
-        }
 
         s = new ForStatement(id, i_o_d, exp1, exp2, stms);
 
@@ -239,24 +408,17 @@ Stm *Parser::ParseStatement() {
             cout<<"Se esperaba el Token DO, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
             exit(0);
         }
-        if(!match(Token::BEGINIF)){
-            cout<<"Se esperaba el Token BEGINIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
-            exit(0);
-        }
 
         StmList* stms = ParseStatementList();
 
-        if(!match(Token::ENDIF)){
-            cout<<"Se esperaba el Token ENDIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
-            exit(0);
-        }
 
         s = new WhileStatement(e, stms);
 
     }
+
     else{
         cout << "Error: Se esperaba un identificador o 'print', pero se encontró: " << *current << endl;
-        exit(0);
+        exit(1);
     }
 
 
@@ -329,8 +491,27 @@ Exp *Parser::ParseFactor() {
     if(match(Token::NUM)){
         return new NumberExp(stoi(previous->TypeText));
     }
-    else if(match(Token::ID)){
-        return new IdentifierExp(previous->TypeText);
+    else if (match(Token::ID)) {
+        string texto = previous->TypeText;
+        //Parse FCallExp
+        if (match(Token::PI)){
+            list<Exp*> args;
+            if (!check(Token::PD)){
+                args.push_back(ParseCExpression());
+                while (match(Token::COMA)){
+                    args.push_back(ParseCExpression());
+                }
+            }
+            if (!match(Token::PD)){
+                cout << "Falta paréntesis derecho" << endl;
+                exit(0);
+            }
+            return new FCallExp(texto, args);
+        }
+        else{
+            return new IdentifierExp(previous->TypeText);
+        }
+
     }
     else if(match(Token::PI)){
         Exp* exp = ParseExpression();

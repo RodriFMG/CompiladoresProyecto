@@ -42,8 +42,8 @@ int main(int argc, const char* argv[]) {
         printVisitor.imprimir(program);
         cout << endl;
         cout << endl << "Run program:" << endl;
-        EvalVisitor evalVisitor;
-        evalVisitor.ejecutar(program);
+        //EvalVisitor evalVisitor;
+        //evalVisitor.ejecutar(program);
         cout << "End of program execution" << endl;
         delete program;
     } catch (const exception &e) {

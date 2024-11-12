@@ -4,122 +4,116 @@
 	<Project>
 		<Option title="CompiladoresProyecto"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug"/>
+				<Option working_dir="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CompiladoresProyecto">
-				<Option output="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug"/>
+				<Option output="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 CompiladoresProyecto"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 CompiladoresProyecto"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CompiladoresProyecto/fast">
-				<Option output="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug"/>
+				<Option output="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
-					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 CompiladoresProyecto/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 CompiladoresProyecto/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug"/>
+				<Option working_dir="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/RODRIGO/CompilaChistes/cmake-build-debug"/>
+				<Option working_dir="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaChistes\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Exp.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Exp.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Exp.h">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Exp.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Scanner.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Scanner.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Scanner.h">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Scanner.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Token.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Token.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/Token.h">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/Token.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/main.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/main.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/parser.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/parser.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/parser.h">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/parser.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/visitor.cpp">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/visitor.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/visitor.h">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/visitor.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaChistes/CMakeLists.txt">
+		<Unit filename="C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

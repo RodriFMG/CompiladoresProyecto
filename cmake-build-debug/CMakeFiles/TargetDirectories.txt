@@ -1,3 +1,3 @@
-C:/Users/RODRIGO/CompilaChistes/cmake-build-debug/CMakeFiles/CompiladoresProyecto.dir
-C:/Users/RODRIGO/CompilaChistes/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/RODRIGO/CompilaChistes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/CMakeFiles/CompiladoresProyecto.dir
+C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/USUARIO/CLionProjects/CompiladoresProyecto/cmake-build-debug/CMakeFiles/rebuild_cache.dir

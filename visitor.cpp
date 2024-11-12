@@ -1,8 +1,14 @@
 #include "visitor.h"
 #include "Exp.h"
 #include <unordered_map>
+#include <iostream>
+using namespace std;
 
 unordered_map<string, int> memoria;
+
+////////////////////////////////////////////////////////////////////////////////
+// Implementación de aceptaciones para cada expresión y sentencia
+////////////////////////////////////////////////////////////////////////////////
 
 int IdentifierExp::accept(Visitor *visitor) {
     return visitor->visit(this);
@@ -13,6 +19,10 @@ int BinaryExp::accept(Visitor *visitor) {
 }
 
 int NumberExp::accept(Visitor *visitor) {
+    return visitor->visit(this);
+}
+
+int FCallExp::accept(Visitor* visitor) {
     return visitor->visit(this);
 }
 
@@ -47,282 +57,273 @@ int StmList::accept(Visitor *visitor) {
     return 0;
 }
 
+int FCallStatement::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int VarDec::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int VarDecList::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int FunDec::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int FunDecList::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int Body::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
 int Program::accept(Visitor *visitor) {
     visitor->visit(this);
     return 0;
 }
 
-/// Print Visitor
+////////////////////////////////////////////////////////////////////////////////
+// Implementación de PrintVisitor
+////////////////////////////////////////////////////////////////////////////////
 
 void PrintVisitor::imprimir(Program *p) {
-
     p->accept(this);
-
+    cout << ".";
 }
 
 void PrintVisitor::visit(Program *p) {
-
-    p->sl->accept(this);
-
+    p->funDecs->accept(this);
+    p->varDecs->accept(this);
+    cout <<"begin" <<endl;
+    p->stmList->accept(this);
+    cout <<"end";
 }
 
-void PrintVisitor::visit(StmList *sl) {
-
-    for(auto stm : sl->stms){
-        stm->accept(this);
-
-        if(stm != sl->stms.back()) cout<<"\n";
+void PrintVisitor::visit(StmList *stm) {
+    increaseIndent();
+    for(auto i: stm->stms){
+        printIndent();
+        i->accept(this);
+        cout << endl;
     }
-
+    decreaseIndent();
 }
 
 void PrintVisitor::visit(AssignStatement *s) {
-
-    cout<<s->id <<" := ";
+    cout << s->id << " := ";
     s->exp->accept(this);
-    cout<<";";
-
+    cout << ";";
 }
 
 void PrintVisitor::visit(PrinteoStatement *s) {
-
-    if(s->TypePrint == "WriteLn"){
-        cout<<"WriteLn";
-
-        if(s->exp != NULL){
-            cout<<"(";
+    if (s->TypePrint == "writeln") {
+        cout << "writeln";
+        if (s->exp != NULL) {
+            cout << "(";
             s->exp->accept(this);
-            cout<<");";
+            cout << ");";
         }
-
-    } else if(s->TypePrint == "Write"){
-        cout<<"Write(";
+    } else if (s->TypePrint == "write") {
+        cout << "write(";
         s->exp->accept(this);
-        cout<<");";
+        cout << ");";
     }
-    else{
-        cout<<"No debería llegar acá (PrintVisitor - PrinteoStatement)\n";
-        exit(0);
-    }
-
 }
 
 void PrintVisitor::visit(IfStatement *s) {
+    auto itExp = s->conditions.begin();
+    auto itStmList = s->conditionBodies.begin();
 
-    list<Exp*>::iterator itExp;
-    list<StmList*>::iterator itStmList;
+    cout << "if ";
+    (*itExp)->accept(this);
+    cout << " then\n";
+    printIndent();
+    cout <<"begin" <<endl;
+    (*itStmList)->accept(this);
+    printIndent();
+    cout <<"end\n";
 
-    // La cantidad de s->conditions, será siempre uno menos que s->conditionBodies (por el else)
-    // lo cual, cuando de leer s->conditions, solo quedará el s->conditionBody del else.
-    for(itExp = s->conditions.begin(), itStmList = s->conditionBodies.begin();
-    itExp != s->conditions.end(); ++itExp, ++itStmList){
+    ++itExp;
+    ++itStmList;
 
-        if(itExp == s->conditions.begin()){
-            cout<<"if "; (*itExp)->accept(this); cout<<" then\nbegin\n";
-            (*itStmList)->accept(this); cout<<"\n";
-            cout<<"end\n";
-        }
-        else{
-            cout<<"else if "; (*itExp)->accept(this); cout <<" then\nbegin\n";
-            (*itStmList)->accept(this); cout<<"\n";
-            cout<<"end\n";
-        }
-
-    }
-
-    // Esto siempre y cuando va a cumplir cuando se declare else.
-    if(itStmList != s->conditionBodies.end()){
-        cout<<"else\nbegin\n";
+    while (itExp != s->conditions.end()) {
+        printIndent();
+        cout << "else if ";
+        (*itExp)->accept(this);
+        cout << " then\n";
+        printIndent();
+        cout <<"begin" <<endl;
         (*itStmList)->accept(this);
-        cout<<"\nend\n";
+        printIndent();
+        cout <<"end;";
+        ++itExp;
+        ++itStmList;
     }
 
+    if (itStmList != s->conditionBodies.end()) {
+        printIndent();
+        cout << "else\n";
+        printIndent();
+        cout <<"begin" <<endl;
+        (*itStmList)->accept(this);
+        printIndent();
+        cout <<"end;";
+    }
 }
 
 void PrintVisitor::visit(ForStatement *s) {
-
-    cout<<"for "<<s->id<<" := ";
+    cout << "for " << s->id << " := ";
     s->exp1->accept(this);
-    cout<<" "<<s->increase_or_decrease<<" ";
+    cout << " " << s->increase_or_decrease << " ";
     s->exp2->accept(this);
-    cout<<" do\n";
-
-    cout<<"begin\n";
+    cout << " do\n";
+    printIndent();
+    cout <<"begin" <<endl;
     s->stms->accept(this);
-    cout<<"end;";
-
+    printIndent();
+    cout <<"end;";
 }
 
 void PrintVisitor::visit(WhileStatement *s) {
-
-    cout<<"while ";
+    cout << "while ";
     s->exp->accept(this);
-    cout<<" do\n";
-    cout<<"begin\n";
+    cout << " do\n";
+    printIndent();
+    cout <<"begin" <<endl;
     s->stms->accept(this);
-    cout<<"end;";
+    printIndent();
+    cout <<"end;";
+}
 
+void PrintVisitor::visit(FCallStatement* s) {
+    cout << s->fname << "(";
+    bool first = true;
+    for (Exp* arg : s->args) {
+        if (!first) cout << ", ";
+        arg->accept(this);
+        first = false;
+    }
+    cout << ")";
 }
 
 int PrintVisitor::visit(BinaryExp *e) {
-
     e->left->accept(this);
-    cout<< ' ' << Exp::BinaryToChar(e->op) << ' ';
+    cout << ' ' << Exp::BinaryToChar(e->op) << ' ';
     e->right->accept(this);
-
     return 0;
 }
 
 int PrintVisitor::visit(NumberExp *e) {
-    cout<<e->value;
+    cout << e->value;
     return 0;
 }
+
+int PrintVisitor::visit(FCallExp* exp) {
+    cout << exp->fname << "(";
+    bool first = true;
+    for (Exp* arg : exp->args) {
+        if (!first) cout << ", ";
+        arg->accept(this);
+        first = false;
+    }
+    cout << ")";
+    return 0;
+}
+
 
 int PrintVisitor::visit(IdentifierExp *e) {
-
     cout << e->id;
     return 0;
-
 }
 
-/// Eval Visitor
-
-void EvalVisitor::ejecutar(Program *p) {
-    p->accept(this);
-}
-
-void EvalVisitor::visit(Program *p) {
-    p->sl->accept(this);
-}
-
-void EvalVisitor::visit(StmList *sl) {
-
-    for(Stm* stm : sl->stms){
-        stm->accept(this);
-    }
-
-}
-
-void EvalVisitor::visit(AssignStatement *s) {
-
-    memoria[s->id] = s->exp->accept(this);
-
-}
-
-void EvalVisitor::visit(PrinteoStatement *s) {
-
-    if(s->TypePrint == "WriteLn"){
-
-        if(s->exp != NULL) cout << s->exp->accept(this) <<"\n";
-        else cout<<"\n";
-
-    }
-    else if(s->TypePrint == "Write") cout<<s->exp->accept(this);
-
-    else{
-        cout<<"No debería llegar acá (EvalVisitor - PrinteoStatement)\n";
-        exit(0);
-    }
-
-}
-
-void EvalVisitor::visit(IfStatement *s) {
-
-    // ver PrintVisitor de IfStatement.
-
-    list<Exp*>::iterator itExp;
-    list<StmList*>::iterator itStmList;
-    bool else_or_not = true;
-
-    for(itExp = s->conditions.begin(), itStmList = s->conditionBodies.begin();
-        itExp != s->conditions.end(); ++itExp, ++itStmList){
-
-        if((*itExp)->accept(this)){
-            (*itStmList)->accept(this);
-            else_or_not = false;
-            break;
+void PrintVisitor::visit(VarDec *stm) {
+    for (auto it = stm->vars.begin(); it != stm->vars.end(); ++it) {
+        cout << *it;
+        if (std::next(it) != stm->vars.end()) {
+            cout << ", ";
         }
-
     }
-
-    if(s->conditions.size() != s->conditionBodies.size()){
-        if(else_or_not) (*itStmList)->accept(this);
-    }
-
+    cout << " : " << stm->type << ";"<< endl;
 }
 
-void EvalVisitor::visit(ForStatement *s) {
-
-    if(memoria.find(s->id) == memoria.end()){
-        cout<<"El ID "<<s->id<<" no fue declarado anteriormente.\n";
-        exit(0);
+void PrintVisitor::visit(VarDecList *stm) {
+    if (!stm->vardecs.empty()){
+        cout << "var" << endl;
     }
-
-    int value = (s->increase_or_decrease == "to") ? 1 : -1;
-    memoria[s->id] = s->exp1->accept(this);
-    int expfinish = s->exp2->accept(this);
-
-    while (memoria[s->id] <= expfinish){
-        s->stms->accept(this);
-        memoria[s->id] += value;
+    increaseIndent();
+    for (auto i : stm->vardecs) {
+        printIndent();
+        i->accept(this);
+    }
+    decreaseIndent();
+    if (!stm->vardecs.empty()){
+        cout << endl;
     }
 
 
 }
 
-void EvalVisitor::visit(WhileStatement *s) {
-
-    while (s->exp->accept(this)) s->stms->accept(this);
-
-
-}
-
-int EvalVisitor::visit(BinaryExp *e) {
-
-    int left = e->left->accept(this);
-    int right = e->right->accept(this);
-
-    int result;
-
-    switch (e->op) {
-        case PLUS_OP: result = left + right; break;
-        case MINUS_OP: result = left - right; break;
-        case MUL_OP: result = left * right; break;
-        case DIV_OP: {
-            if(right == 0){
-                cout<< "Error, se está dividiendo entre 0. (EvalVisitor - BinaryExp)";
-                exit(0);
-            }
-            else{
-                result = left / right ; break;
+void PrintVisitor::visit(FunDec *stm) {
+    printIndent();
+    cout << "function " << stm->fname << "(";
+    // Agrupar parámetros por tipo
+    auto paramNameIt = stm->paramNames.begin();
+    auto paramTypeIt = stm->paramTypes.begin();
+    while (paramTypeIt != stm->paramTypes.end()) {
+        std::list<std::string> paramsWithSameType;
+        std::string currentType = *paramTypeIt;
+        while (paramTypeIt != stm->paramTypes.end() && *paramTypeIt == currentType) {
+            paramsWithSameType.push_back(*paramNameIt);
+            ++paramNameIt;
+            ++paramTypeIt;
+        }
+        // Imprimir parámetros con el mismo tipo
+        for (auto it = paramsWithSameType.begin(); it != paramsWithSameType.end(); ++it) {
+            cout << *it;
+            if (std::next(it) != paramsWithSameType.end()) {
+                cout << ", ";
             }
         }
-        case EQ_OP: result = (left == right); break;
-        case LE_OP: result = (left < right); break;
-        case LT_OP: result = (left <= right); break;
-        case DE_OP: result = (left > right); break;
-        case DT_OP: result = (left >= right); break;
-        default:
-            cout<<"No debería llegar acá (EvalVisitor - BinaryExp)";
-            exit(0);
-
+        cout << " : " << currentType;
+        if (paramTypeIt != stm->paramTypes.end()) {
+            cout << "; ";
+        }
     }
-
-    return result;
-
+    cout << ") : " << stm->rtype << ";" << endl;
+    stm->body->accept(this);
+    cout << ";" << endl;
 }
 
-int EvalVisitor::visit(NumberExp *e) {
-    return e->value;
-}
 
-int EvalVisitor::visit(IdentifierExp *e) {
-
-    if(memoria.find(e->id) == memoria.end()){
-        cout<<"El ID "<<e->id<<" no fue declarado anteriormente.\n";
-        exit(0);
+void PrintVisitor::visit(FunDecList *stm) {
+    for (auto i : stm->flist) {
+        i->accept(this);
+        cout << endl;
     }
-
-    return memoria[e->id];
-
 }
+
+void PrintVisitor::visit(Body *stm) {
+    stm->vardecs->accept(this);
+    cout <<"begin" <<endl;
+    increaseIndent();
+    stm->statements->accept(this);
+    decreaseIndent();
+    cout <<"end";
+}
+
+void PrintVisitor::printIndent() {
+    for (int i = 0; i < indentLevel * 2; i++) {
+        cout << ' ';
+    }
+}
+

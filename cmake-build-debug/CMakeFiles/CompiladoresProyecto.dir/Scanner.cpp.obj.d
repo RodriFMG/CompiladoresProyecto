@@ -1,107 +1,143 @@
-C:/Users/RODRIGO/CompilaChistes/Scanner.h
-C:/Users/RODRIGO/CompilaChistes/Token.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/iostream
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/yvals_core.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/sal.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/concurrencysal.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vadefs.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xkeycheck.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/istream
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/ostream
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/ios
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xlocnum
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/climits
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/limits.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cmath
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/yvals.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/crtdbg.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_new_debug.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_new.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/crtdefs.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/use_ansi.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cstdlib
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/math.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_math.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/stdlib.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_malloc.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_search.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/stddef.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wstdlib.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xtr1common
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/intrin0.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/intrin0.inl.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cstdio
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/stdio.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wstdio.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_stdio_config.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/iterator
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/iosfwd
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cstring
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/string.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_memory.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_memcpy_s.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/errno.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_string.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wstring.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cwchar
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/wchar.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wconio.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wctype.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wdirect.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wio.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_share.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wprocess.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_wtime.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/sys/stat.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/sys/types.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xutility
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/__msvc_iter_core.hpp
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/utility
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/initializer_list
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cstddef
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/type_traits
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cstdint
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/stdint.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/streambuf
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xiosbase
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/share.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/system_error
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/__msvc_system_error_abi.hpp
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cerrno
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/stdexcept
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/exception
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/malloc.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_exception.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/eh.h
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_terminate.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xstring
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/__msvc_sanitizer_annotate_container.hpp
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xmemory
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/limits
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cfloat
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/float.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/new
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xatomic.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xpolymorphic_allocator.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/tuple
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xcall_once.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xerrc.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/atomic
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xthreads.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xtimec.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/ctime
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/time.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xlocale
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/memory
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/typeinfo
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_typeinfo.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xfacet
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xlocinfo
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/__msvc_xlocinfo_types.hpp
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/cctype
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/ctype.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/clocale
-C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/locale.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/string
+CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.obj: \
+ C:\Users\USUARIO\CLionProjects\CompiladoresProyecto\Scanner.cpp \
+ C:\Users\USUARIO\CLionProjects\CompiladoresProyecto\Scanner.h \
+ C:\Users\USUARIO\CLionProjects\CompiladoresProyecto\Token.h \
+ C:/msys64/mingw64/include/c++/13.2.0/iostream \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/requires_hosted.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/msys64/mingw64/include/c++/13.2.0/pstl/pstl_config.h \
+ C:/msys64/mingw64/include/c++/13.2.0/ostream \
+ C:/msys64/mingw64/include/c++/13.2.0/ios \
+ C:/msys64/mingw64/include/c++/13.2.0/iosfwd \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stringfwd.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/memoryfwd.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/postypes.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cwchar \
+ C:/msys64/mingw64/include/wchar.h C:/msys64/mingw64/include/corecrt.h \
+ C:/msys64/mingw64/include/_mingw.h \
+ C:/msys64/mingw64/include/_mingw_mac.h \
+ C:/msys64/mingw64/include/_mingw_secapi.h \
+ C:/msys64/mingw64/include/vadefs.h \
+ C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+ C:/msys64/mingw64/include/corecrt_stdio_config.h \
+ C:/msys64/mingw64/include/corecrt_wstdlib.h \
+ C:/msys64/mingw64/include/_mingw_off_t.h \
+ C:/msys64/mingw64/include/_mingw_stat64.h \
+ C:/msys64/mingw64/include/swprintf.inl \
+ C:/msys64/mingw64/include/sec_api/wchar_s.h \
+ C:/msys64/mingw64/include/c++/13.2.0/exception \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/exception.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/exception_ptr.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/exception_defines.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \
+ C:/msys64/mingw64/include/stddef.h C:/msys64/mingw64/include/crtdefs.h \
+ C:/msys64/mingw64/include/c++/13.2.0/typeinfo \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/hash_bytes.h \
+ C:/msys64/mingw64/include/c++/13.2.0/new \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/move.h \
+ C:/msys64/mingw64/include/c++/13.2.0/type_traits \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/nested_exception.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/char_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/localefwd.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+ C:/msys64/mingw64/include/c++/13.2.0/clocale \
+ C:/msys64/mingw64/include/locale.h C:/msys64/mingw64/include/stdio.h \
+ C:/msys64/mingw64/include/sec_api/stdio_s.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cctype \
+ C:/msys64/mingw64/include/ctype.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/ios_base.h \
+ C:/msys64/mingw64/include/c++/13.2.0/ext/atomicity.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/gthr.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+ C:/msys64/mingw64/include/pthread.h C:/msys64/mingw64/include/errno.h \
+ C:/msys64/mingw64/include/sys/types.h \
+ C:/msys64/mingw64/include/process.h \
+ C:/msys64/mingw64/include/corecrt_startup.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/msys64/mingw64/include/limits.h C:/msys64/mingw64/include/signal.h \
+ C:/msys64/mingw64/include/pthread_signal.h \
+ C:/msys64/mingw64/include/time.h C:/msys64/mingw64/include/sys/timeb.h \
+ C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
+ C:/msys64/mingw64/include/_timeval.h \
+ C:/msys64/mingw64/include/pthread_time.h \
+ C:/msys64/mingw64/include/pthread_compat.h \
+ C:/msys64/mingw64/include/pthread_unistd.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/locale_classes.h \
+ C:/msys64/mingw64/include/c++/13.2.0/string \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/allocator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/new_allocator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/functexcept.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/cpp_type_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/ostream_insert.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/cxxabi_forced.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/concept_check.h \
+ C:/msys64/mingw64/include/c++/13.2.0/debug/assertions.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator_base_types.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_iterator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/ext/type_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/ptr_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_function.h \
+ C:/msys64/mingw64/include/c++/13.2.0/backward/binders.h \
+ C:/msys64/mingw64/include/c++/13.2.0/ext/numeric_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_algobase.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_pair.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/utility.h \
+ C:/msys64/mingw64/include/c++/13.2.0/debug/debug.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/predefined_ops.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bit \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/refwrap.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/invoke.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/range_access.h \
+ C:/msys64/mingw64/include/c++/13.2.0/initializer_list \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/basic_string.h \
+ C:/msys64/mingw64/include/c++/13.2.0/ext/alloc_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/alloc_traits.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/stl_construct.h \
+ C:/msys64/mingw64/include/c++/13.2.0/string_view \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/functional_hash.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/string_view.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/ext/string_conversions.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cstdlib \
+ C:/msys64/mingw64/include/stdlib.h \
+ C:/msys64/mingw64/include/sec_api/stdlib_s.h \
+ C:/msys64/mingw64/include/c++/13.2.0/stdlib.h \
+ C:/msys64/mingw64/include/malloc.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/std_abs.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cstdio \
+ C:/msys64/mingw64/include/c++/13.2.0/cerrno \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/charconv.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/basic_string.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/memory_resource.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cstddef \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/uses_allocator_args.h \
+ C:/msys64/mingw64/include/c++/13.2.0/tuple \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/locale_classes.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/system_error \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/msys64/mingw64/include/c++/13.2.0/stdexcept \
+ C:/msys64/mingw64/include/c++/13.2.0/streambuf \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/streambuf.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/basic_ios.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/locale_facets.h \
+ C:/msys64/mingw64/include/c++/13.2.0/cwctype \
+ C:/msys64/mingw64/include/wctype.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/streambuf_iterator.h \
+ C:/msys64/mingw64/include/c++/13.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/locale_facets.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/basic_ios.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/ostream.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/istream \
+ C:/msys64/mingw64/include/c++/13.2.0/bits/istream.tcc \
+ C:/msys64/mingw64/include/c++/13.2.0/cstring \
+ C:/msys64/mingw64/include/string.h \
+ C:/msys64/mingw64/include/sec_api/string_s.h

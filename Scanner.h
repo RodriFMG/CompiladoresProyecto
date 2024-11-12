@@ -15,7 +15,7 @@ private:
 
 public:
 
-    explicit Scanner(const char* it_s);
+    Scanner(const char* it_s);
     Token* NextToken();
     void reset();
     ~Scanner();

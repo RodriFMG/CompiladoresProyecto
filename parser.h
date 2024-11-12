@@ -13,6 +13,10 @@ private:
     bool check(Token::Type token);
     bool advance();
     bool isAtEnd();
+    Exp* ParseCExpression();
+    Exp* ParseExpression();
+    Exp* ParseTerm();
+    Exp* ParseFactor();
 
 public:
 
@@ -20,13 +24,12 @@ public:
 
     Program* ParseProgram();
     StmList* ParseStatementList();
-
     Stm* ParseStatement();
-
-    Exp* ParseCExpression();
-    Exp* ParseExpression();
-    Exp* ParseTerm();
-    Exp* ParseFactor();
+    VarDec* ParseVarDec();
+    VarDecList* ParseVarDecList();
+    Body* ParseBody();
+    FunDecList* ParseFunDecList();
+    FunDec* ParseFunDec();
 
 
     ~Parser();

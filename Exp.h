@@ -17,152 +17,183 @@ enum BinaryOp {
 
 class Exp {
 public:
-
     virtual ~Exp() noexcept = 0;
     virtual int accept(Visitor* visitor) = 0;
     static string BinaryToChar(BinaryOp op);
-
 };
 
-class NumberExp : public Exp{
+class NumberExp : public Exp {
 public:
-
     int value;
-
     explicit NumberExp(int v);
     int accept(Visitor* visitor) override;
     ~NumberExp() noexcept override;
-
 };
 
-class BinaryExp : public Exp{
+class BinaryExp : public Exp {
 public:
-
     Exp *left, *right;
     BinaryOp op;
-
     BinaryExp(Exp* l, BinaryOp o, Exp* r);
     int accept(Visitor* visitor) override;
     ~BinaryExp() noexcept override;
-
-
 };
 
-class IdentifierExp : public Exp{
+class IdentifierExp : public Exp {
 public:
-
     string id;
-
     explicit IdentifierExp(string id_);
     int accept(Visitor* visitor) override;
     ~IdentifierExp() noexcept override;
-
 };
 
-class Stm{
+class FCallExp : public Exp {
 public:
+    string fname;
+    list<Exp*> args;
+    FCallExp(string fname, list<Exp*> args);
+    int accept(Visitor* visitor) override;
+    ~FCallExp() noexcept override;
+};
 
+class Stm {
+public:
     virtual int accept(Visitor* visitor) = 0;
     virtual ~Stm() noexcept = 0;
-
 };
 
-
-class AssignStatement : public Stm{
+class AssignStatement : public Stm {
 public:
-
     string id;
     Exp* exp;
-
     AssignStatement(string id_, Exp* exp_);
     int accept(Visitor* visitor) override;
     ~AssignStatement() noexcept override;
-
 };
 
-class PrinteoStatement : public Stm{
+class PrinteoStatement : public Stm {
 public:
-
     string TypePrint;
     Exp* exp;
     PrinteoStatement(string TypePrint_, Exp* exp_);
     int accept(Visitor* visitor) override;
     ~PrinteoStatement() noexcept override;
-
 };
 
-class ForStatement : public Stm{
+class ForStatement : public Stm {
 public:
-
     string id;
     string increase_or_decrease;
     Exp* exp1;
     Exp* exp2;
     StmList* stms;
-
-    ForStatement(string id_, string i_o_d ,Exp* exp1_, Exp* exp2_, StmList* stms_);
+    ForStatement(string id_, string i_o_d, Exp* exp1_, Exp* exp2_, StmList* stms_);
     int accept(Visitor* visitor) override;
     ~ForStatement() noexcept override;
-
 };
 
-class WhileStatement : public Stm{
+class WhileStatement : public Stm {
 public:
-
     Exp* exp;
     StmList* stms;
-
     WhileStatement(Exp* exp_, StmList* stms_);
     int accept(Visitor* visitor) override;
     ~WhileStatement() noexcept override;
-
 };
 
-class WhileStatement : public Stm{
+class IfStatement : public Stm {
 public:
-
-    Exp* exp;
-    StmList* stms;
-
-    WhileStatement(Exp* exp_, StmList* stms_);
-    int accept(Visitor* volatile) override;
-    ~WhileStatement() noexcept override;
-
+    list<Exp*> conditions;
+    list<StmList*> conditionBodies;
+    IfStatement(list<Exp*> conditions_, list<StmList*> conditionBodies_);
+    int accept(Visitor* visitor) override;
+    ~IfStatement() noexcept override;
 };
 
-class StmList{
+class StmList {
 public:
     list<Stm*> stms;
     StmList();
     int accept(Visitor* visitor);
     ~StmList();
-
     void add(Stm* stm);
-
 };
 
-class IfStatement : public Stm{
+
+class FCallStatement : public Stm {
 public:
-    list<Exp*> conditions;
-    list<StmList*> conditionBodies;
+    string fname;
+    list<Exp*> args;
+    FCallStatement(string fname, list<Exp*> args);
+    int accept(Visitor* visitor);
+    ~FCallStatement();
+};
 
-    IfStatement(list<Exp*> conditions_, list<StmList*> conditionBodies_);
-    int accept(Visitor* visitor) override;
-    ~IfStatement() noexcept override;
+// Clases para declaraciones de variables y funciones
 
+class VarDec {
+public:
+    string type;
+    list<string> vars;
+    VarDec(string type, list<string> vars);
+    int accept(Visitor* visitor);
+    ~VarDec();
+};
+
+class VarDecList {
+public:
+    list<VarDec*> vardecs;
+    VarDecList();
+    void add(VarDec* vardec);
+    int accept(Visitor* visitor);
+    ~VarDecList();
+};
+
+// Clase Body para almacenar variables y declaraciones en un bloque
+
+class Body {
+public:
+    VarDecList* vardecs;
+    StmList* statements;
+    Body(VarDecList* vardecs, StmList* statements);
+    int accept(Visitor* visitor);
+    ~Body();
+};
+
+class FunDec {
+public:
+    string fname;
+    string rtype;
+    list<string> paramTypes;
+    list<string> paramNames;
+    Body* body;
+    FunDec(string fname, list<string> paramTypes, list<string> paramNames, string rtype, Body* body);
+    int accept(Visitor* visitor);
+    ~FunDec();
+};
+
+class FunDecList {
+public:
+    list<FunDec*> flist;
+    FunDecList();
+    void add(FunDec* s);
+    int accept(Visitor* visitor);
+    ~FunDecList();
 };
 
 
 class Program {
 public:
+    VarDecList* varDecs;
+    FunDecList* funDecs;
+    StmList* stmList;
 
-    StmList* sl;
-
-    explicit Program(StmList* sl_);
+    Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList);
     int accept(Visitor* visitor);
     ~Program();
-
 };
 
-
 #endif //COMPILADORESPROYECTO_EXP_H
+
+
+
