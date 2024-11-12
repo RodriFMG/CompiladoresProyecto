@@ -1,12 +1,12 @@
 #include "Exp.h"
 
-Exp::~Exp()  = default;
+Exp::~Exp() noexcept = default;
 
 NumberExp::NumberExp(int v) : value(v){}
-NumberExp::~NumberExp()  = default;
+NumberExp::~NumberExp() noexcept = default;
 
 BinaryExp::BinaryExp(Exp *l, BinaryOp o, Exp *r) : left(l), op(o), right(r){}
-BinaryExp::~BinaryExp()  {
+BinaryExp::~BinaryExp() noexcept {
     delete left;
     delete right;
 }
@@ -17,36 +17,36 @@ Program::~Program() {
 }
 
 IdentifierExp::IdentifierExp(std::string id_) : id(std::move(id_)){}
-IdentifierExp::~IdentifierExp()  = default;
+IdentifierExp::~IdentifierExp() noexcept = default;
 
-Stm::~Stm()  = default;
+Stm::~Stm() noexcept = default;
 
 AssignStatement::AssignStatement(std::string id_, Exp *exp_) : id(std::move(id_)), exp(exp_){}
-AssignStatement::~AssignStatement()  {
+AssignStatement::~AssignStatement() noexcept {
     delete exp;
 }
 
 PrinteoStatement::PrinteoStatement(string TypePrint_, Exp *exp_) : TypePrint(std::move(TypePrint_)), exp(exp_){}
-PrinteoStatement::~PrinteoStatement()  {
+PrinteoStatement::~PrinteoStatement() noexcept {
     delete exp;
 
 }
 
 IfStatement::IfStatement(list<Exp *> conditions_, list<StmList*> conditionBodies_) : conditions(std::move(conditions_)), conditionBodies(std::move(conditionBodies_)){}
-IfStatement::~IfStatement()  {
+IfStatement::~IfStatement() noexcept {
     for(Exp* condition : conditions) delete condition;
     for(StmList* condicional : conditionBodies) delete condicional;
 }
 
 ForStatement::ForStatement(std::string id_, string i_o_d , Exp *exp1_, Exp *exp2_, StmList* stms_) : id(std::move(id_)), increase_or_decrease(std::move(i_o_d)),
 exp1(exp1_), exp2(exp2_), stms(stms_){}
-ForStatement::~ForStatement()  {
+ForStatement::~ForStatement() noexcept {
     delete exp1;
     delete exp2;
 }
 
 WhileStatement::WhileStatement(Exp *exp_, StmList *stms_) : exp(exp_), stms(stms_){}
-WhileStatement::~WhileStatement()  {
+WhileStatement::~WhileStatement() noexcept {
     delete exp;
     delete stms;
 }
