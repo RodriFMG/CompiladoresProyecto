@@ -436,6 +436,15 @@ CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Vi
 CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt\ctype.h"
 CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\clocale"
 CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt\locale.h"
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\fstream"
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\__msvc_filebuf.hpp"
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaChistes\parser.h
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaChistes\Scanner.h
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaChistes\Token.h
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\string"
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaChistes\Exp.h
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\list"
+CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaChistes\visitor.h
 
 
 CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj: C:\Users\RODRIGO\CompilaChistes\parser.cpp
@@ -728,6 +737,8 @@ C:\Users\RODRIGO\CompilaChistes\Exp.h:
 
 "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt\wchar.h":
 
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\__msvc_filebuf.hpp":
+
 C:\Users\RODRIGO\CompilaChistes\main.cpp:
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\yvals.h":
@@ -899,6 +910,10 @@ C:\Users\RODRIGO\CompilaChistes\Scanner.h:
 C:\Users\RODRIGO\CompilaChistes\Token.h:
 
 C:\Users\RODRIGO\CompilaChistes\Token.cpp:
+
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\fstream":
+
+C:\Users\RODRIGO\CompilaChistes\parser.h:
 
 C:\Users\RODRIGO\CompilaChistes\parser.cpp:
 

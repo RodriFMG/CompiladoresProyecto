@@ -16,7 +16,7 @@ private:
 
 public:
 
-    Parser(Scanner* scanner1);
+    explicit Parser(Scanner* scanner1);
 
     Program* ParseProgram();
     StmList* ParseStatementList();

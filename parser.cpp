@@ -73,6 +73,7 @@ StmList* Parser::ParseStatementList(){
 
     stmList->add(ParseStatement());
 
+    // Modificar esto si quiero que todas las sentencias terminen en ;
     while(match(Token::PC)) stmList->add(ParseStatement());
 
     return stmList;

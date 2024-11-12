@@ -133,10 +133,10 @@ void EvalVisitor::visit(AssignStatement *s) {
 void EvalVisitor::visit(PrinteoStatement *s) {
 
     if(s->TypePrint == "WriteLn"){
-        cout<<"WriteLn(" << s->exp->accept(this) <<")\n";
+        cout << s->exp->accept(this) <<"\n";
     }
     else if(s->TypePrint == "Write"){
-        cout<<"Write(" << s->exp->accept(this) <<")";
+        cout<<s->exp->accept(this);
     }
     else{
         cout<<"No debería llegar acá (EvalVisitor - PrinteoStatement)\n";

@@ -18,7 +18,7 @@ enum BinaryOp {
 class Exp {
 public:
 
-    virtual ~Exp() = 0;
+    virtual ~Exp() noexcept = 0;
     virtual int accept(Visitor* visitor) = 0;
     static string BinaryToChar(BinaryOp op);
 
@@ -31,7 +31,7 @@ public:
 
     explicit NumberExp(int v);
     int accept(Visitor* visitor) override;
-    ~NumberExp() override;
+    ~NumberExp() noexcept override;
 
 };
 
@@ -43,7 +43,7 @@ public:
 
     BinaryExp(Exp* l, BinaryOp o, Exp* r);
     int accept(Visitor* visitor) override;
-    ~BinaryExp() override;
+    ~BinaryExp() noexcept override;
 
 
 };
@@ -55,7 +55,7 @@ public:
 
     explicit IdentifierExp(string id_);
     int accept(Visitor* visitor) override;
-    ~IdentifierExp() override;
+    ~IdentifierExp() noexcept override;
 
 };
 
@@ -63,7 +63,7 @@ class Stm{
 public:
 
     virtual int accept(Visitor* visitor) = 0;
-    virtual ~Stm() = 0;
+    virtual ~Stm() noexcept = 0;
 
 };
 
@@ -76,7 +76,7 @@ public:
 
     AssignStatement(string id_, Exp* exp_);
     int accept(Visitor* visitor) override;
-    ~AssignStatement() override;
+    ~AssignStatement() noexcept override;
 
 };
 
@@ -87,7 +87,7 @@ public:
     Exp* exp;
     PrinteoStatement(string TypePrint_, Exp* exp_);
     int accept(Visitor* visitor) override;
-    ~PrinteoStatement() override;
+    ~PrinteoStatement() noexcept override;
 
 };
 

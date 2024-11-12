@@ -1,0 +1,4 @@
+x := 4;
+xy := x + 4;
+WriteLn(x+xy+21);
+WriteLn(x+1)
