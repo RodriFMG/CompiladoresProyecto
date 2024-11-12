@@ -118,18 +118,6 @@ public:
 
 };
 
-class WhileStatement : public Stm{
-public:
-
-    Exp* exp;
-    StmList* stms;
-
-    WhileStatement(Exp* exp_, StmList* stms_);
-    int accept(Visitor* volatile) override;
-    ~WhileStatement() noexcept override;
-
-};
-
 class StmList{
 public:
     list<Stm*> stms;
