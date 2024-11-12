@@ -37,6 +37,10 @@ Token *Scanner::NextToken() {
         else if(word == "else") token = new Token(Token::ELSE, word, 0, word.length());
         else if(word == "begin") token = new Token(Token::BEGINIF, word, 0, word.length());
         else if(word == "end") token = new Token(Token::ENDIF, word, 0, word.length());
+        else if(word == "for") token = new Token(Token::FOR, word, 0, word.length());
+        else if(word == "to") token = new Token(Token::TO, word, 0, word.length());
+        else if(word == "downto") token = new Token(Token::DOWNTO, word, 0, word.length());
+        else if(word == "do") token = new Token(Token::DO, word, 0, word.length());
         else token = new Token(Token::ID, word, 0, word.length());
 
     }

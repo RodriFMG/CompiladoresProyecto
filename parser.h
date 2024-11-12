@@ -20,11 +20,15 @@ public:
 
     Program* ParseProgram();
     StmList* ParseStatementList();
+
     Stm* ParseStatement();
+
     Exp* ParseCExpression();
     Exp* ParseExpression();
     Exp* ParseTerm();
     Exp* ParseFactor();
+
+
     ~Parser();
 
 };

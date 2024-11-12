@@ -32,6 +32,11 @@ int IfStatement::accept(Visitor *visitor) {
     return 0;
 }
 
+int ForStatement::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
 int StmList::accept(Visitor *visitor) {
     visitor->visit(this);
     return 0;
@@ -77,9 +82,14 @@ void PrintVisitor::visit(AssignStatement *s) {
 void PrintVisitor::visit(PrinteoStatement *s) {
 
     if(s->TypePrint == "WriteLn"){
-        cout<<"WriteLn(";
-        s->exp->accept(this);
-        cout<<");";
+        cout<<"WriteLn";
+
+        if(s->exp != NULL){
+            cout<<"(";
+            s->exp->accept(this);
+            cout<<");";
+        }
+
     } else if(s->TypePrint == "Write"){
         cout<<"Write(";
         s->exp->accept(this);
@@ -121,6 +131,20 @@ void PrintVisitor::visit(IfStatement *s) {
         (*itStmList)->accept(this);
         cout<<"\nend\n";
     }
+
+}
+
+void PrintVisitor::visit(ForStatement *s) {
+
+    cout<<"for "<<s->id<<" := ";
+    s->exp1->accept(this);
+    cout<<" "<<s->increase_or_decrease<<" ";
+    s->exp2->accept(this);
+    cout<<" do\n";
+
+    cout<<"begin\n";
+    s->stms->accept(this);
+    cout<<"end;";
 
 }
 
@@ -172,11 +196,13 @@ void EvalVisitor::visit(AssignStatement *s) {
 void EvalVisitor::visit(PrinteoStatement *s) {
 
     if(s->TypePrint == "WriteLn"){
-        cout << s->exp->accept(this) <<"\n";
+
+        if(s->exp != NULL) cout << s->exp->accept(this) <<"\n";
+        else cout<<"\n";
+
     }
-    else if(s->TypePrint == "Write"){
-        cout<<s->exp->accept(this);
-    }
+    else if(s->TypePrint == "Write") cout<<s->exp->accept(this);
+
     else{
         cout<<"No debería llegar acá (EvalVisitor - PrinteoStatement)\n";
         exit(0);
@@ -206,6 +232,25 @@ void EvalVisitor::visit(IfStatement *s) {
     if(s->conditions.size() != s->conditionBodies.size()){
         if(else_or_not) (*itStmList)->accept(this);
     }
+
+}
+
+void EvalVisitor::visit(ForStatement *s) {
+
+    if(memoria.find(s->id) == memoria.end()){
+        cout<<"El ID "<<s->id<<" no fue declarado anteriormente.\n";
+        exit(0);
+    }
+
+    int value = (s->increase_or_decrease == "to") ? 1 : -1;
+    memoria[s->id] = s->exp1->accept(this);
+    int expfinish = s->exp2->accept(this);
+
+    while (memoria[s->id] <= expfinish){
+        s->stms->accept(this);
+        memoria[s->id] += value;
+    }
+
 
 }
 
@@ -249,6 +294,11 @@ int EvalVisitor::visit(NumberExp *e) {
 }
 
 int EvalVisitor::visit(IdentifierExp *e) {
+
+    if(memoria.find(e->id) == memoria.end()){
+        cout<<"El ID "<<e->id<<" no fue declarado anteriormente.\n";
+        exit(0);
+    }
 
     return memoria[e->id];
 

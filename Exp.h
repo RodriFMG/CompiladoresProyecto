@@ -91,6 +91,21 @@ public:
 
 };
 
+class ForStatement : public Stm{
+public:
+
+    string id;
+    string increase_or_decrease;
+    Exp* exp1;
+    Exp* exp2;
+    StmList* stms;
+
+    ForStatement(string id_, string i_o_d ,Exp* exp1_, Exp* exp2_, StmList* stms_);
+    int accept(Visitor* visitor) override;
+    ~ForStatement() noexcept override;
+
+};
+
 class StmList{
 public:
     list<Stm*> stms;

@@ -40,6 +40,13 @@ IfStatement::~IfStatement() noexcept {
     for(StmList* condicional : conditionBodies) delete condicional;
 }
 
+ForStatement::ForStatement(std::string id_, string i_o_d , Exp *exp1_, Exp *exp2_, StmList* stms_) : id(std::move(id_)), increase_or_decrease(std::move(i_o_d)),
+exp1(exp1_), exp2(exp2_), stms(stms_){}
+ForStatement::~ForStatement() noexcept {
+    delete exp1;
+    delete exp2;
+}
+
 StmList::StmList() : stms() {}
 StmList::~StmList() {
     for(Stm* stm : stms) delete stm;

@@ -110,17 +110,15 @@ Stm *Parser::ParseStatement() {
         if(previous->type == Token::WriteLn) TypePrint = "WriteLn";
         else if(previous->type == Token::Write) TypePrint = "Write";
 
-        if(!match(Token::PI)){
-            cout<< "Se esperaba un parentesis izquierdo en el printeo. (ParseStatement)";
-            exit(0);
+        if(match(Token::PI)){
+            e = ParseCExpression();
+
+            if(!match(Token::PD)){
+                cout<< "Se esperaba un parentesis derecho en el printeo. (ParseStatement)";
+                exit(0);
+            }
         }
 
-        e = ParseCExpression();
-
-        if(!match(Token::PD)){
-            cout<< "Se esperaba un parentesis derecho en el printeo. (ParseStatement)";
-            exit(0);
-        }
 
         s = new PrinteoStatement(TypePrint, e);
 
@@ -191,9 +189,54 @@ Stm *Parser::ParseStatement() {
         s = new IfStatement(expList, stmList);
 
     }
+    else if(match(Token::FOR)){
+
+        if(!match(Token::ID)){
+            cout<<"Se esperaba un ID, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        string id = previous->TypeText;
+
+        if(!match(Token::ASSIGN)){
+            cout<<"Se esperaba una ASSIGN, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        Exp* exp1 = ParseCExpression();
+
+        if(!match(Token::TO) && !match(Token::DOWNTO)){
+            cout<<"Se esperaba el Token TO o Token DOWNTO, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        string i_o_d = previous->TypeText;
+
+        Exp* exp2 = ParseCExpression();
+
+        if(!match(Token::DO)){
+            cout<<"Se esperaba el Token DO, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        if(!match(Token::BEGINIF)){
+            cout<<"Se esperaba el Token BEGINIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        StmList* stms = ParseStatementList();
+
+        if(!match(Token::ENDIF)){
+            cout<<"Se esperaba el Token ENDIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - FOR)";
+            exit(0);
+        }
+
+        s = new ForStatement(id, i_o_d, exp1, exp2, stms);
+
+    }
     else{
         cout << "Error: Se esperaba un identificador o 'print', pero se encontró: " << *current << endl;
-        exit(1);
+        exit(0);
     }
 
 
@@ -281,7 +324,7 @@ Exp *Parser::ParseFactor() {
 
     }
 
-    cout << "Error: se esperaba un número o identificador. (ParseFactor)" << endl;
+    cout << "Error: se esperaba un número o identificador. (ParseFactor)" << current->TypeText <<endl;
     exit(0);
 
 }

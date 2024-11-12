@@ -12,6 +12,7 @@ class NumberExp;
 class AssignStatement;
 class PrinteoStatement;
 class IfStatement;
+class ForStatement;
 class StmList;
 class Program;
 
@@ -25,6 +26,7 @@ public:
     virtual void visit(AssignStatement* s) = 0;
     virtual void visit(PrinteoStatement* s) = 0;
     virtual void visit(IfStatement* s) = 0;
+    virtual void visit(ForStatement* s) = 0;
 
     virtual void visit(StmList* sl) = 0;
     virtual void visit(Program* p) = 0;
@@ -42,6 +44,7 @@ public:
     void visit(AssignStatement* s) override;
     void visit(PrinteoStatement* s) override;
     void visit(IfStatement* s) override;
+    void visit(ForStatement* s) override;
 
     void visit(StmList* sl) override;
     void visit(Program* p) override;
@@ -59,6 +62,7 @@ public:
     void visit(AssignStatement* s) override;
     void visit(PrinteoStatement* s) override;
     void visit(IfStatement* s) override;
+    void visit(ForStatement* s) override;
 
     void visit(StmList* sl) override;
     void visit(Program* p) override;
