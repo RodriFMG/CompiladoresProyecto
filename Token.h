@@ -11,7 +11,13 @@ class Token {
 public:
 
     enum Type { MUL, MINUS, PLUS, DIV, END, NUM, ERR,
-            PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC};
+            PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC,
+            LE, LT, DE, DT};
+
+    //LE <
+    //LT <=
+    //DE >
+    //DT >=
 
     // ASSIGN :=
     // TypeDCL :

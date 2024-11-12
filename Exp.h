@@ -12,7 +12,7 @@
 using namespace std;
 
 enum BinaryOp {
-    PLUS_OP, MINUS_OP, MUL_OP, DIV_OP
+    PLUS_OP, MINUS_OP, MUL_OP, DIV_OP, EQ_OP, LE_OP, LT_OP, DE_OP, DT_OP
 };
 
 class Exp {
@@ -88,6 +88,11 @@ public:
     PrinteoStatement(string TypePrint_, Exp* exp_);
     int accept(Visitor* visitor) override;
     ~PrinteoStatement() noexcept override;
+
+};
+
+class IfStatement : public Stm{
+
 
 };
 

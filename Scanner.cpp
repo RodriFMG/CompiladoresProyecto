@@ -34,7 +34,7 @@ Token *Scanner::NextToken() {
         else token = new Token(Token::ID, word, 0, word.length());
 
     }
-    else if(strchr("+-/*():=;", c)){
+    else if(strchr("+-/*():=;<>", c)){
         switch (c) {
             case '+': token = new Token(Token::PLUS, c); break;
             case '-': token = new Token(Token::MINUS, c); break;
@@ -52,6 +52,22 @@ Token *Scanner::NextToken() {
             }
             case '=': token = new Token(Token::EQ, c); break;
             case ';': token = new Token(Token::PC, c); break;
+            case '>': {
+                if(current + 1 < input.length() && input[current+1] == '='){
+                    ++current;
+                    token = new Token(Token::DT, input, first, current-first);
+                }
+                else token = new Token(Token::DE, c);
+                break;
+            }
+            case '<': {
+                if(current + 1 < input.length() && input[current+1] == '='){
+                    ++current;
+                    token = new Token(Token::LT, input, first, current-first);
+                }
+                else token = new Token(Token::LE, c);
+                break;
+            }
             default :
                 token = new Token(Token::ERR, c);
                 cout<< "No debería poder llegar acá";

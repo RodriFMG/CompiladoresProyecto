@@ -98,7 +98,7 @@ Stm *Parser::ParseStatement() {
             exit(0);
         }
 
-        e = ParseExpression();
+        e = ParseCExpression();
 
         s = new AssignStatement(lex, e);
     }
@@ -113,7 +113,7 @@ Stm *Parser::ParseStatement() {
             exit(0);
         }
 
-        e = ParseExpression();
+        e = ParseCExpression();
 
         if(!match(Token::PD)){
             cout<< "Se esperaba un parentesis derecho en el printeo. (ParseStatement)";
@@ -129,6 +129,26 @@ Stm *Parser::ParseStatement() {
 
 }
 
+Exp *Parser::ParseCExpression() {
+
+    Exp* left = ParseExpression();
+
+    if(match(Token::EQ) || match(Token::LE) || match(Token::LT) || match(Token::DE) || match(Token::DT)){
+        BinaryOp op = EQ_OP;
+
+        if(previous->type == Token::EQ) op = EQ_OP;
+        else if(previous->type == Token::LE) op = LE_OP;
+        else if(previous->type == Token::LT) op = LT_OP;
+        else if(previous->type == Token::DE) op = DE_OP;
+        else if(previous->type == Token::DT) op = DT_OP;
+
+        Exp* right = ParseExpression();
+        left = new BinaryExp(left, op, right);
+
+    }
+
+    return left;
+}
 
 Exp *Parser::ParseExpression() {
 

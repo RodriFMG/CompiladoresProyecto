@@ -150,7 +150,7 @@ int EvalVisitor::visit(BinaryExp *e) {
     int left = e->left->accept(this);
     int right = e->right->accept(this);
 
-    int result{};
+    int result;
 
     switch (e->op) {
         case PLUS_OP: result = left + right; break;
@@ -165,6 +165,15 @@ int EvalVisitor::visit(BinaryExp *e) {
                 result = left / right ; break;
             }
         }
+        case EQ_OP: result = (left == right); break;
+        case LE_OP: result = (left < right); break;
+        case LT_OP: result = (left <= right); break;
+        case DE_OP: result = (left > right); break;
+        case DT_OP: result = (left >= right); break;
+        default:
+            cout<<"No debería llegar acá (EvalVisitor - BinaryExp)";
+            exit(0);
+
     }
 
     return result;

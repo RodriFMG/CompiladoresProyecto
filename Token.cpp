@@ -32,7 +32,10 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::Write: os <<"TOKEN(WRITE)"; break;
         case Token::WriteLn: os << "TOKEN(WRITELN)"; break;
         case Token::PC: os << "TOKEN(PC)"; break;
-
+        case Token::LE: os << "TOKEN(LE)"; break;
+        case Token::LT: os << "TOKEN(LT)"; break;
+        case Token::DE: os << "TOKEN(DE)"; break;
+        case Token::DT: os << "TOKEN(DT)"; break;
         default:
             os<<"Token(UNKNOW)"; break;
     }
