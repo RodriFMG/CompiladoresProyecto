@@ -41,6 +41,7 @@ Token *Scanner::NextToken() {
         else if(word == "to") token = new Token(Token::TO, word, 0, word.length());
         else if(word == "downto") token = new Token(Token::DOWNTO, word, 0, word.length());
         else if(word == "do") token = new Token(Token::DO, word, 0, word.length());
+        else if(word == "while") token = new Token(Token::WHILE, word, 0, word.length());
         else token = new Token(Token::ID, word, 0, word.length());
 
     }

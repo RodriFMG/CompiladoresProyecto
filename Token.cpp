@@ -45,6 +45,7 @@ ostream& operator<<(ostream& os, const Token& tokens){
         case Token::TO: os << "TOKEN(TO)"; break;
         case Token::DOWNTO: os << "TOKEN(DOWNTO)"; break;
         case Token::DO: os << "TOKEN(DO)"; break;
+        case Token::WHILE: os << "TOKEN(WHILE)"; break;
         default:
             os<<"Token(UNKNOW)"; break;
     }

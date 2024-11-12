@@ -47,6 +47,12 @@ ForStatement::~ForStatement() noexcept {
     delete exp2;
 }
 
+WhileStatement::WhileStatement(Exp *exp_, StmList *stms_) : exp(exp_), stms(stms_){}
+WhileStatement::~WhileStatement() noexcept {
+    delete exp;
+    delete stms;
+}
+
 StmList::StmList() : stms() {}
 StmList::~StmList() {
     for(Stm* stm : stms) delete stm;

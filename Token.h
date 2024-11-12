@@ -14,7 +14,7 @@ public:
             PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC,
             LE, LT, DE, DT,
             IF, THEN, ELSE, BEGINIF, ENDIF,
-            FOR, TO, DOWNTO, DO};
+            FOR, TO, DOWNTO, DO, WHILE};
 
     //LE <
     //LT <=

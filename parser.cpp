@@ -139,7 +139,7 @@ Stm *Parser::ParseStatement() {
             exit(0);
         }
 
-        stmList.push_back(ParseStatementList());
+        stmList.push_back(ParseStatementList()); // maybe hay que poner el ;
 
         if(!match(Token::ENDIF)){
             cout << "Se esperaba el token ENDIF, pero se encontró: "<<current->TypeText<< " (ParseStatement - IF)";
@@ -232,6 +232,29 @@ Stm *Parser::ParseStatement() {
         }
 
         s = new ForStatement(id, i_o_d, exp1, exp2, stms);
+
+    }
+    else if(match(Token::WHILE)){
+
+        e = ParseCExpression();
+
+        if(!match(Token::DO)){
+            cout<<"Se esperaba el Token DO, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
+            exit(0);
+        }
+        if(!match(Token::BEGINIF)){
+            cout<<"Se esperaba el Token BEGINIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
+            exit(0);
+        }
+
+        StmList* stms = ParseStatementList();
+
+        if(!match(Token::ENDIF)){
+            cout<<"Se esperaba el Token ENDIF, pero se encontró: "<< current->TypeText << ". (ParseStatement - WHILE)";
+            exit(0);
+        }
+
+        s = new WhileStatement(e, stms);
 
     }
     else{

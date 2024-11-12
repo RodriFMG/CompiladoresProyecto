@@ -37,6 +37,11 @@ int ForStatement::accept(Visitor *visitor) {
     return 0;
 }
 
+int WhileStatement::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
 int StmList::accept(Visitor *visitor) {
     visitor->visit(this);
     return 0;
@@ -148,6 +153,17 @@ void PrintVisitor::visit(ForStatement *s) {
 
 }
 
+void PrintVisitor::visit(WhileStatement *s) {
+
+    cout<<"while ";
+    s->exp->accept(this);
+    cout<<" do\n";
+    cout<<"begin\n";
+    s->stms->accept(this);
+    cout<<"end;";
+
+}
+
 int PrintVisitor::visit(BinaryExp *e) {
 
     e->left->accept(this);
@@ -251,6 +267,12 @@ void EvalVisitor::visit(ForStatement *s) {
         memoria[s->id] += value;
     }
 
+
+}
+
+void EvalVisitor::visit(WhileStatement *s) {
+
+    while (s->exp->accept(this)) s->stms->accept(this);
 
 }
 
