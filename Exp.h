@@ -18,7 +18,7 @@ enum BinaryOp {
 class Exp {
 public:
 
-    virtual ~Exp() noexcept = 0;
+    virtual ~Exp()  = 0;
     virtual int accept(Visitor* visitor) = 0;
     static string BinaryToChar(BinaryOp op);
 
@@ -31,7 +31,7 @@ public:
 
     explicit NumberExp(int v);
     int accept(Visitor* visitor) override;
-    ~NumberExp() noexcept override;
+    ~NumberExp()  override;
 
 };
 
@@ -43,7 +43,7 @@ public:
 
     BinaryExp(Exp* l, BinaryOp o, Exp* r);
     int accept(Visitor* visitor) override;
-    ~BinaryExp() noexcept override;
+    ~BinaryExp()  override;
 
 
 };
@@ -55,7 +55,7 @@ public:
 
     explicit IdentifierExp(string id_);
     int accept(Visitor* visitor) override;
-    ~IdentifierExp() noexcept override;
+    ~IdentifierExp()  override;
 
 };
 
@@ -63,7 +63,7 @@ class Stm{
 public:
 
     virtual int accept(Visitor* visitor) = 0;
-    virtual ~Stm() noexcept = 0;
+    virtual ~Stm()  = 0;
 
 };
 
@@ -76,7 +76,7 @@ public:
 
     AssignStatement(string id_, Exp* exp_);
     int accept(Visitor* visitor) override;
-    ~AssignStatement() noexcept override;
+    ~AssignStatement()  override;
 
 };
 
@@ -87,7 +87,7 @@ public:
     Exp* exp;
     PrinteoStatement(string TypePrint_, Exp* exp_);
     int accept(Visitor* visitor) override;
-    ~PrinteoStatement() noexcept override;
+    ~PrinteoStatement()  override;
 
 };
 
@@ -102,7 +102,19 @@ public:
 
     ForStatement(string id_, string i_o_d ,Exp* exp1_, Exp* exp2_, StmList* stms_);
     int accept(Visitor* visitor) override;
-    ~ForStatement() noexcept override;
+    ~ForStatement()  override;
+
+};
+
+class WhileStatement : public Stm{
+public:
+
+    Exp* exp;
+    StmList* stms;
+
+    WhileStatement(Exp* exp_, StmList* stms_);
+    int accept(Visitor* visitor) override;
+    ~WhileStatement()  override;
 
 };
 
@@ -136,7 +148,7 @@ public:
 
     IfStatement(list<Exp*> conditions_, list<StmList*> conditionBodies_);
     int accept(Visitor* visitor) override;
-    ~IfStatement() noexcept override;
+    ~IfStatement()  override;
 
 };
 

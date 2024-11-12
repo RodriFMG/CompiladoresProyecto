@@ -274,6 +274,7 @@ void EvalVisitor::visit(WhileStatement *s) {
 
     while (s->exp->accept(this)) s->stms->accept(this);
 
+
 }
 
 int EvalVisitor::visit(BinaryExp *e) {

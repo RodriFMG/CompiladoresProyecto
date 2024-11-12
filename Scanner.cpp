@@ -100,7 +100,7 @@ void Scanner::reset() {
     current = 0;
 }
 
-Scanner::~Scanner() {}
+Scanner::~Scanner() = default;
 
 void test_scanner(Scanner* scanner) {
     Token* current;

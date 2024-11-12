@@ -12,11 +12,8 @@ Parser::Parser(Scanner *scanner1) : scanner(scanner1) {
 
 }
 
-Parser::~Parser() {
-    delete scanner;
-    delete previous;
-    delete current;
-}
+// Si borro la memoria del escaner, current o previous sale error de memoria.
+Parser::~Parser() = default;
 
 bool Parser::advance() {
 
