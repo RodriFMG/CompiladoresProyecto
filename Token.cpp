@@ -21,6 +21,8 @@ ostream& operator<<(ostream& os, const Token& tokens) {
         case Token::END: os << "TOKEN(END)"; break;
         case Token::ERR: os << "TOKEN(ERR)"; break;
         case Token::NUM: os << "TOKEN(NUM)"; break;
+        case Token::TRUE: os << "TOKEN(TRUE)"; break;
+        case Token::FALSE: os << "TOKEN(FALSE)"; break;
         case Token::PI: os << "TOKEN(PI)"; break;
         case Token::PD: os << "TOKEN(PD)"; break;
         case Token::ID: os << "TOKEN(ID)"; break;
@@ -48,6 +50,7 @@ ostream& operator<<(ostream& os, const Token& tokens) {
         case Token::FUNCTION: os << "TOKEN(FUNCTION)"; break;
         case Token::INTEGER: os << "TOKEN(INTEGER)"; break;
         case Token::LONGINT: os << "TOKEN(LONGINT)"; break;
+        case Token::BOOLEAN: os << "TOKEN(BOOLEAN)";break;
         case Token::RETURN: os << "TOKEN(RETURN)"; break;
         case Token::BEGIN: os << "TOKEN(BEGIN)"; break;
         case Token::ENDP: os << "TOKEN(ENDPROGRAM)"; break;

@@ -11,7 +11,7 @@ class Token {
 public:
 
     enum Type {
-        MUL, MINUS, PLUS, DIV, END, NUM, ERR,
+        MUL, MINUS, PLUS, DIV, END, NUM, ERR, TRUE, FALSE,
         PD, PI, ID, ASSIGN, TypeDCL, EQ, WriteLn, Write, PC,
         LE, LT, DE, DT,
         IF, THEN, ELSE,
@@ -26,7 +26,8 @@ public:
 
         // Tipos de datos específicos
         INTEGER,           // Tipo de dato entero
-        LONGINT            // Tipo de dato longint
+        LONGINT,            // Tipo de dato longint
+        BOOLEAN,
     };
 
     //LE <

@@ -11,6 +11,7 @@
 class IdentifierExp;
 class BinaryExp;
 class NumberExp;
+class BoolExp;
 class AssignStatement;
 class PrinteoStatement;
 class IfStatement;
@@ -33,6 +34,7 @@ public:
     virtual int visit(BinaryExp* e) = 0;
     virtual int visit(NumberExp* e) = 0;
     virtual int visit(FCallExp* e) = 0;
+    virtual int visit(BoolExp* e) = 0;
 
     virtual void visit(AssignStatement* s) = 0;
     virtual void visit(PrinteoStatement* s) = 0;
@@ -59,6 +61,7 @@ public:
     int visit(BinaryExp* e) override;
     int visit(NumberExp* e) override;
     int visit (FCallExp* e) override;
+    int visit(BoolExp* e) override;
 
     void visit(AssignStatement* s) override;
     void visit(PrinteoStatement* s) override;

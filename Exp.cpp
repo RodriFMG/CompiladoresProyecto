@@ -5,6 +5,9 @@ Exp::~Exp() noexcept = default;
 NumberExp::NumberExp(int v) : value(v) {}
 NumberExp::~NumberExp() noexcept = default;
 
+BoolExp::BoolExp(int v) : value(v){}
+BoolExp:: ~BoolExp() noexcept = default;
+
 BinaryExp::BinaryExp(Exp *l, BinaryOp o, Exp *r) : left(l), op(o), right(r) {}
 BinaryExp::~BinaryExp() noexcept {
     delete left;

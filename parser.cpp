@@ -80,8 +80,8 @@ VarDec* Parser::ParseVarDec() {
         }
 
         // Luego del `:` esperamos el tipo de dato (INTEGER o LONGINT)
-        if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
-            std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT) después de ':'.\n";
+        if (!(match(Token::INTEGER) || match(Token::LONGINT) || match(Token::BOOLEAN))) {
+            std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT o BOOLEAN) después de ':'.\n";
             exit(1);
         }
         std::string type = previous->TypeText;
@@ -160,8 +160,8 @@ FunDec* Parser::ParseFunDec() {
                 exit(1);
             }
 
-            if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
-                std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT) después de ':'.\n";
+            if (!(match(Token::INTEGER) || match(Token::LONGINT) || match(Token::BOOLEAN))) {
+                std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT o BOOLEAN) después de ':'.\n";
                 exit(1);
             }
             std::string paramType = previous->TypeText;
@@ -181,8 +181,8 @@ FunDec* Parser::ParseFunDec() {
             exit(1);
         }
 
-        if (!(match(Token::INTEGER) || match(Token::LONGINT))) {
-            std::cout << "Error: se esperaba un tipo de datos de retorno válido (INTEGER o LONGINT).\n";
+        if (!(match(Token::INTEGER) || match(Token::LONGINT) || match(Token::BOOLEAN))) {
+            std::cout << "Error: se esperaba un tipo de datos de retorno válido (INTEGER o LONGINT o BOOLEAN).\n";
             exit(1);
         }
         std::string rtype = previous->TypeText;
@@ -512,6 +512,12 @@ Exp *Parser::ParseFactor() {
             return new IdentifierExp(previous->TypeText);
         }
 
+    }
+    else if(match(Token::TRUE)){
+        return new BoolExp(1);
+    }
+    else if(match(Token::FALSE)){
+        return new BoolExp(0);
     }
     else if(match(Token::PI)){
         Exp* exp = ParseExpression();

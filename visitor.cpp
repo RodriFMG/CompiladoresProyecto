@@ -22,6 +22,10 @@ int NumberExp::accept(Visitor *visitor) {
     return visitor->visit(this);
 }
 
+int BoolExp::accept(Visitor *visitor) {
+    return visitor->visit(this);
+}
+
 int FCallExp::accept(Visitor* visitor) {
     return visitor->visit(this);
 }
@@ -225,6 +229,12 @@ int PrintVisitor::visit(BinaryExp *e) {
 
 int PrintVisitor::visit(NumberExp *e) {
     cout << e->value;
+    return 0;
+}
+
+int PrintVisitor::visit(BoolExp* exp) {
+    if(exp->value) cout << "true";
+    else cout << "false";
     return 0;
 }
 

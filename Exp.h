@@ -9,6 +9,8 @@
 #include <string>
 #include <list>
 #include "visitor.h"
+#include "imp_value_visitor.h"
+#include "imp_value.h"
 using namespace std;
 
 enum BinaryOp {
@@ -19,6 +21,7 @@ class Exp {
 public:
     virtual ~Exp() noexcept = 0;
     virtual int accept(Visitor* visitor) = 0;
+    virtual ImpValue accept(ImpValueVisitor* Impvisitor)=0;
     static string BinaryToChar(BinaryOp op);
 };
 
@@ -27,7 +30,17 @@ public:
     int value;
     explicit NumberExp(int v);
     int accept(Visitor* visitor) override;
+    ImpValue accept(ImpValueVisitor* Impvisitor)override;
     ~NumberExp() noexcept override;
+};
+
+class BoolExp : public Exp {
+public:
+    int value;
+    explicit BoolExp(int v);
+    int accept(Visitor* visitor) override;
+    ImpValue accept(ImpValueVisitor* Impvisitor)override;
+    ~BoolExp() noexcept override;
 };
 
 class BinaryExp : public Exp {
@@ -36,6 +49,7 @@ public:
     BinaryOp op;
     BinaryExp(Exp* l, BinaryOp o, Exp* r);
     int accept(Visitor* visitor) override;
+    ImpValue accept(ImpValueVisitor* Impvisitor)override;
     ~BinaryExp() noexcept override;
 };
 
@@ -44,6 +58,7 @@ public:
     string id;
     explicit IdentifierExp(string id_);
     int accept(Visitor* visitor) override;
+    ImpValue accept(ImpValueVisitor* Impvisitor)override;
     ~IdentifierExp() noexcept override;
 };
 
@@ -53,6 +68,7 @@ public:
     list<Exp*> args;
     FCallExp(string fname, list<Exp*> args);
     int accept(Visitor* visitor) override;
+    ImpValue accept(ImpValueVisitor* Impvisitor)override;
     ~FCallExp() noexcept override;
 };
 
@@ -60,6 +76,7 @@ class Stm {
 public:
     virtual int accept(Visitor* visitor) = 0;
     virtual ~Stm() noexcept = 0;
+    virtual void accept(ImpValueVisitor* Impvisitor)=0;
 };
 
 class AssignStatement : public Stm {
@@ -68,6 +85,7 @@ public:
     Exp* exp;
     AssignStatement(string id_, Exp* exp_);
     int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
     ~AssignStatement() noexcept override;
 };
 
@@ -77,6 +95,7 @@ public:
     Exp* exp;
     PrinteoStatement(string TypePrint_, Exp* exp_);
     int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
     ~PrinteoStatement() noexcept override;
 };
 
@@ -89,6 +108,7 @@ public:
     StmList* stms;
     ForStatement(string id_, string i_o_d, Exp* exp1_, Exp* exp2_, StmList* stms_);
     int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
     ~ForStatement() noexcept override;
 };
 
@@ -98,6 +118,7 @@ public:
     StmList* stms;
     WhileStatement(Exp* exp_, StmList* stms_);
     int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
     ~WhileStatement() noexcept override;
 };
 
@@ -107,6 +128,7 @@ public:
     list<StmList*> conditionBodies;
     IfStatement(list<Exp*> conditions_, list<StmList*> conditionBodies_);
     int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
     ~IfStatement() noexcept override;
 };
 
@@ -115,6 +137,7 @@ public:
     list<Stm*> stms;
     StmList();
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~StmList();
     void add(Stm* stm);
 };
@@ -126,6 +149,7 @@ public:
     list<Exp*> args;
     FCallStatement(string fname, list<Exp*> args);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~FCallStatement();
 };
 
@@ -137,6 +161,7 @@ public:
     list<string> vars;
     VarDec(string type, list<string> vars);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~VarDec();
 };
 
@@ -146,6 +171,7 @@ public:
     VarDecList();
     void add(VarDec* vardec);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~VarDecList();
 };
 
@@ -157,6 +183,7 @@ public:
     StmList* statements;
     Body(VarDecList* vardecs, StmList* statements);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~Body();
 };
 
@@ -169,6 +196,7 @@ public:
     Body* body;
     FunDec(string fname, list<string> paramTypes, list<string> paramNames, string rtype, Body* body);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~FunDec();
 };
 
@@ -178,6 +206,7 @@ public:
     FunDecList();
     void add(FunDec* s);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~FunDecList();
 };
 
@@ -190,6 +219,7 @@ public:
 
     Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList);
     int accept(Visitor* visitor);
+    void accept(ImpValueVisitor* Impvisitor);
     ~Program();
 };
 

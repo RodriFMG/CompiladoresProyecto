@@ -9,4 +9,10 @@ add_executable(CompiladoresProyecto main.cpp
         Exp.cpp
         parser.cpp
         visitor.cpp
+        imp_value.h
+        imp_value.cpp
+        imp_value_visitor.h
+        imp_interpreter.h
+        imp_interpreter.cpp
+        environment.h
 )
