@@ -1,0 +1,19 @@
+function suma(a, b: Integer): Integer;
+var
+    respuesta: integer;
+begin
+    respuesta := a + b;
+    suma := respuesta;
+end;
+
+var
+    x, y: Integer;
+
+
+begin
+    x := 1;
+    y := 20;
+
+    writeln(suma(x, y));
+end.
+
