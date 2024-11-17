@@ -1,21 +1,17 @@
-program NestedLoopWithWhile;
+program ExampleProgram;
+
+function suma(a, b: Integer): Integer;
+begin
+    suma := a + b;
+end;
 
 var
-  i, j, count: Integer;
+    x, y: Integer;
 
 begin
-  count := 0;
+    x := 1;
+    y := 20;
 
-  for i := 1 to 3 do
-  begin
-    for j := 1 to 2 do
-    begin
-      while count < 5 do
-      begin
-        count := count + 1;
-      end;
-    end;
-  end;
-
-  writeln(count);
+    writeln(suma(x, y));
 end.
+
