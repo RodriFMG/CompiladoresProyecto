@@ -17,7 +17,7 @@ public:
     ImpValue();
     ImpVType type;
     int int_value;
-    long longint_value;
+    long long longint_value;
     bool bool_value;
     void set_default_value(ImpVType tt);
     static ImpVType get_basic_type(string s);

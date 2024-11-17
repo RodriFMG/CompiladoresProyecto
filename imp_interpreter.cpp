@@ -153,13 +153,32 @@ void ImpInterpreter::visit(AssignStatement* s) {
 
     ImpValue lhs = env.lookup(s->id);
 
-    if (lhs.type != v.type) {
+    // ojeada a esto.
+    if ((v.type == TBOOL  || lhs.type == TBOOL ) && lhs.type != v.type ) {
         cout << "Type Error en Assign: Tipos de variable " << s->id;
         cout << " no coinciden" << endl;
         exit(0);
     }
 
+    if(lhs.type == TINT){
+        if(v.type != TINT) {
+
+            v.int_value = v.longint_value;
+            v.type = TINT;
+
+        }
+    }
+    else if(lhs.type == TLONGINT){
+        if(v.type != TLONGINT) {
+
+            v.longint_value = v.int_value;
+            v.type = TLONGINT;
+
+        }
+    }
+
     env.update(s->id, v);
+
     return;
 }
 
@@ -234,16 +253,22 @@ void ImpInterpreter::visit(ForStatement* s) {
     ImpValue start = s->exp1->accept(this);
     ImpValue end = s->exp2->accept(this);
 
-    if (start.type != TINT || end.type != TINT){
-        cout << "Type error en FOR: esperaba int" << endl;
+    if(start.type == TBOOL){
+        cout << "Type error en FOR: se esperaba un int o longint en el START." << endl;
+        exit(0);
+    }
+
+    if (end.type == TBOOL){
+        cout << "Type error en FOR: se esperaba un int o longint en el END." << endl;
         exit(0);
     }
 
     ImpValue paso;
-    paso.type = TINT;
-    paso.set_default_value(TINT);
-    if(s->increase_or_decrease == "downto") paso.int_value -= 1;
-    else paso.int_value += 1;
+    paso.type = end.type;
+    paso.set_default_value(end.type);
+
+    if(s->increase_or_decrease == "downto") paso.int_value = start.int_value;
+    else paso.int_value = 0;
 
     if (!env.check(s->id)) {
         cout << "Variable " << s->id << " undefined" << endl;
@@ -252,7 +277,7 @@ void ImpInterpreter::visit(ForStatement* s) {
 
     ImpValue var = env.lookup(s->id);
 
-    if(var.type != start.type){
+    if(var.type  == TBOOL){
         cout << "Type error en FOR: la comparación de la variable usada con el for, no se puede realizar.\n"
                 "se esta comparando un " << var.type << " con un " << start.type;
     }
@@ -261,13 +286,22 @@ void ImpInterpreter::visit(ForStatement* s) {
     env.update(s->id, start);
 
 
-    while(env.lookup(s->id).int_value <= end.int_value){
-        s->stms->accept(this);
+    if(s->increase_or_decrease == "to")
+        while(env.lookup(s->id).int_value < end.int_value){
+            s->stms->accept(this);
 
-        paso.int_value +=1;
-        env.update(s->id, paso);
-    }
+            paso.int_value += 1;
+            env.update(s->id, paso);
+        }
+    else
+        while(env.lookup(s->id).int_value > end.int_value) {
+            s->stms->accept(this);
 
+            paso.int_value -= 1;
+            env.update(s->id, paso);
+        }
+
+    env.remove_level();
     return;
 }
 
@@ -276,14 +310,15 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
     ImpValue result;
     ImpValue v1 = e->left->accept(this);
     ImpValue v2 = e->right->accept(this);
-    if (v1.type != TINT || v2.type != TINT) {
+    if (v1.type == TBOOL || v2.type == TBOOL) {
         cout << "Error de tipos: operandos en operacion binaria tienen que ser "
                 "enteros"
              << endl;
         exit(0);
     }
 
-    int iv, iv1, iv2;
+    long long iv, iv1, iv2;
+
 
     bool bv;
 
@@ -295,19 +330,31 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
     switch (e->op) {
         case PLUS_OP:
             iv = iv1 + iv2;
-            type = TINT;
+
+            if(v1.type == TLONGINT || v2.type == TLONGINT) type = TLONGINT;
+            else type = TINT;
+
             break;
         case MINUS_OP:
             iv = iv1 - iv2;
-            type = TINT;
+
+            if(v1.type == TLONGINT || v2.type == TLONGINT) type = TLONGINT;
+            else type = TINT;
+
             break;
         case MUL_OP:
             iv = iv1 * iv2;
-            type = TINT;
+
+            if(v1.type == TLONGINT || v2.type == TLONGINT) type = TLONGINT;
+            else type = TINT;
+
             break;
         case DIV_OP:
             iv = iv1 / iv2;
-            type = TINT;
+
+            if(v1.type == TLONGINT || v2.type == TLONGINT) type = TLONGINT;
+            else type = TINT;
+
             break;
         case LT_OP:
             bv = (iv1 < iv2) ? 1 : 0;
@@ -332,7 +379,9 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
     }
 
     if (type == TINT)
-        result.int_value = iv;
+        result.int_value = static_cast<int>(iv);
+    else if(type == TLONGINT)
+        result.longint_value = iv;
     else
         result.bool_value = bv;
 
@@ -397,8 +446,9 @@ ImpValue ImpInterpreter::visit(FCallExp* e) {
 
         ImpValue v = (*it)->accept(this);
 
-        if (v.type != tt) {
-            cout << "Error FCall: Tipos de param y arg no coinciden. Funcion "
+        // checar esto.
+        if ((v.type == TBOOL  || tt== TBOOL ) && v.type != tt) {
+            cout << "Error FCall: Tipos de param y arg no coinciden o no son compatibles. Funcion "
                  << fdec->fname << " param " << *varit << endl;
             exit(0);
         }
@@ -421,7 +471,7 @@ ImpValue ImpInterpreter::visit(FCallExp* e) {
         exit(0);
     }
 
-    env.add_var(fdec->fname,v1);
+    env.add_var(fdec->fname, v1);
 
     fdec->body->accept(this);
 
@@ -462,8 +512,8 @@ void ImpInterpreter::visit(FCallStatement* s) {
 
         ImpValue v = (*it)->accept(this);
 
-        if (v.type != tt) {
-            cout << "Error FCall: Tipos de param y arg no coinciden. Funcion "
+        if ((v.type == TBOOL  || tt== TBOOL ) && v.type != tt) {
+            cout << "Error FCall: Tipos de param y arg no coinciden o no son compatibles. Funcion "
                  << fdec->fname << " param " << *varit << endl;
             exit(0);
         }
