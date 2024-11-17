@@ -1,17 +1,30 @@
-program ExampleProgram;
+program FunctionCallsExample;
 
-function suma(a, b: Integer): Integer;
+function FunctionA(x: Integer): Integer;
 begin
-    suma := a + b;
+  x := x + 2;
+  result := FunctionB(x);
+  FunctionA := result;
+end;
+
+function FunctionB(y: Integer): Integer;
+begin
+  y := y * 2;
+  result := FunctionC(y);
+  FunctionB := result;
+end;
+
+function FunctionC(z: Integer): Integer;
+begin
+  z := z - 3;
+  FunctionC := z;
 end;
 
 var
-    x, y: Integer;
+  result: Integer;
 
 begin
-    x := 1;
-    y := 20;
-
-    writeln(suma(x, y));
+  result := FunctionA(5);
+  writeln(result);
 end.
 
