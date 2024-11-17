@@ -220,6 +220,23 @@ FunDecList* Parser::ParseFunDecList() {
 // Parse del Programa
 
 Program* Parser::ParseProgram() {
+
+    if(!match(Token::PROGRAM)){
+        cout << "Falto colocar el Token PROGRAM al inicio del código. (ParseProgram)";
+        exit(0);
+    }
+    if(!match(Token::ID)){
+        cout << "Falto colocar el nombre del programa al inicio del código. (ParseProgram)";
+        exit(0);
+    }
+
+    string NameProgram = previous->TypeText;
+
+    if(!match(Token::PC)){
+        cout << "Falto colocar el ; del programa al inicio del código. (ParseProgram)";
+        exit(0);
+    }
+
     FunDecList* funDecs = ParseFunDecList();
     VarDecList* varDecs = ParseVarDecList();
     StmList* stmList = ParseStatementList();
@@ -228,7 +245,7 @@ Program* Parser::ParseProgram() {
         std::cout << "Error: se esperaba '.' al final del programa" << current->TypeText<<endl;
         exit(1);
     }
-    return new Program(varDecs, funDecs, stmList);
+    return new Program(varDecs, funDecs, stmList, NameProgram);
 }
 
 

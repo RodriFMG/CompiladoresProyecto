@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "imp_interpreter.h"
 #include "parser.h"
 
 int main(int argc, const char* argv[]) {
@@ -33,17 +34,17 @@ int main(int argc, const char* argv[]) {
     Parser parser(&scanner);
 
     try {
-        Program *program = parser.ParseProgram();
+        Program* program = parser.ParseProgram();
         cout << "Parsing exitoso" << endl << endl;
         cout << "Iniciando Visitor:" << endl;
         PrintVisitor printVisitor;
+        ImpInterpreter interpreter;
         cout << endl;
         cout << "IMPRIMIR:" << endl;
         printVisitor.imprimir(program);
-        cout << endl;
+        cout  << endl;
         cout << endl << "Run program:" << endl;
-        //EvalVisitor evalVisitor;
-        //evalVisitor.ejecutar(program);
+        interpreter.interpret(program);
         cout << "End of program execution" << endl;
         delete program;
     } catch (const exception &e) {

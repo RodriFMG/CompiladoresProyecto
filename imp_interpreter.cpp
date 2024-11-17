@@ -80,6 +80,8 @@ void ImpInterpreter::interpret(Program* p) {
 
 void ImpInterpreter::visit(Program* p) {
     env.add_level();
+
+
     fdecs.add_level();
     p->funDecs->accept(this);
     p->varDecs->accept(this);
@@ -88,8 +90,10 @@ void ImpInterpreter::visit(Program* p) {
 }
 
 void ImpInterpreter::visit(Body* b) {
+    env.add_level();
     b->vardecs->accept(this);
     b->statements->accept(this);
+    env.remove_level();
     return;
 }
 
@@ -128,26 +132,13 @@ void ImpInterpreter::visit(VarDec* vd) {
 void ImpInterpreter::visit(FunDec* fd) {
 
     fdecs.add_var(fd->fname, fd);
-    env.add_level();
-    ImpValue v;
-    ImpVType tt = ImpValue::get_basic_type(fd->rtype);
-    if (tt == NOTYPE) {
-        cout << "Tipo invalido: " << fd->rtype << endl;
-        exit(0);
-    }
-    v.set_default_value(tt);
-    env.add_var(fd->fname,v);
-    fd->body->accept(this);
-    env.remove_level();
-    return;
+     return;
 }
 
 void ImpInterpreter::visit(StmList* s) {
     list<Stm*>::iterator it;
     for (it = s->stms.begin(); it != s->stms.end(); ++it) {
         (*it)->accept(this);
-        if (retcall)
-            break;
     }
     return;
 }
@@ -173,22 +164,33 @@ void ImpInterpreter::visit(AssignStatement* s) {
 }
 
 void ImpInterpreter::visit(PrinteoStatement* s) {
+
     ImpValue v = s->exp->accept(this);
-    cout << v << endl;
+
+    if(s->TypePrint == "writeln"){
+        cout << v << "\n";
+    }
+    else{
+        cout << v;
+    }
+
     return;
 }
 
 void ImpInterpreter::visit(IfStatement* s) {
     // Iteradores para recorrer las condiciones y los cuerpos de sentencias
+
     list<Exp*>::iterator itExp;
     list<StmList*>::iterator itStmList;
     bool else_or_not = true;
+
 
     // Recorremos las condiciones y los cuerpos de las sentencias en paralelo
     for (itExp = s->conditions.begin(), itStmList = s->conditionBodies.begin();
          itExp != s->conditions.end(); ++itExp, ++itStmList) {
 
         // Evaluamos cada condición
+
         ImpValue v = (*itExp)->accept(this);
 
         // Validamos que el valor de la condición sea de tipo booleano
@@ -229,21 +231,43 @@ void ImpInterpreter::visit(ForStatement* s) {
 
     env.add_level();
 
-    ImpValue start = s->start->accept(this);
-    ImpValue end = s->end->accept(this);
-    ImpValue paso = s->step->accept(this);
+    ImpValue start = s->exp1->accept(this);
+    ImpValue end = s->exp2->accept(this);
 
-    if (start.type != TINT || end.type != TINT || paso.type != TINT){
+    if (start.type != TINT || end.type != TINT){
         cout << "Type error en FOR: esperaba int" << endl;
         exit(0);
     }
 
-    int a =start.int_value;
+    ImpValue paso;
+    paso.type = TINT;
+    paso.set_default_value(TINT);
+    if(s->increase_or_decrease == "downto") paso.int_value -= 1;
+    else paso.int_value += 1;
 
-    while(a<end.int_value){
-        s->b->accept(this);
-        a+= paso.int_value;
+    if (!env.check(s->id)) {
+        cout << "Variable " << s->id << " undefined" << endl;
+        exit(0);
     }
+
+    ImpValue var = env.lookup(s->id);
+
+    if(var.type != start.type){
+        cout << "Type error en FOR: la comparación de la variable usada con el for, no se puede realizar.\n"
+                "se esta comparando un " << var.type << " con un " << start.type;
+    }
+
+
+    env.update(s->id, start);
+
+
+    while(env.lookup(s->id).int_value <= end.int_value){
+        s->stms->accept(this);
+
+        paso.int_value +=1;
+        env.update(s->id, paso);
+    }
+
     return;
 }
 
@@ -266,6 +290,8 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
     ImpVType type = NOTYPE;
     iv1 = v1.int_value;
     iv2 = v2.int_value;
+
+
     switch (e->op) {
         case PLUS_OP:
             iv = iv1 + iv2;
@@ -293,6 +319,14 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
             break;
         case EQ_OP:
             bv = (iv1 == iv2) ? 1 : 0;
+            type = TBOOL;
+            break;
+        case DE_OP:
+            bv = (iv1 >= iv2) ? 1 : 0;
+            type = TBOOL;
+            break;
+        case DT_OP:
+            bv = (iv1 > iv2) ? 1 : 0;
             type = TBOOL;
             break;
     }
@@ -354,6 +388,7 @@ ImpValue ImpInterpreter::visit(FCallExp* e) {
         exit(0);
     }
 
+
     for (it = e->args.begin(), varit = fdec->paramNames.begin(),
          vartype = fdec->paramTypes.begin();
          it != e->args.end(); ++it, ++varit, ++vartype) {
@@ -371,42 +406,39 @@ ImpValue ImpInterpreter::visit(FCallExp* e) {
         env.add_var(*varit, v);
     }
 
-    retcall = false;
+    // Agregamos el nombre de la función como variable.
+    ImpValue v1;
+    ImpVType tt1 = ImpValue::get_basic_type(fdec->rtype);
+    if (tt1 == NOTYPE) {
+        cout << "El tipo de retorno de la función, no es válida, " << fdec->rtype;
+        exit(0);
+    }
+
+    v1.set_default_value(tt1);
+
+    if(env.lookup(fdec->fname, v1)){
+        cout << "Error, ya existe una variable con el mismo nombre de la función.\n";
+        exit(0);
+    }
+
+    env.add_var(fdec->fname,v1);
 
     fdec->body->accept(this);
 
-    if (!retcall) {
-        cout << "Error: Funcion " << e->fname << " no ejecuto RETURN" << endl;
-        exit(0);
-    }
-
-
-    retcall = false;
+    retval = env.lookup(fdec->fname);
 
     env.remove_level();
-
-    tt = ImpValue::get_basic_type(fdec->rtype);
-
-    if(tt == NOTYPE){
-        cout<<"Error: Funcion tipo void no debe poder asignarse\n";
-        exit(0);
-    }
-
-    if (tt != retval.type) {
-        cout << "Error: Tipo de retorno incorrecto de funcion " << fdec->fname
-             << endl;
-        exit(0);
-    }
 
     return retval;
 }
 
+
+// Esto es más que todo para funciones void, las cuales aún no hemos realizado.
 void ImpInterpreter::visit(FCallStatement* s) {
 
     FunDec* fdec = fdecs.lookup(s->fname);
 
     env.add_level();
-
 
     list<Exp*>::iterator it;
 
@@ -416,14 +448,14 @@ void ImpInterpreter::visit(FCallStatement* s) {
 
     ImpVType tt;
 
-    if (fdec->vars.size() != s->args.size()) {
+    if (fdec->paramNames.size() != s->args.size()) {
         cout << "Error: Numero de parametros incorrecto en llamada a "
              << fdec->fname << endl;
         exit(0);
     }
 
-    for (it = s->args.begin(), varit = fdec->vars.begin(),
-         vartype = fdec->types.begin();
+    for (it = s->args.begin(), varit = fdec->paramNames.begin(),
+         vartype = fdec->paramTypes.begin();
          it != s->args.end(); ++it, ++varit, ++vartype) {
 
         tt = ImpValue::get_basic_type(*vartype);
@@ -438,8 +470,6 @@ void ImpInterpreter::visit(FCallStatement* s) {
 
         env.add_var(*varit, v);
     }
-
-    retcall = false;
 
     fdec->body->accept(this);
 

@@ -213,11 +213,12 @@ public:
 
 class Program {
 public:
+    string NameProgram;
     VarDecList* varDecs;
     FunDecList* funDecs;
     StmList* stmList;
 
-    Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList);
+    Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList, string NameProgram);
     int accept(Visitor* visitor);
     void accept(ImpValueVisitor* Impvisitor);
     ~Program();

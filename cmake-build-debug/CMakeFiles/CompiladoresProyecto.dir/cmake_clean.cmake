@@ -17,8 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj.d"
   "CompiladoresProyecto.exe"
   "CompiladoresProyecto.exe.manifest"
+  "CompiladoresProyecto.lib"
   "CompiladoresProyecto.pdb"
-  "libCompiladoresProyecto.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

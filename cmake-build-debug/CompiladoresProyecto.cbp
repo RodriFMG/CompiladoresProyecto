@@ -4,136 +4,140 @@
 	<Project>
 		<Option title="CompiladoresProyecto"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug"/>
+				<Option working_dir="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CompiladoresProyecto">
-				<Option output="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug"/>
+				<Option output="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 CompiladoresProyecto"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 CompiladoresProyecto"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CompiladoresProyecto/fast">
-				<Option output="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug"/>
+				<Option output="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug/CompiladoresProyecto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 CompiladoresProyecto/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 CompiladoresProyecto/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug"/>
+				<Option working_dir="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug"/>
+				<Option working_dir="C:/Users/RODRIGO/CompilaJosep/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLion 2023.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/HP/Desktop/CompiladoresProyecto_one/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Exp.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Exp.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Exp.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Exp.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Scanner.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Scanner.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Scanner.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Scanner.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Token.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Token.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/Token.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/Token.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/environment.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/environment.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/imp_interpreter.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/imp_interpreter.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/imp_interpreter.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/imp_interpreter.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/imp_value.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/imp_value.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/imp_value.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/imp_value.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/imp_value_visitor.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/imp_value_visitor.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/main.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/main.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/parser.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/parser.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/parser.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/parser.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/visitor.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/visitor.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/visitor.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/visitor.h">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/HP/Desktop/CompiladoresProyecto_one/CMakeLists.txt">
+		<Unit filename="C:/Users/RODRIGO/CompilaJosep/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

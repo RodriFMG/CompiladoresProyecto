@@ -40,6 +40,7 @@ public:
         }
         ribs.back()[var] = value;
     }
+
     void add_var(string var) { ribs.back()[var] = 0; }
 
     bool remove_level() {

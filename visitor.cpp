@@ -106,6 +106,8 @@ void PrintVisitor::imprimir(Program *p) {
 }
 
 void PrintVisitor::visit(Program *p) {
+
+    cout << "program " << p->NameProgram << ";\n";
     p->funDecs->accept(this);
     p->varDecs->accept(this);
     cout <<"begin" <<endl;

@@ -28,6 +28,8 @@ public:
         INTEGER,           // Tipo de dato entero
         LONGINT,            // Tipo de dato longint
         BOOLEAN,
+
+        PROGRAM
     };
 
     //LE <

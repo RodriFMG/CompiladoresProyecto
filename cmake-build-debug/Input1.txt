@@ -1,16 +1,18 @@
 program ExampleProgram;
 
-function suma(a, b: Integer): Integer;
-begin
-    suma := a + b;
-end;
-
 var
     x, y: Integer;
 
 begin
-    x := 1;
-    y := 20;
+    x := 5;
+    y := 10;
 
-    writeln(suma(x, y));
+    if x > y then
+    begin
+        writeln(x);
+    end
+    else
+    begin
+        writeln(y);
+    end;
 end.
