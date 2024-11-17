@@ -266,9 +266,7 @@ void ImpInterpreter::visit(ForStatement* s) {
     ImpValue paso;
     paso.type = end.type;
     paso.set_default_value(end.type);
-
-    if(s->increase_or_decrease == "downto") paso.int_value = start.int_value;
-    else paso.int_value = 0;
+    paso.int_value = start.int_value;
 
     if (!env.check(s->id)) {
         cout << "Variable " << s->id << " undefined" << endl;
@@ -287,14 +285,14 @@ void ImpInterpreter::visit(ForStatement* s) {
 
 
     if(s->increase_or_decrease == "to")
-        while(env.lookup(s->id).int_value < end.int_value){
+        while(env.lookup(s->id).int_value <= end.int_value){
             s->stms->accept(this);
 
             paso.int_value += 1;
             env.update(s->id, paso);
         }
     else
-        while(env.lookup(s->id).int_value > end.int_value) {
+        while(env.lookup(s->id).int_value >= end.int_value) {
             s->stms->accept(this);
 
             paso.int_value -= 1;
@@ -357,11 +355,11 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
 
             break;
         case LT_OP:
-            bv = (iv1 < iv2) ? 1 : 0;
+            bv = (iv1 <= iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case LE_OP:
-            bv = (iv1 <= iv2) ? 1 : 0;
+            bv = (iv1 < iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case EQ_OP:
@@ -369,11 +367,11 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
             type = TBOOL;
             break;
         case DE_OP:
-            bv = (iv1 >= iv2) ? 1 : 0;
+            bv = (iv1 > iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case DT_OP:
-            bv = (iv1 > iv2) ? 1 : 0;
+            bv = (iv1 >= iv2) ? 1 : 0;
             type = TBOOL;
             break;
     }
