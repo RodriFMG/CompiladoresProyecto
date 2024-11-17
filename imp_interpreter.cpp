@@ -464,9 +464,12 @@ ImpValue ImpInterpreter::visit(FCallExp* e) {
 
     v1.set_default_value(tt1);
 
-    if(env.lookup(fdec->fname, v1)){
-        cout << "Error, ya existe una variable con el mismo nombre de la función.\n";
-        exit(0);
+    // agregar un control más seguro, pero por el momento es adecuado.
+    if (env.lookup(fdec->fname, v1)) {
+        if (v1.type != ImpValue::get_basic_type(fdec->rtype)) {
+            cout << "Error, ya existe una variable con el mismo nombre de la función y el tipo no coincide.\n";
+            exit(0);
+        }
     }
 
     env.add_var(fdec->fname, v1);
