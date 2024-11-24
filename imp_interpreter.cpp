@@ -1,5 +1,7 @@
 #include "imp_interpreter.h"
 
+/// ImpValue Visitor.
+
 ImpValue BinaryExp::accept(ImpValueVisitor* v) {
     return v->visit(this);
 }
@@ -68,9 +70,87 @@ void Program::accept(ImpValueVisitor* v) {
     return v->visit(this);
 }
 
-void FCallStatement::accept(ImpValueVisitor *visitor) {
+    void FCallStatement::accept(ImpValueVisitor *visitor) {
     return visitor->visit(this);
 }
+
+/// TypeVisitor
+
+ImpType BinaryExp::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+ImpType BoolExp::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+ImpType NumberExp::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+ImpType IdentifierExp::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+ImpType FCallExp::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void AssignStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void PrinteoStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void IfStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void WhileStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void ForStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void StmList::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void VarDec::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void FunDec::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void VarDecList::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void FunDecList::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void Body::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void Program::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void FCallStatement::accept(TypeVisitor *visitor) {
+    return visitor->visit(this);
+}
+
+
+
+/// Interpreter Ejecución.
 
 void ImpInterpreter::interpret(Program* p) {
     env.clear();
@@ -83,8 +163,8 @@ void ImpInterpreter::visit(Program* p) {
 
 
     fdecs.add_level();
-    p->funDecs->accept(this);
     p->varDecs->accept(this);
+    p->funDecs->accept(this);
     p->stmList->accept(this);
 
 }

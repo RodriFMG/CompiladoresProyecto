@@ -46,10 +46,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\RODRIGO\CompilaJosep
+CMAKE_SOURCE_DIR = C:\Users\RODRIGO\CompilaVeintes
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\RODRIGO\CompilaJosep\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -76,9 +76,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\CMakeFiles C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\RODRIGO\CompilaJosep\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -190,6 +190,30 @@ Token.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Token.cpp.s
 .PHONY : Token.cpp.s
 
+imp_codegen.obj: imp_codegen.cpp.obj
+.PHONY : imp_codegen.obj
+
+# target to build an object file
+imp_codegen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj
+.PHONY : imp_codegen.cpp.obj
+
+imp_codegen.i: imp_codegen.cpp.i
+.PHONY : imp_codegen.i
+
+# target to preprocess a source file
+imp_codegen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.i
+.PHONY : imp_codegen.cpp.i
+
+imp_codegen.s: imp_codegen.cpp.s
+.PHONY : imp_codegen.s
+
+# target to generate assembly for a file
+imp_codegen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.s
+.PHONY : imp_codegen.cpp.s
+
 imp_interpreter.obj: imp_interpreter.cpp.obj
 .PHONY : imp_interpreter.obj
 
@@ -213,6 +237,54 @@ imp_interpreter.s: imp_interpreter.cpp.s
 imp_interpreter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.s
 .PHONY : imp_interpreter.cpp.s
+
+imp_type.obj: imp_type.cpp.obj
+.PHONY : imp_type.obj
+
+# target to build an object file
+imp_type.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj
+.PHONY : imp_type.cpp.obj
+
+imp_type.i: imp_type.cpp.i
+.PHONY : imp_type.i
+
+# target to preprocess a source file
+imp_type.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.i
+.PHONY : imp_type.cpp.i
+
+imp_type.s: imp_type.cpp.s
+.PHONY : imp_type.s
+
+# target to generate assembly for a file
+imp_type.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.s
+.PHONY : imp_type.cpp.s
+
+imp_type_checker.obj: imp_type_checker.cpp.obj
+.PHONY : imp_type_checker.obj
+
+# target to build an object file
+imp_type_checker.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj
+.PHONY : imp_type_checker.cpp.obj
+
+imp_type_checker.i: imp_type_checker.cpp.i
+.PHONY : imp_type_checker.i
+
+# target to preprocess a source file
+imp_type_checker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.i
+.PHONY : imp_type_checker.cpp.i
+
+imp_type_checker.s: imp_type_checker.cpp.s
+.PHONY : imp_type_checker.s
+
+# target to generate assembly for a file
+imp_type_checker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.s
+.PHONY : imp_type_checker.cpp.s
 
 imp_value.obj: imp_value.cpp.obj
 .PHONY : imp_value.obj
@@ -328,9 +400,18 @@ help:
 	@echo ... Token.obj
 	@echo ... Token.i
 	@echo ... Token.s
+	@echo ... imp_codegen.obj
+	@echo ... imp_codegen.i
+	@echo ... imp_codegen.s
 	@echo ... imp_interpreter.obj
 	@echo ... imp_interpreter.i
 	@echo ... imp_interpreter.s
+	@echo ... imp_type.obj
+	@echo ... imp_type.i
+	@echo ... imp_type.s
+	@echo ... imp_type_checker.obj
+	@echo ... imp_type_checker.i
+	@echo ... imp_type_checker.s
 	@echo ... imp_value.obj
 	@echo ... imp_value.i
 	@echo ... imp_value.s

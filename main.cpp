@@ -1,10 +1,15 @@
 #include <iostream>
 #include <fstream>
-#include "imp_interpreter.h"
+#include <string>
+#include "scanner.h"
 #include "parser.h"
+#include "visitor.h"
+#include "imp_interpreter.h"
+#include "imp_type.hh"
+#include "imp_type_checker.hh"
+#include "imp_codegen.hh"
 
 int main(int argc, const char* argv[]) {
-
     if (argc != 2) {
         cout << "Numero incorrecto de argumentos. Uso: " << argv[0] << " <archivo_de_entrada>" << endl;
         exit(1);
@@ -32,22 +37,31 @@ int main(int argc, const char* argv[]) {
     cout << endl;
     cout << "Iniciando parsing:" << endl;
     Parser parser(&scanner);
-
     try {
         Program* program = parser.ParseProgram();
         cout << "Parsing exitoso" << endl << endl;
         cout << "Iniciando Visitor:" << endl;
         PrintVisitor printVisitor;
         ImpInterpreter interpreter;
+        ImpTypeChecker typeChecker;
+        ImpCodeGen codegen(&typeChecker);
+
         cout << endl;
         cout << "IMPRIMIR:" << endl;
         printVisitor.imprimir(program);
         cout  << endl;
+        cout << "TypeChecker:" << endl;
+        typeChecker.typecheck(program);
+
         cout << endl << "Run program:" << endl;
         interpreter.interpret(program);
+
+        cout << endl << "Generar codigo:" << endl;
+        string filename =  argv[1];
+        codegen.codegen(program, filename + ".sm");
         cout << "End of program execution" << endl;
         delete program;
-    } catch (const exception &e) {
+    } catch (const exception& e) {
         cout << "Error durante la ejecución: " << e.what() << endl;
         return 1;
     }

@@ -15,4 +15,7 @@ add_executable(CompiladoresProyecto main.cpp
         imp_interpreter.h
         imp_interpreter.cpp
         environment.h
+        imp_codegen.cpp
+        imp_type.cpp
+        imp_type_checker.cpp
 )

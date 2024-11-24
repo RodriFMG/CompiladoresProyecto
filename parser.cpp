@@ -237,8 +237,8 @@ Program* Parser::ParseProgram() {
         exit(0);
     }
 
-    FunDecList* funDecs = ParseFunDecList();
     VarDecList* varDecs = ParseVarDecList();
+    FunDecList* funDecs = ParseFunDecList();
     StmList* stmList = ParseStatementList();
 
     if(!match(Token::PUNTO)){

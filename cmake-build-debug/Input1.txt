@@ -1,5 +1,8 @@
 program RecursiveFactorial;
 
+var
+  result: Integer;
+
 function Factorial(n: Integer): Integer;
 begin
   if n = 0 then
@@ -12,10 +15,7 @@ begin
   end;
 end;
 
-var
-  result: Integer;
-
 begin
-  result := Factorial(5);
+  result := Factorial(6);
   writeln(result);
 end.
