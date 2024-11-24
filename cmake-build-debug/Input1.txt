@@ -1,16 +1,38 @@
-program ExampleProgram;
+program FuncionRecursiva;
 
-function suma(a, b: Integer): Integer;
+function A(n: Integer): Integer;
 begin
-    suma := a + b;
+  if n = 0 then begin
+    A := 1; end
+  else begin
+    A := B(n - 1) + C(n - 1);
+  end;
+end;
+
+function B(n: Integer): Integer;
+begin
+  if n = 0 then begin
+    B := 2; end
+  else begin
+    B := A(n - 1) * 2;
+  end;
+end;
+
+function C(n: Integer): Integer;
+begin
+
+  if n = 0 then begin
+    C := 3; end
+  else begin
+    C := A(n - 1) - B(n - 1);
+   end;
 end;
 
 var
-    x, y: Integer;
+  resultado: Integer;
 
 begin
-    x := 1;
-    y := 20;
 
-    writeln(suma(x, y));
+  resultado := A(5);
+
 end.

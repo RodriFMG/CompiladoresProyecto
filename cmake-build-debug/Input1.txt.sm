@@ -1,30 +1,98 @@
 start: skip
-enter 2
-alloc 2
+enter 1
+alloc 1
 mark
-pusha LExampleProgram
+pusha LFuncionRecursiva
 call
 halt
-Lsuma: skip
-enter 2
-alloc 0
-loadr -4
-loadr -3
-add
-storer -5
-return 5
-LExampleProgram: skip
+LA: skip
 enter 4
 alloc 0
+loadr -3
+push 0
+eq
+jmpz L1
 push 1
-store 1
-push 20
-store 2
+storer -4
+goto L0
+L1: skip
 alloc 1
-load 1
-load 2
+loadr -3
+push 1
+sub
 mark
-pusha Lsuma
+pusha LB
 call
-print
+alloc 1
+loadr -3
+push 1
+sub
+mark
+pusha LC
+call
+add
+storer -4
+L0: skip
+return 4
+LB: skip
+enter 3
+alloc 0
+loadr -3
+push 0
+eq
+jmpz L3
+push 2
+storer -4
+goto L2
+L3: skip
+alloc 1
+loadr -3
+push 1
+sub
+mark
+pusha LA
+call
+push 2
+mul
+storer -4
+L2: skip
+return 4
+LC: skip
+enter 4
+alloc 0
+loadr -3
+push 0
+eq
+jmpz L5
+push 3
+storer -4
+goto L4
+L5: skip
+alloc 1
+loadr -3
+push 1
+sub
+mark
+pusha LA
+call
+alloc 1
+loadr -3
+push 1
+sub
+mark
+pusha LB
+call
+sub
+storer -4
+L4: skip
+return 4
+LFuncionRecursiva: skip
+enter 12
+alloc 0
+alloc 1
+push 5
+mark
+pusha LA
+call
+store 1
 return 3
