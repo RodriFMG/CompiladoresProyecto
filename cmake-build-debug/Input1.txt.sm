@@ -1,40 +1,28 @@
 start: skip
-enter 1
-alloc 1
+enter 2
+alloc 2
 mark
-pusha LRecursiveFactorial
+pusha LExampleProgram
 call
 halt
-LFactorial: skip
-enter 4
+Lsuma: skip
+enter 2
 alloc 0
+loadr -4
 loadr -3
-push 0
-eq
-jmpz L1
+add
+storer -5
+return 5
+LExampleProgram: skip
 push 1
-storer -4
-goto L0
-L1: skip
-loadr -3
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LFactorial
-call
-mul
-storer -4
-L0: skip
-return 4
-LRecursiveFactorial: skip
-alloc 1
-push 6
-mark
-pusha LFactorial
-call
 store 1
+push 20
+store 2
+alloc 1
 load 1
+load 2
+mark
+pusha Lsuma
+call
 print
-return 4
+return 5

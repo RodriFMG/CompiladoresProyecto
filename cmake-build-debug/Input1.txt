@@ -1,21 +1,16 @@
-program RecursiveFactorial;
+program ExampleProgram;
 
-var
-  result: Integer;
-
-function Factorial(n: Integer): Integer;
+function suma(a, b: Integer): Integer;
 begin
-  if n = 0 then
-  begin
-    Factorial := 1;
-  end
-  else
-  begin
-    Factorial := n * Factorial(n - 1);
-  end;
+    suma := a + b;
 end;
 
+var
+    x, y: Integer;
+
 begin
-  result := Factorial(6);
-  writeln(result);
+    x := 1;
+    y := 20;
+
+    writeln(suma(x, y));
 end.

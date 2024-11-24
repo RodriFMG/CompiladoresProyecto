@@ -164,7 +164,7 @@ void ImpInterpreter::visit(Program* p) {
 
     fdecs.add_level();
     p->varDecs->accept(this);
-    p->funDecs->accept(this);
+    if(p->funDecs != nullptr) p->funDecs->accept(this);
     p->stmList->accept(this);
 
 }

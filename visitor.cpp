@@ -109,7 +109,10 @@ void PrintVisitor::visit(Program *p) {
 
     cout << "program " << p->NameProgram << ";\n";
     p->varDecs->accept(this);
-    p->funDecs->accept(this);
+
+    if(p->funDecs != nullptr){
+        p->funDecs->accept(this);
+    }
     cout <<"begin" <<endl;
     p->stmList->accept(this);
     cout <<"end";

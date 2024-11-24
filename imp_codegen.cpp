@@ -63,7 +63,10 @@ void ImpCodeGen::visit(Program* p) {
   codegen(nolabel,"pusha",get_flabel(p->NameProgram));
   codegen(nolabel,"call");
   codegen(nolabel,"halt");
-  p->funDecs->accept(this);
+
+  if(p->funDecs != nullptr) p->funDecs->accept(this);
+  else num_params = 0;
+
 
   codegen(get_flabel(p->NameProgram),"skip");
   p->stmList->accept(this);
@@ -244,7 +247,7 @@ void ImpCodeGen::visit(ForStatement* s) {
 
     s->exp2->accept(this);
 
-    codegen(nolabel, "lt");
+    codegen(nolabel, "le");
 
     codegen(nolabel, "jmpz", l2);
 
@@ -256,10 +259,10 @@ void ImpCodeGen::visit(ForStatement* s) {
     if(s->increase_or_decrease == "to") codegen(nolabel, "push", 1);
     else codegen(nolabel, "push", -1);
 
+    codegen(nolabel, "add");
+
     if(is_var_global) codegen(nolabel, "store", varEntry.dir);
     else codegen(nolabel, "storer", varEntry.dir);
-
-    codegen(nolabel, "add");
 
     codegen(nolabel, "goto", l1);
     codegen(l2, "skip");
@@ -280,6 +283,8 @@ int ImpCodeGen::visit(BinaryExp* e) {
   case DIV_OP:  op = "div"; break;
   case LT_OP:  op = "lt"; break;
   case LE_OP: op = "le"; break;
+  case DT_OP: op = "gt"; break;
+  case DE_OP: op = "ge"; break;
   case EQ_OP:  op = "eq"; break;
   default: cout << "binop " << Exp::BinaryToChar(e->op) << " not implemented" << endl;
   }

@@ -30,15 +30,20 @@ void ImpTypeChecker::visit(Program* p) {
   ftable.add_level();
   p->varDecs->accept(this);
 
-  cout  << "Paso las variables globales\n";
+  //cout  << "Paso las variables globales\n";
 
-  p->funDecs->accept(this);
-
-  cout << "Paso las funciones\n";
+  if(p->funDecs != nullptr) {
+      //cout << "Paso las funciones\n";
+      p->funDecs->accept(this);
+  }
+  else {
+      sp = max_sp = 0;
+      dir = max_dir = 0;
+  }
 
   p->stmList->accept(this);
 
-  cout << "Paso los Statements\n";
+  //cout << "Paso los Statements\n";
 
   env.remove_level();
 
@@ -284,6 +289,8 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
     break;
   case LT_OP: 
   case LE_OP:
+  case DE_OP:
+  case DT_OP:
   case EQ_OP:
     result = booltype;
     break;
@@ -296,7 +303,6 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
 }
 
 ImpType ImpTypeChecker::visit(NumberExp* e) {
-    // Por la operación se suma 1.
   sp_incr(1);
   return inttype;
 }

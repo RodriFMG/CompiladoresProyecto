@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "svm.hh"
-
 string nombresInstrucciones[33] = { "push", "pop", "dup", "swap", "add", "sub", "mult", "div", "goto", "eq", "gt", "ge", "lt", "le", "skip", "store", "load", "print", "jmpz", "jmpn", "and", "or", "neg", "not", "halt", "call", "mark", "storer", "loadr", "pusha", "enter", "alloc", "return" };
 
 Instruction::Instruction(string etiqueta, IType tipoInstruccion):etiqueta(etiqueta),tipo(tipoInstruccion),tieneArg(false) {}

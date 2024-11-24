@@ -210,6 +210,9 @@ FunDec* Parser::ParseFunDec() {
 FunDecList* Parser::ParseFunDecList() {
     FunDecList* fdl = new FunDecList();
     FunDec* funDec = ParseFunDec();
+
+    if(funDec == NULL) fdl = nullptr;
+
     while (funDec != nullptr) {
         fdl->add(funDec);
         funDec = ParseFunDec();
