@@ -55,6 +55,7 @@ bool SVM::ejecutar(Instruction* instr) {
       if (pila_vacia()) error_svm("No se puede duplicar de una pila vacía");
       pila_push(pila_top()); break;
     case(Instruction::IPRINT): cout << pila_top() << endl; pila_pop(); break;
+    case(Instruction::IPRINTN): cout << pila_top(); pila_pop(); break;
     case(Instruction::ISKIP): break;
     default: error_svm("Error de programación 1");
     }

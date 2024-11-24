@@ -229,8 +229,11 @@ void ImpTypeChecker::visit(AssignStatement* s) {
 }
 
 void ImpTypeChecker::visit(PrinteoStatement* s) {
-  s->exp->accept(this);
-  sp_decr(1); // Dentro del write() haces una operación matemática, pues aumento.
+
+  if(s->exp != NULL){
+      s->exp->accept(this);
+      sp_decr(1); // Dentro del write() haces una operación matemática, pues aumento.
+  }
   return;
 }
 

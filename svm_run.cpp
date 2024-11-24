@@ -54,7 +54,7 @@ int main(int argc, const char* argv[]) {
 
   cout << "Ejecutando ...." << endl;
   svm->ejecutar();
-  cout << "Terminado" << endl;
+  cout << "\nTerminado" << endl;
 
   svm->imprimir_pila();
   

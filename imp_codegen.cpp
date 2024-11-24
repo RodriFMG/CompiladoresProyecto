@@ -183,8 +183,11 @@ void ImpCodeGen::visit(AssignStatement* s) {
 }
 
 void ImpCodeGen::visit(PrinteoStatement* s) {
-  s->exp->accept(this);
-  code << "print" << endl;;
+
+  if(s->exp != NULL) s->exp->accept(this);
+
+  if(s->TypePrint=="writeln") code << "print" << endl;
+  else code << "printn" << endl;
   return ;
 }
 

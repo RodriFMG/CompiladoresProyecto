@@ -276,14 +276,20 @@ void ImpInterpreter::visit(AssignStatement* s) {
 
 void ImpInterpreter::visit(PrinteoStatement* s) {
 
-    ImpValue v = s->exp->accept(this);
+    ImpValue v;
 
     if(s->TypePrint == "writeln"){
-        cout << v << "\n";
+        if(s->exp != NULL) {
+            v = s->exp->accept(this);
+            cout << v << "\n";
+        }
+        else cout << "\n";
     }
     else{
+        v = s->exp->accept(this);
         cout << v;
     }
+
 
     return;
 }
