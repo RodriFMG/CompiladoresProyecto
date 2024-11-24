@@ -8,17 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/RODRIGO/CompilaVeintes/Exp.cpp" "CMakeFiles/CompiladoresProyecto.dir/Exp.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/Exp.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/Scanner.cpp" "CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/Token.cpp" "CMakeFiles/CompiladoresProyecto.dir/Token.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/Token.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/imp_codegen.cpp" "CMakeFiles/CompiladoresProyecto.dir/imp_codegen.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/imp_codegen.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/imp_interpreter.cpp" "CMakeFiles/CompiladoresProyecto.dir/imp_interpreter.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/imp_interpreter.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/imp_type.cpp" "CMakeFiles/CompiladoresProyecto.dir/imp_type.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/imp_type.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/imp_type_checker.cpp" "CMakeFiles/CompiladoresProyecto.dir/imp_type_checker.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/imp_type_checker.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/imp_value.cpp" "CMakeFiles/CompiladoresProyecto.dir/imp_value.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/imp_value.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/main.cpp" "CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/parser.cpp" "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj.d"
-  "C:/Users/RODRIGO/CompilaVeintes/visitor.cpp" "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj.d"
+  "C:/Users/RODRIGO/CompilaVeintes/svm.cpp" "CMakeFiles/CompiladoresProyecto.dir/svm.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/svm.cpp.obj.d"
+  "C:/Users/RODRIGO/CompilaVeintes/svm_parser.cpp" "CMakeFiles/CompiladoresProyecto.dir/svm_parser.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/svm_parser.cpp.obj.d"
+  "C:/Users/RODRIGO/CompilaVeintes/svm_run.cpp" "CMakeFiles/CompiladoresProyecto.dir/svm_run.cpp.obj" "msvc" "CMakeFiles/CompiladoresProyecto.dir/svm_run.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

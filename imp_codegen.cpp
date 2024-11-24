@@ -38,7 +38,6 @@ string ImpCodeGen::get_flabel(string fname) {
 void ImpCodeGen::codegen(Program* p, string outfname) {
   nolabel = "";
   current_label = 0;
-  cout << " ppe";
   p->accept(this);
   ofstream outfile;
   outfile.open(outfname);
@@ -65,7 +64,10 @@ void ImpCodeGen::visit(Program* p) {
   codegen(nolabel,"call");
   codegen(nolabel,"halt");
   p->funDecs->accept(this);
+
+  codegen(get_flabel(p->NameProgram),"skip");
   p->stmList->accept(this);
+  codegen(nolabel,"return",num_params+3);
   direcciones.remove_level();
   return ;
 }
@@ -114,7 +116,7 @@ void ImpCodeGen::visit(FunDecList* s) {
 }
 
 void ImpCodeGen::visit(FunDec* fd) {
-  FEntry fentry = analysis->ftable.lookup(fd->fname);
+  FEntry fentry = analysis->ftable.lookup("L"+fd->fname);
   current_dir = 0;
   list<string>::iterator it, vit;
   // Parameters
@@ -143,6 +145,8 @@ void ImpCodeGen::visit(FunDec* fd) {
 
   num_params = m;
   fd->body->accept(this);
+
+  codegen(nolabel,"return",num_params+3);
 
   return ;
 }
@@ -193,7 +197,7 @@ void ImpCodeGen::visit(IfStatement* s) {
         codegen(nolabel, "jmpz", *itEtiquetas);
         (*itStmList)->accept(this);
         codegen(nolabel, "goto", l1);
-        codegen(nolabel, "skip", *itEtiquetas);
+        codegen(*itEtiquetas, "skip");
 
     }
 
@@ -201,7 +205,7 @@ void ImpCodeGen::visit(IfStatement* s) {
         (*itStmList)->accept(this); // Ejecutamos el bloque `else`
     }
 
-    codegen(nolabel, "skip", l1);
+    codegen(l1, "skip");
 
 
 }
@@ -284,7 +288,7 @@ int ImpCodeGen::visit(BinaryExp* e) {
 }
 
 int ImpCodeGen::visit(NumberExp* e) {
-  codegen(nolabel,"push ",e->value);
+  codegen(nolabel,"push",e->value);
   return 0;
 }
 
@@ -306,7 +310,7 @@ int ImpCodeGen::visit(IdentifierExp* e) {
 // ver esto.
 int ImpCodeGen::visit(FCallExp* e) {
   // nuevo
-  FEntry fentry = analysis->ftable.lookup(e->fname);
+  FEntry fentry = analysis->ftable.lookup("L"+e->fname);
   ImpType ftype = fentry.ftype;
   if (ftype.types[ftype.types.size()-1] != ImpType::VOID) {
     codegen(nolabel,"alloc",1);
@@ -324,7 +328,7 @@ int ImpCodeGen::visit(FCallExp* e) {
 
 void ImpCodeGen::visit(FCallStatement* s) {
   // nuevo
-  FEntry fentry = analysis->ftable.lookup(s->fname);
+  FEntry fentry = analysis->ftable.lookup("L"+s->fname);
   ImpType ftype = fentry.ftype;
   if (ftype.types[ftype.types.size()-1] != ImpType::VOID) {
     codegen(nolabel,"alloc",1);

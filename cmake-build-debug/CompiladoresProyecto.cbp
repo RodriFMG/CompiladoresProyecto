@@ -86,73 +86,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Exp.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/svm.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Exp.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/svm.hh">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Scanner.cpp">
+		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/svm_parser.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Scanner.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/svm_parser.hh">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Token.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/Token.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/environment.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_codegen.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_codegen.hh">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_interpreter.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_interpreter.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_type.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_type.hh">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_type_checker.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_type_checker.hh">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_value.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_value.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/imp_value_visitor.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/main.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/parser.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/parser.h">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/visitor.cpp">
-			<Option target="CompiladoresProyecto"/>
-		</Unit>
-		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/visitor.h">
+		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/svm_run.cpp">
 			<Option target="CompiladoresProyecto"/>
 		</Unit>
 		<Unit filename="C:/Users/RODRIGO/CompilaVeintes/CMakeLists.txt">

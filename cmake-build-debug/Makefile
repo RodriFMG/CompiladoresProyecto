@@ -118,269 +118,77 @@ CompiladoresProyecto\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\build
 .PHONY : CompiladoresProyecto\fast
 
-Exp.obj: Exp.cpp.obj
-.PHONY : Exp.obj
+svm.obj: svm.cpp.obj
+.PHONY : svm.obj
 
 # target to build an object file
-Exp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj
-.PHONY : Exp.cpp.obj
+svm.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj
+.PHONY : svm.cpp.obj
 
-Exp.i: Exp.cpp.i
-.PHONY : Exp.i
+svm.i: svm.cpp.i
+.PHONY : svm.i
 
 # target to preprocess a source file
-Exp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.i
-.PHONY : Exp.cpp.i
+svm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm.cpp.i
+.PHONY : svm.cpp.i
 
-Exp.s: Exp.cpp.s
-.PHONY : Exp.s
+svm.s: svm.cpp.s
+.PHONY : svm.s
 
 # target to generate assembly for a file
-Exp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.s
-.PHONY : Exp.cpp.s
+svm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm.cpp.s
+.PHONY : svm.cpp.s
 
-Scanner.obj: Scanner.cpp.obj
-.PHONY : Scanner.obj
+svm_parser.obj: svm_parser.cpp.obj
+.PHONY : svm_parser.obj
 
 # target to build an object file
-Scanner.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj
-.PHONY : Scanner.cpp.obj
+svm_parser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj
+.PHONY : svm_parser.cpp.obj
 
-Scanner.i: Scanner.cpp.i
-.PHONY : Scanner.i
+svm_parser.i: svm_parser.cpp.i
+.PHONY : svm_parser.i
 
 # target to preprocess a source file
-Scanner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.i
-.PHONY : Scanner.cpp.i
+svm_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.i
+.PHONY : svm_parser.cpp.i
 
-Scanner.s: Scanner.cpp.s
-.PHONY : Scanner.s
+svm_parser.s: svm_parser.cpp.s
+.PHONY : svm_parser.s
 
 # target to generate assembly for a file
-Scanner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.s
-.PHONY : Scanner.cpp.s
+svm_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.s
+.PHONY : svm_parser.cpp.s
 
-Token.obj: Token.cpp.obj
-.PHONY : Token.obj
+svm_run.obj: svm_run.cpp.obj
+.PHONY : svm_run.obj
 
 # target to build an object file
-Token.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj
-.PHONY : Token.cpp.obj
+svm_run.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj
+.PHONY : svm_run.cpp.obj
 
-Token.i: Token.cpp.i
-.PHONY : Token.i
-
-# target to preprocess a source file
-Token.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Token.cpp.i
-.PHONY : Token.cpp.i
-
-Token.s: Token.cpp.s
-.PHONY : Token.s
-
-# target to generate assembly for a file
-Token.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\Token.cpp.s
-.PHONY : Token.cpp.s
-
-imp_codegen.obj: imp_codegen.cpp.obj
-.PHONY : imp_codegen.obj
-
-# target to build an object file
-imp_codegen.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj
-.PHONY : imp_codegen.cpp.obj
-
-imp_codegen.i: imp_codegen.cpp.i
-.PHONY : imp_codegen.i
+svm_run.i: svm_run.cpp.i
+.PHONY : svm_run.i
 
 # target to preprocess a source file
-imp_codegen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.i
-.PHONY : imp_codegen.cpp.i
+svm_run.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.i
+.PHONY : svm_run.cpp.i
 
-imp_codegen.s: imp_codegen.cpp.s
-.PHONY : imp_codegen.s
-
-# target to generate assembly for a file
-imp_codegen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.s
-.PHONY : imp_codegen.cpp.s
-
-imp_interpreter.obj: imp_interpreter.cpp.obj
-.PHONY : imp_interpreter.obj
-
-# target to build an object file
-imp_interpreter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj
-.PHONY : imp_interpreter.cpp.obj
-
-imp_interpreter.i: imp_interpreter.cpp.i
-.PHONY : imp_interpreter.i
-
-# target to preprocess a source file
-imp_interpreter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.i
-.PHONY : imp_interpreter.cpp.i
-
-imp_interpreter.s: imp_interpreter.cpp.s
-.PHONY : imp_interpreter.s
+svm_run.s: svm_run.cpp.s
+.PHONY : svm_run.s
 
 # target to generate assembly for a file
-imp_interpreter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.s
-.PHONY : imp_interpreter.cpp.s
-
-imp_type.obj: imp_type.cpp.obj
-.PHONY : imp_type.obj
-
-# target to build an object file
-imp_type.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj
-.PHONY : imp_type.cpp.obj
-
-imp_type.i: imp_type.cpp.i
-.PHONY : imp_type.i
-
-# target to preprocess a source file
-imp_type.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.i
-.PHONY : imp_type.cpp.i
-
-imp_type.s: imp_type.cpp.s
-.PHONY : imp_type.s
-
-# target to generate assembly for a file
-imp_type.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.s
-.PHONY : imp_type.cpp.s
-
-imp_type_checker.obj: imp_type_checker.cpp.obj
-.PHONY : imp_type_checker.obj
-
-# target to build an object file
-imp_type_checker.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj
-.PHONY : imp_type_checker.cpp.obj
-
-imp_type_checker.i: imp_type_checker.cpp.i
-.PHONY : imp_type_checker.i
-
-# target to preprocess a source file
-imp_type_checker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.i
-.PHONY : imp_type_checker.cpp.i
-
-imp_type_checker.s: imp_type_checker.cpp.s
-.PHONY : imp_type_checker.s
-
-# target to generate assembly for a file
-imp_type_checker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.s
-.PHONY : imp_type_checker.cpp.s
-
-imp_value.obj: imp_value.cpp.obj
-.PHONY : imp_value.obj
-
-# target to build an object file
-imp_value.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj
-.PHONY : imp_value.cpp.obj
-
-imp_value.i: imp_value.cpp.i
-.PHONY : imp_value.i
-
-# target to preprocess a source file
-imp_value.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.i
-.PHONY : imp_value.cpp.i
-
-imp_value.s: imp_value.cpp.s
-.PHONY : imp_value.s
-
-# target to generate assembly for a file
-imp_value.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.s
-.PHONY : imp_value.cpp.s
-
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\main.cpp.s
-.PHONY : main.cpp.s
-
-parser.obj: parser.cpp.obj
-.PHONY : parser.obj
-
-# target to build an object file
-parser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj
-.PHONY : parser.cpp.obj
-
-parser.i: parser.cpp.i
-.PHONY : parser.i
-
-# target to preprocess a source file
-parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\parser.cpp.i
-.PHONY : parser.cpp.i
-
-parser.s: parser.cpp.s
-.PHONY : parser.s
-
-# target to generate assembly for a file
-parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\parser.cpp.s
-.PHONY : parser.cpp.s
-
-visitor.obj: visitor.cpp.obj
-.PHONY : visitor.obj
-
-# target to build an object file
-visitor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj
-.PHONY : visitor.cpp.obj
-
-visitor.i: visitor.cpp.i
-.PHONY : visitor.i
-
-# target to preprocess a source file
-visitor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i
-.PHONY : visitor.cpp.i
-
-visitor.s: visitor.cpp.s
-.PHONY : visitor.s
-
-# target to generate assembly for a file
-visitor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s
-.PHONY : visitor.cpp.s
+svm_run.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CompiladoresProyecto.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.s
+.PHONY : svm_run.cpp.s
 
 # Help Target
 help:
@@ -391,39 +199,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CompiladoresProyecto
-	@echo ... Exp.obj
-	@echo ... Exp.i
-	@echo ... Exp.s
-	@echo ... Scanner.obj
-	@echo ... Scanner.i
-	@echo ... Scanner.s
-	@echo ... Token.obj
-	@echo ... Token.i
-	@echo ... Token.s
-	@echo ... imp_codegen.obj
-	@echo ... imp_codegen.i
-	@echo ... imp_codegen.s
-	@echo ... imp_interpreter.obj
-	@echo ... imp_interpreter.i
-	@echo ... imp_interpreter.s
-	@echo ... imp_type.obj
-	@echo ... imp_type.i
-	@echo ... imp_type.s
-	@echo ... imp_type_checker.obj
-	@echo ... imp_type_checker.i
-	@echo ... imp_type_checker.s
-	@echo ... imp_value.obj
-	@echo ... imp_value.i
-	@echo ... imp_value.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... parser.obj
-	@echo ... parser.i
-	@echo ... parser.s
-	@echo ... visitor.obj
-	@echo ... visitor.i
-	@echo ... visitor.s
+	@echo ... svm.obj
+	@echo ... svm.i
+	@echo ... svm.s
+	@echo ... svm_parser.obj
+	@echo ... svm_parser.i
+	@echo ... svm_parser.s
+	@echo ... svm_run.obj
+	@echo ... svm_run.i
+	@echo ... svm_run.s
 .PHONY : help
 
 

@@ -58,257 +58,81 @@ include CMakeFiles\CompiladoresProyecto.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\CompiladoresProyecto.dir\flags.make
 
-CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\main.cpp
-CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/main.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\main.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\main.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
+CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\svm.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/svm.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\svm.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/main.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\main.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/svm.cpp.i"
+	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\svm.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\svm.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/main.cpp.s"
+CMakeFiles\CompiladoresProyecto.dir\svm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/svm.cpp.s"
 	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\main.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\main.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\svm.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\svm.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\Token.cpp
-CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/Token.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\Token.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
+CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\svm_parser.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/svm_parser.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\svm_parser.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Token.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/Token.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\Token.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\Token.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/svm_parser.cpp.i"
+	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\svm_parser.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Token.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/Token.cpp.s"
+CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/svm_parser.cpp.s"
 	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\Token.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\Token.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\svm_parser.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\Scanner.cpp
-CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\Scanner.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
+CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\svm_run.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/svm_run.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\svm_run.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\Scanner.cpp
+CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/svm_run.cpp.i"
+	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\svm_run.cpp
 <<
 
-CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/Scanner.cpp.s"
+CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/svm_run.cpp.s"
 	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\Scanner.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\Exp.cpp
-CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/Exp.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\Exp.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/Exp.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\Exp.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/Exp.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\Exp.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\Exp.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\parser.cpp
-CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/parser.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\parser.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/parser.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\parser.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\parser.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/parser.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\parser.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\parser.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\visitor.cpp
-CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\visitor.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\visitor.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/visitor.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\visitor.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\visitor.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\imp_value.cpp
-CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/imp_value.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\imp_value.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/imp_value.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\imp_value.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/imp_value.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\imp_value.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\imp_interpreter.cpp
-CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/imp_interpreter.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\imp_interpreter.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/imp_interpreter.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\imp_interpreter.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/imp_interpreter.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\imp_interpreter.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\imp_codegen.cpp
-CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/imp_codegen.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\imp_codegen.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/imp_codegen.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\imp_codegen.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/imp_codegen.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\imp_codegen.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\imp_type.cpp
-CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/imp_type.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\imp_type.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/imp_type.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\imp_type.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/imp_type.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\imp_type.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\flags.make
-CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj: C:\Users\RODRIGO\CompilaVeintes\imp_type_checker.cpp
-CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj: CMakeFiles\CompiladoresProyecto.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CompiladoresProyecto.dir/imp_type_checker.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj.d --working-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug --filter-prefix="Nota: inclusión del archivo: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj /FdCMakeFiles\CompiladoresProyecto.dir\ /FS -c C:\Users\RODRIGO\CompilaVeintes\imp_type_checker.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompiladoresProyecto.dir/imp_type_checker.cpp.i"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\RODRIGO\CompilaVeintes\imp_type_checker.cpp
-<<
-
-CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompiladoresProyecto.dir/imp_type_checker.cpp.s"
-	C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\imp_type_checker.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.s /c C:\Users\RODRIGO\CompilaVeintes\svm_run.cpp
 <<
 
 # Object files for target CompiladoresProyecto
 CompiladoresProyecto_OBJECTS = \
-"CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj" \
-"CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj"
+"CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj" \
+"CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj" \
+"CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj"
 
 # External object files for target CompiladoresProyecto
 CompiladoresProyecto_EXTERNAL_OBJECTS =
 
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\main.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Token.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Scanner.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\Exp.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\parser.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\visitor.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\imp_value.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\imp_interpreter.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\imp_codegen.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\imp_type.cpp.obj
-CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\imp_type_checker.cpp.obj
+CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\svm.cpp.obj
+CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\svm_parser.cpp.obj
+CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\svm_run.cpp.obj
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\build.make
 CompiladoresProyecto.exe: CMakeFiles\CompiladoresProyecto.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable CompiladoresProyecto.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CompiladoresProyecto.exe"
 	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\CompiladoresProyecto.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\CompiladoresProyecto.dir\objects1.rsp @<<
  /out:CompiladoresProyecto.exe /implib:CompiladoresProyecto.lib /pdb:C:\Users\RODRIGO\CompilaVeintes\cmake-build-debug\CompiladoresProyecto.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
