@@ -29,7 +29,8 @@ public:
         LONGINT,            // Tipo de dato longint
         BOOLEAN,
 
-        PROGRAM
+        PROGRAM,
+        PROCEDURE
     };
 
     //LE <

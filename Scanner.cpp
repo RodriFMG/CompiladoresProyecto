@@ -54,6 +54,7 @@ Token *Scanner::NextToken() {
         else if (word == "boolean") token = new Token(Token::BOOLEAN, word, 0, word.length());
         else if (word == "Boolean") token = new Token(Token::BOOLEAN, word, 0, word.length());
         else if(word == "program") token = new Token(Token::PROGRAM, word, 0, word.length());
+        else if(word == "procedure") token = new Token(Token::PROCEDURE, word, 0, word.length());
 
 
         else token = new Token(Token::ID, word, 0, word.length());

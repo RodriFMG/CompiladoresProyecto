@@ -299,7 +299,10 @@ void PrintVisitor::visit(VarDecList *stm) {
 
 void PrintVisitor::visit(FunDec *stm) {
     printIndent();
-    cout << "function " << stm->fname << "(";
+
+    if(stm->rtype == "procedure") cout << "procedure ";
+    else cout << "function ";
+    cout << stm->fname << "(";
     // Agrupar parámetros por tipo
     auto paramNameIt = stm->paramNames.begin();
     auto paramTypeIt = stm->paramTypes.begin();
@@ -323,7 +326,10 @@ void PrintVisitor::visit(FunDec *stm) {
             cout << "; ";
         }
     }
-    cout << ") : " << stm->rtype << ";" << endl;
+    cout << ")";
+    if(stm->rtype == "procedure") cout << ";" << endl;
+    else cout << ") : " << stm->rtype << ";" << endl;
+
     stm->body->accept(this);
     cout << ";" << endl;
 }

@@ -1,16 +1,19 @@
-program ExampleProgram;
-
-function suma(a, b: Integer): Integer;
-begin
-    suma := a + b;
-end;
+program Ejemplo;
 
 var
-    x, y: Integer;
+    guardar : integer;
+
+procedure ImprimirSuma(a, b: Integer);
+var
+  suma: Integer;
+begin
+  suma := a + b;
+  write(suma);
+end;
 
 begin
-    x := 1;
-    y := 20;
+  guardar := 5;
+  ImprimirSuma(guardar, 10);
+  ImprimirSuma(guardar+15, 25);
 
-    writeln(suma(x, y));
 end.

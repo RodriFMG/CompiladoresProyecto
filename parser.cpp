@@ -203,6 +203,73 @@ FunDec* Parser::ParseFunDec() {
             exit(1);
         }
     }
+    else if(match(Token::PROCEDURE)){
+        if (!match(Token::ID)) {
+            std::cout << "Error: se esperaba un nombre de función después de 'function'.\n";
+            exit(1);
+        }
+        std::string fname = previous->TypeText;
+
+        if (!match(Token::PI)) {
+            std::cout << "Error: se esperaba '(' después del nombre de la función.\n";
+            exit(1);
+        }
+
+        std::list<std::string> paramNames;
+        std::list<std::string> paramTypes;
+
+        if (!check(Token::PD)) {  // Si no hay ')', procesamos los parámetros
+
+            do {
+                if (!match(Token::ID)) {
+                    std::cout << "Error: se esperaba un nombre de parámetro.\n";
+                    exit(1);
+                }
+                paramNames.push_back(previous->TypeText);
+            } while (match(Token::COMA));
+
+            if (!match(Token::TypeDCL)) {
+                std::cout << "Error: se esperaba ':' después de los nombres de los parámetros.\n";
+                exit(1);
+            }
+
+            if (!(match(Token::INTEGER) || match(Token::LONGINT) || match(Token::BOOLEAN))) {
+                std::cout << "Error: se esperaba un tipo de datos válido (INTEGER o LONGINT o BOOLEAN) después de ':'.\n";
+                exit(1);
+            }
+            std::string paramType = previous->TypeText;
+
+            for (size_t i = 0; i < paramNames.size(); i++) {
+                paramTypes.push_back(paramType);
+            }
+        }
+
+        if (!match(Token::PD)) {
+            std::cout << "Error: se esperaba ')' después de la lista de parámetros.\n";
+            exit(1);
+        }
+
+        if (match(Token::TypeDCL)) {
+            std::cout << "Error: Una función void no tiene tipo de return.\n";
+            exit(1);
+        }
+
+        std::string rtype = "procedure";
+
+        if(!match(Token::PC)){
+            std::cout << "Error: se esperaba ';' después del tipo de datos de retorno.\n";
+            exit(1);
+        }
+
+        Body* body = ParseBody();
+
+        fd = new FunDec(fname, paramTypes, paramNames, rtype, body);
+
+        if(!match(Token::PC)){
+            std::cout << "Error: se esperaba ';' después del tipo de datos de retorno.\n";
+            exit(1);
+        }
+    }
     return fd;
 }
 
@@ -244,7 +311,7 @@ Program* Parser::ParseProgram() {
         exit(0);
     }
 
-    if(check(Token::FUNCTION)){
+    if(check(Token::FUNCTION) || check(Token::PROCEDURE)){
         FirstFunction = true;
         funDecs = ParseFunDecList();
         varDecs = ParseVarDecList();

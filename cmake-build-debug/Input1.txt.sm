@@ -1,30 +1,35 @@
 start: skip
-enter 2
-alloc 2
+enter 1
+alloc 1
 mark
-pusha LExampleProgram
+pusha LEjemplo
 call
 halt
-Lsuma: skip
-enter 2
-alloc 0
+LImprimirSuma: skip
+enter 3
+alloc 1
 loadr -4
 loadr -3
 add
-storer -5
-return 5
-LExampleProgram: skip
-enter 4
-alloc 0
-push 1
-store 1
-push 20
-store 2
-alloc 1
-load 1
-load 2
-mark
-pusha Lsuma
-call
+storer 1
+loadr 1
 print
+return 5
+LEjemplo: skip
+enter 3
+alloc 0
+push 5
+store 1
+load 1
+push 10
+mark
+pusha LImprimirSuma
+call
+load 1
+push 15
+add
+push 25
+mark
+pusha LImprimirSuma
+call
 return 3

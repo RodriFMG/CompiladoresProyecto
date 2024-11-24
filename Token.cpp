@@ -57,6 +57,7 @@ ostream& operator<<(ostream& os, const Token& tokens) {
         case Token::COMA: os << "TOKEN(COMA)"; break;
         case Token::PUNTO: os << "TOKEN(PUNTO)"; break;
         case Token::PROGRAM: os << "TOKEN(PROGRAM)"; break;
+        case Token::PROCEDURE: os << "TOKEN(PROCEDURE)"; break;
 
         default:
             os << "TOKEN(UNKNOWN)"; break;

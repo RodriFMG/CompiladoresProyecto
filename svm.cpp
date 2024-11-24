@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "svm.hh"
-string nombresInstrucciones[33] = { "push", "pop", "dup", "swap", "add", "sub", "mult", "div", "goto", "eq", "gt", "ge", "lt", "le", "skip", "store", "load", "print", "jmpz", "jmpn", "and", "or", "neg", "not", "halt", "call", "mark", "storer", "loadr", "pusha", "enter", "alloc", "return" };
+string nombresInstrucciones[34] = { "push", "pop", "dup", "swap", "add", "sub", "mult", "div", "goto", "eq", "gt", "ge", "lt", "le", "skip", "store", "load", "print", "printn", "jmpz", "jmpn", "and", "or", "neg", "not", "halt", "call", "mark", "storer", "loadr", "pusha", "enter", "alloc", "return" };
 
 Instruction::Instruction(string etiqueta, IType tipoInstruccion):etiqueta(etiqueta),tipo(tipoInstruccion),tieneArg(false) {}
 Instruction::Instruction(string etiqueta, IType tipoInstruccion, int arg):etiqueta(etiqueta),tipo(tipoInstruccion),tieneArg(true), argEntero(arg),etiquetaSalto("") {}
@@ -46,7 +46,7 @@ bool SVM::ejecutar(Instruction* instr) {
   Instruction::IType tipoInstruccion = instr->tipo;
   int siguiente, cima;
   if (tipoInstruccion==Instruction::IPOP || tipoInstruccion==Instruction::IDUP ||
-      tipoInstruccion==Instruction::IPRINT || tipoInstruccion==Instruction::ISKIP) {
+      tipoInstruccion==Instruction::IPRINT || tipoInstruccion == Instruction::IPRINTN || tipoInstruccion==Instruction::ISKIP) {
     switch (tipoInstruccion) {
     case(Instruction::IPOP):
       if (pila_vacia()) error_svm("No se puede hacer pop de una pila vacía");
