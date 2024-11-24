@@ -27,6 +27,7 @@ private:
   ImpType booltype;
   ImpType inttype;
   ImpType voidtype;
+  ImpType longinttype;
 
   vector<string> fnames; 
   int sp, max_sp;

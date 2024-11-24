@@ -112,8 +112,9 @@ Body::~Body() {
 }
 
 
-Program::Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList, string NameProgram_)
-        : varDecs(varDecs), funDecs(funDecs), stmList(stmList), NameProgram(std::move(NameProgram_)) {}
+Program::Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList, string NameProgram_, bool FirstFunctions_)
+        : varDecs(varDecs), funDecs(funDecs), stmList(stmList), NameProgram(std::move(NameProgram_)),
+        FirstFunctions(FirstFunctions_){}
 
 Program::~Program() {
     delete varDecs;

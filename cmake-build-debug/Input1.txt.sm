@@ -14,6 +14,8 @@ add
 storer -5
 return 5
 LExampleProgram: skip
+enter 4
+alloc 0
 push 1
 store 1
 push 20
@@ -25,4 +27,4 @@ mark
 pusha Lsuma
 call
 print
-return 5
+return 3

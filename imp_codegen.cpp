@@ -49,29 +49,37 @@ void ImpCodeGen::codegen(Program* p, string outfname) {
 
 // CAMBIAR.
 void ImpCodeGen::visit(Program* p) {
-  current_dir = 0;  
+  current_dir = 0;
+  max_stack = 0;
+  mem_globals = 0;
   direcciones.add_level();
-  process_global = true;
-  p->varDecs->accept(this);
-  process_global = false;
-  mem_globals = current_dir;
-  // codegen
-  codegen("start","skip");
-  codegen(nolabel,"enter",mem_globals);
-  codegen(nolabel,"alloc",mem_globals);
-  codegen(nolabel,"mark");
-  codegen(nolabel,"pusha",get_flabel(p->NameProgram));
-  codegen(nolabel,"call");
-  codegen(nolabel,"halt");
 
-  if(p->funDecs != nullptr) p->funDecs->accept(this);
-  else num_params = 0;
+    process_global = true;
+    p->varDecs->accept(this);
+    process_global = false;
+    mem_globals = current_dir;
+    // codegen
+    codegen("start","skip");
+    codegen(nolabel,"enter",mem_globals);
+    codegen(nolabel,"alloc",mem_globals);
+    codegen(nolabel,"mark");
+    codegen(nolabel,"pusha",get_flabel(p->NameProgram));
+    codegen(nolabel,"call");
+    codegen(nolabel,"halt");
+
+    if(p->funDecs != nullptr) p->funDecs->accept(this);
+    else num_params = 0;
+
+    codegen(get_flabel(p->NameProgram),"skip");
+
+    codegen(nolabel,"enter", mem_globals + max_stack);
+    codegen(nolabel,"alloc", 0);
+    p->stmList->accept(this);
+    codegen(nolabel,"return", 3);
+    direcciones.remove_level();
 
 
-  codegen(get_flabel(p->NameProgram),"skip");
-  p->stmList->accept(this);
-  codegen(nolabel,"return",num_params+3);
-  direcciones.remove_level();
+
   return ;
 }
 
@@ -146,6 +154,7 @@ void ImpCodeGen::visit(FunDec* fd) {
   codegen(nolabel,"enter",fentry.mem_locals+fentry.max_stack);
   codegen(nolabel,"alloc",fentry.mem_locals);
 
+  max_stack += fentry.max_stack;
   num_params = m;
   fd->body->accept(this);
 

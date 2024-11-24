@@ -108,11 +108,20 @@ void PrintVisitor::imprimir(Program *p) {
 void PrintVisitor::visit(Program *p) {
 
     cout << "program " << p->NameProgram << ";\n";
-    p->varDecs->accept(this);
 
-    if(p->funDecs != nullptr){
-        p->funDecs->accept(this);
+    if(p->FirstFunctions){
+        if(p->funDecs != nullptr){
+            p->funDecs->accept(this);
+        }
+        p->varDecs->accept(this);
     }
+    else{
+        p->varDecs->accept(this);
+        if(p->funDecs != nullptr){
+            p->funDecs->accept(this);
+        }
+    }
+
     cout <<"begin" <<endl;
     p->stmList->accept(this);
     cout <<"end";

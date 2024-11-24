@@ -3,6 +3,7 @@
 ImpTypeChecker::ImpTypeChecker():inttype(),booltype(),voidtype() {
   inttype.set_basic_type("Integer");
   booltype.set_basic_type("Boolean");
+  longinttype.set_basic_type("longint");
   voidtype.set_basic_type("procedure");
 }
 
@@ -28,26 +29,38 @@ void ImpTypeChecker::typecheck(Program* p) {
 void ImpTypeChecker::visit(Program* p) {
   env.add_level();
   ftable.add_level();
-  p->varDecs->accept(this);
 
-  //cout  << "Paso las variables globales\n";
+    if(p->FirstFunctions){
+        if(p->funDecs != nullptr){
+            p->funDecs->accept(this);
+        }
+        else {
+            sp = max_sp = 0;
+            dir = max_dir = 0;
+        }
 
-  if(p->funDecs != nullptr) {
-      //cout << "Paso las funciones\n";
-      p->funDecs->accept(this);
-  }
-  else {
-      sp = max_sp = 0;
-      dir = max_dir = 0;
-  }
+        p->varDecs->accept(this);
+    }
+    else{
+        p->varDecs->accept(this);
+        if(p->funDecs != nullptr){
+            p->funDecs->accept(this);
+        }
+        else {
+            sp = max_sp = 0;
+            dir = max_dir = 0;
+        }
+    }
+
+
 
   p->stmList->accept(this);
 
-  //cout << "Paso los Statements\n";
 
   env.remove_level();
 
   for(int i = 0; i < fnames.size(); i++) {
+      cout << "\n";
     cout << "-- Function: " << fnames[i] << endl;
     FEntry fentry = ftable.lookup("L"+fnames[i]);
 
@@ -161,7 +174,7 @@ void ImpTypeChecker::visit(FunDec* fd) {
   rtype.set_basic_type(funtype.types.back());
   list<string>::iterator it;
   int i=0;
-  for (it = fd->paramNames.begin(); it != fd->paramNames.end(); ++it, i++) {
+  for (it = fd->paramNames.begin(); it != fd->paramNames.end(); ++it, ++i) {
       // Cada parámetro de la función lo meto al env.
     ptype.set_basic_type(funtype.types[i]);
     env.add_var(*it,ptype);
@@ -193,11 +206,25 @@ void ImpTypeChecker::visit(AssignStatement* s) {
   sp_decr(1);
   ImpType var_type = env.lookup(s->id);
 
-
-  if (!type.match(var_type)) {
-    cout << "Tipo incorrecto en Assign a " << s->id << endl;
-    exit(0);
+  if(var_type.match(booltype)){
+      if(!type.match(var_type)) {
+          cout << "Tipo incorrecto en Assign a " << s->id << endl;
+          exit(0);
+      }
   }
+  else if (var_type.match(inttype) || var_type.match(longinttype)){
+
+      if(!type.match(longinttype) && !type.match(inttype)){
+          cout << "Tipo incorrecto en Assign a " << s->id << endl;
+          exit(0);
+      }
+
+  }
+  else{
+      cout << "Tipo de variable " << s->id << " no soportado para asignación." << endl;
+      exit(0);
+  }
+
   return;
 }
 
@@ -257,12 +284,10 @@ void ImpTypeChecker::visit(ForStatement* s) {
       exit(0);
   }
 
-  if(!s->exp1->accept(this).match(inttype) || !s->exp2->accept(this).match(inttype)) {
-    cout << "Expresiones en for deben de ser int" << endl;
+  if(s->exp1->accept(this).match(booltype) || s->exp2->accept(this).match(booltype)) {
+    cout << "Expresiones en for deben de ser int o longint" << endl;
     exit(0);
   }
-
-  // Aca se tiene que hacer una validación más extrmea con longint.
 
   sp_decr(3);
   s->stms->accept(this);
@@ -275,8 +300,8 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
   ImpType t2 = e->right->accept(this);
 
   // Se espera que ambos sean tipo ENTEROS (HAY QUE MODIFICAR ESTO.)
-  if (!t1.match(inttype) || !t2.match(inttype)) {
-    cout << "Tipos en BinExp deben de ser int" << endl;
+  if (t1.match(booltype) || t2.match(booltype)) {
+    cout << "Tipos en BinExp deben de ser int o longint" << endl;
     exit(0);
   }
   ImpType result;
@@ -285,7 +310,8 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
   case MINUS_OP:
   case MUL_OP:
   case DIV_OP:
-    result = inttype;
+    if(t1.match(longinttype) || t2.match(longinttype)) result = longinttype;
+    else result = inttype;
     break;
   case LT_OP: 
   case LE_OP:
@@ -296,14 +322,13 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
     break;
   }
 
-  // POR LA OPERACIÓN MATEMÁTICA SE USA 1 (medio raro porque esto es solo una parte de toda la operacióm) y toda la operación
-  // debería ser 1 solo.
   sp_decr(1);
   return result;
 }
 
 ImpType ImpTypeChecker::visit(NumberExp* e) {
   sp_incr(1);
+
   return inttype;
 }
 

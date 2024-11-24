@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "imp_type.hh"
 
-const char* ImpType::type_names[5] = { "notype", "procedure", "Integer", "Boolean", "function" };
+const char* ImpType::type_names[6] = { "notype", "procedure", "Integer", "Boolean", "function", "LongInt" };
 
 bool ImpType::match(const ImpType& t) {
   if (this->ttype != t.ttype) return false;
@@ -28,6 +28,7 @@ bool ImpType::set_basic_type(TType tt) {
   case ImpType::INT:
   case ImpType::BOOL:
   case ImpType::VOID:
+  case ImpType::LONGINT:
     this->ttype = tt; break;
   default:
     ret = false;
@@ -43,7 +44,7 @@ bool ImpType::set_fun_type(list<string> slist, string s) {
   for (it = slist.begin(); it != slist.end(); ++it) {
     ImpType type;
     type.set_basic_type(*it);
-    if (type.ttype==ImpType::INT || type.ttype==ImpType::BOOL) 
+    if (type.ttype==ImpType::INT || type.ttype==ImpType::BOOL || type.ttype == ImpType::LONGINT)
       types.push_back(type.ttype);
     else {     
       types.clear();
@@ -70,6 +71,7 @@ ImpType::TType ImpType:: string_to_type(string s) {
   if (s == "integer") return ImpType::INT;
   else if (s == "boolean") return ImpType::BOOL;
   else if (s == "procedure") return ImpType::VOID;
+  else if(s == "longint") return ImpType::LONGINT;
   else return ImpType::NOTYPE;
 }
 

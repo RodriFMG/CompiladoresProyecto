@@ -237,8 +237,9 @@ public:
     VarDecList* varDecs;
     FunDecList* funDecs;
     StmList* stmList;
+    bool FirstFunctions;
 
-    Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList, string NameProgram);
+    Program(VarDecList* varDecs, FunDecList* funDecs, StmList* stmList, string NameProgram, bool FirstFunctions_);
     int accept(Visitor* visitor);
     void accept(ImpValueVisitor* Impvisitor);
     void accept(TypeVisitor* typeVisitor);
