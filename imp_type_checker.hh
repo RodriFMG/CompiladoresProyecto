@@ -47,7 +47,7 @@ public:
   void visit(AssignStatement*);
   void visit(PrinteoStatement*);
   void visit(IfStatement*);
-  //void visit(DoWhileStatement*);
+  void visit(DoWhileStatement*);
   void visit(WhileStatement*);
   void visit(ForStatement*);
   void visit(FCallStatement*);

@@ -20,10 +20,6 @@ push 1
 store 1
 push 20
 store 2
-push 1
-print
-push 2
-print
 alloc 1
 load 1
 load 2

@@ -59,6 +59,12 @@ WhileStatement::~WhileStatement() noexcept {
     delete stms;
 }
 
+DoWhileStatement::DoWhileStatement(Exp *exp_, StmList *stms_) : exp(exp_), stms(stms_){}
+DoWhileStatement::~DoWhileStatement() noexcept {
+    delete exp;
+    delete stms;
+}
+
 
 StmList::StmList() : stms() {}
 StmList::~StmList() {
@@ -135,6 +141,7 @@ string Exp::BinaryToChar(BinaryOp op) {
         case DE_OP: operacion = ">"; break;
         case DT_OP: operacion = ">="; break;
         case EQ_OP: operacion = "="; break;
+        case DIF_OP: operacion = "<>"; break;
         default: operacion = "$"; break;
     }
     return operacion;

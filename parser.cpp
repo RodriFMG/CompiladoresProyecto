@@ -347,7 +347,8 @@ StmList* Parser::ParseStatementList() {
         exit(1);
     }
 
-    while (check(Token::ID) || check(Token::IF) || check(Token::WHILE) || check(Token::FOR) || check(Token::Write) || check(Token::WriteLn)) {
+    while (check(Token::ID) || check(Token::IF) || check(Token::WHILE) || check(Token::FOR) || check(Token::Write) || check(Token::WriteLn)
+    || check(Token::REPEAT)) {
         stmList->add(ParseStatement());
 
         if (!match(Token::PC)) {
@@ -357,7 +358,7 @@ StmList* Parser::ParseStatementList() {
     }
 
     if (!match(Token::ENDP)) {
-        std::cout << "Error: se esperaba 'end'";
+        std::cout << "Error: se esperaba 'end', pero se encontró: "<< current;
         exit(1);
     }
 
@@ -515,7 +516,26 @@ Stm *Parser::ParseStatement() {
         s = new WhileStatement(e, stms);
 
     }
+    else if(match(Token::REPEAT)){
 
+        StmList* stms = ParseStatementList();
+
+        if(!match(Token::PC)){
+            cout << " Se esperaba un ; despues de todos los statements."<< endl;
+            exit(0);
+        }
+
+        if(!match(Token::UNTIL)){
+            cout << "Error: se esperaba 'until' despues de los statements." << endl;
+            cout << "Se encontró " << current << endl;
+            exit(0);
+        }
+
+        Exp* exp = ParseCExpression();
+
+        s = new DoWhileStatement(exp, stms);
+
+    }
     else{
         cout << "Error: Se esperaba un identificador o 'print', pero se encontró: " << *current << endl;
         exit(1);
@@ -530,7 +550,7 @@ Exp *Parser::ParseCExpression() {
 
     Exp* left = ParseExpression();
 
-    if(match(Token::EQ) || match(Token::LE) || match(Token::LT) || match(Token::DE) || match(Token::DT)){
+    if(match(Token::EQ) || match(Token::LE) || match(Token::LT) || match(Token::DE) || match(Token::DT) || match(Token::DIFERENTES)){
         BinaryOp op = EQ_OP;
 
         if(previous->type == Token::EQ) op = EQ_OP;
@@ -538,6 +558,7 @@ Exp *Parser::ParseCExpression() {
         else if(previous->type == Token::LT) op = LT_OP;
         else if(previous->type == Token::DE) op = DE_OP;
         else if(previous->type == Token::DT) op = DT_OP;
+        else if(previous->type == Token::DIFERENTES) op = DIF_OP;
 
         Exp* right = ParseExpression();
         left = new BinaryExp(left, op, right);

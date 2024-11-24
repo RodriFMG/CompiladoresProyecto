@@ -55,6 +55,8 @@ Token *Scanner::NextToken() {
         else if (word == "Boolean") token = new Token(Token::BOOLEAN, word, 0, word.length());
         else if(word == "program") token = new Token(Token::PROGRAM, word, 0, word.length());
         else if(word == "procedure") token = new Token(Token::PROCEDURE, word, 0, word.length());
+        else if(word == "repeat") token = new Token(Token::REPEAT, word, 0, word.length());
+        else if(word == "until") token = new Token(Token::UNTIL, word, 0, word.length());
 
 
         else token = new Token(Token::ID, word, 0, word.length());
@@ -89,7 +91,12 @@ Token *Scanner::NextToken() {
                 if (current + 1 < input.length() && input[current + 1] == '=') {
                     ++current;
                     token = new Token(Token::LT, input, first, current - first);
-                } else token = new Token(Token::LE, c);
+                }
+                else if ( current + 1 < input.length() && input[current + 1] == '>' ){
+                    ++current;
+                    token = new Token(Token::DIFERENTES, input, first, current - first);
+                }
+                else token = new Token(Token::LE, c);
                 break;
             }
             default:

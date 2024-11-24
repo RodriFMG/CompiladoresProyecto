@@ -15,7 +15,7 @@
 using namespace std;
 
 enum BinaryOp {
-    PLUS_OP, MINUS_OP, MUL_OP, DIV_OP, EQ_OP, LE_OP, LT_OP, DE_OP, DT_OP
+    PLUS_OP, MINUS_OP, MUL_OP, DIV_OP, EQ_OP, LE_OP, LT_OP, DE_OP, DT_OP, DIF_OP
 };
 
 class Exp {
@@ -132,6 +132,18 @@ public:
     void accept(ImpValueVisitor* Impvisitor) override;
     void accept(TypeVisitor* typeVisitor);
     ~WhileStatement() noexcept override;
+};
+
+class DoWhileStatement : public Stm{
+public:
+    Exp* exp;
+    StmList* stms;
+    DoWhileStatement(Exp* exp_, StmList* stms_);
+    int accept(Visitor* visitor) override;
+    void accept(ImpValueVisitor* Impvisitor) override;
+    void accept(TypeVisitor* typeVisitor);
+    ~DoWhileStatement() noexcept override;
+
 };
 
 class IfStatement : public Stm {

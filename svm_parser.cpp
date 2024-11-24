@@ -5,8 +5,8 @@
 #include <fstream>
 #include "svm_parser.hh"
 
-const char* Token::token_names[40] = { "ID", "LABEL", "NUM", "EOL", "ERR", "END",
-"PUSH", "EQ", "GT", "GE", "LT", "LE", "GOTO", "SKIP", "POP", "DUP", "SWAP", "ADD",
+const char* Token::token_names[41] = { "ID", "LABEL", "NUM", "EOL", "ERR", "END",
+"PUSH", "EQ", "DF", "GT", "GE", "LT", "LE", "GOTO", "SKIP", "POP", "DUP", "SWAP", "ADD",
 "SUB", "MUL", "DIV", "STORE", "LOAD", "PRINT", "PRINTN", "JMPZ", "JMPN", "AND", "OR", "NEG",
 "NOT", "HALT", "CALL", "MARK", "ENTER", "ALLOC", "STORER", "LOADR", "LOADA", "RETURN"};
 
@@ -38,6 +38,7 @@ Scanner::Scanner(string s):entrada(s),primero(0),actual(0) {
   reservado["mul"] = Token::MUL;
   reservado["div"] = Token::DIV;
   reservado["eq"] = Token::EQ;
+  reservado["df"] = Token::DF;
   reservado["gt"] = Token::GT;
   reservado["ge"] = Token::GE;
   reservado["lt"] = Token::LT;
@@ -175,6 +176,7 @@ Instruction::IType Token::tokenToIType(Token::Type tt) {
   case(Token::MUL): tipoInstruccion = Instruction::IMUL; break;
   case(Token::DIV): tipoInstruccion = Instruction::IDIV; break;
   case(Token::EQ): tipoInstruccion = Instruction::IEQ; break;
+  case(Token::DF): tipoInstruccion = Instruction::IDIF; break;
   case(Token::GT): tipoInstruccion = Instruction::IGT; break;
   case(Token::GE): tipoInstruccion = Instruction::IGE; break;
   case(Token::LT): tipoInstruccion = Instruction::ILT; break;
@@ -273,7 +275,7 @@ Instruction* Parser::parseInstruction() {
   }
   if (match(Token::SKIP) || match(Token::POP) || match(Token::DUP) ||
       match(Token::SWAP) || match(Token::ADD) || match(Token::SUB) ||
-      match(Token::MUL) || match(Token::DIV) || match(Token::EQ) ||
+      match(Token::MUL) || match(Token::DIV) || match(Token::EQ) || match(Token::DF) ||
       match(Token::GT) || match(Token::GE) || match(Token::LT) ||
       match(Token::LE) || match(Token::AND) || match(Token::OR) ||
       match(Token::PRINT) || match(Token::PRINTN) ||match(Token::NEG) || match(Token::NOT)||

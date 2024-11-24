@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "svm.hh"
-string nombresInstrucciones[34] = { "push", "pop", "dup", "swap", "add", "sub", "mult", "div", "goto", "eq", "gt", "ge", "lt", "le", "skip", "store", "load", "print", "printn", "jmpz", "jmpn", "and", "or", "neg", "not", "halt", "call", "mark", "storer", "loadr", "pusha", "enter", "alloc", "return" };
+string nombresInstrucciones[35] = { "push", "pop", "dup", "swap", "add", "sub", "mult", "div", "goto", "eq", "gt", "ge", "df", "lt", "le", "skip", "store", "load", "print", "printn", "jmpz", "jmpn", "and", "or", "neg", "not", "halt", "call", "mark", "storer", "loadr", "pusha", "enter", "alloc", "return" };
 
 Instruction::Instruction(string etiqueta, IType tipoInstruccion):etiqueta(etiqueta),tipo(tipoInstruccion),tieneArg(false) {}
 Instruction::Instruction(string etiqueta, IType tipoInstruccion, int arg):etiqueta(etiqueta),tipo(tipoInstruccion),tieneArg(true), argEntero(arg),etiquetaSalto("") {}
@@ -99,6 +99,7 @@ bool SVM::ejecutar(Instruction* instr) {
   } else if
       (tipoInstruccion==Instruction::IADD || tipoInstruccion==Instruction::ISUB || tipoInstruccion==Instruction::IMUL ||
        tipoInstruccion==Instruction::IDIV || tipoInstruccion==Instruction::IEQ || tipoInstruccion==Instruction::IGT ||
+        tipoInstruccion == Instruction::IDIF ||
        tipoInstruccion==Instruction::IGE  || tipoInstruccion==Instruction::ILT || tipoInstruccion==Instruction::ILE ||
        tipoInstruccion==Instruction::IAND  || tipoInstruccion==Instruction::IOR || tipoInstruccion==Instruction::ISWAP)  {
     cima = pila_top(); pila_pop();
@@ -109,6 +110,7 @@ bool SVM::ejecutar(Instruction* instr) {
     case(Instruction::IMUL): pila_push(siguiente*cima); break;
     case(Instruction::IDIV): pila_push(siguiente/cima); break;
     case(Instruction::IEQ): pila_push(siguiente==cima?1:0); break;
+    case(Instruction::IDIF): pila_push(siguiente!=cima?1:0); break;
     case(Instruction::IGT): pila_push(siguiente>cima?1:0); break;
     case(Instruction::IGE): pila_push(siguiente>=cima?1:0); break;
     case(Instruction::ILT): pila_push(siguiente<cima?1:0); break;

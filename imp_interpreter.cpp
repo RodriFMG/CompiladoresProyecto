@@ -38,6 +38,10 @@ void WhileStatement::accept(ImpValueVisitor* v) {
     return v->visit(this);
 }
 
+void DoWhileStatement::accept(ImpValueVisitor* v) {
+    return v->visit(this);
+}
+
 void ForStatement::accept(ImpValueVisitor* v) {
     return v->visit(this);
 }
@@ -70,7 +74,7 @@ void Program::accept(ImpValueVisitor* v) {
     return v->visit(this);
 }
 
-    void FCallStatement::accept(ImpValueVisitor *visitor) {
+void FCallStatement::accept(ImpValueVisitor *visitor) {
     return visitor->visit(this);
 }
 
@@ -109,6 +113,10 @@ void IfStatement::accept(TypeVisitor* v) {
 }
 
 void WhileStatement::accept(TypeVisitor* v) {
+    return v->visit(this);
+}
+
+void DoWhileStatement::accept(TypeVisitor* v) {
     return v->visit(this);
 }
 
@@ -344,6 +352,22 @@ void ImpInterpreter::visit(WhileStatement* s) {
     }
 }
 
+void ImpInterpreter::visit(DoWhileStatement* s) {
+
+    ImpValue v = s->exp->accept(this);
+    if (v.type != TBOOL) {
+        cout << "Type error en WHILE: esperaba bool en condicional" << endl;
+        exit(0);
+    }
+
+    do{
+        s->stms->accept(this);
+    } while ( !s->exp->accept(this).bool_value );
+
+
+}
+
+
 void ImpInterpreter::visit(ForStatement* s) {
 
     env.add_level();
@@ -470,6 +494,10 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
             break;
         case DT_OP:
             bv = (iv1 >= iv2) ? 1 : 0;
+            type = TBOOL;
+            break;
+        case DIF_OP:
+            bv = (iv1 != iv2) ? 1 : 0;
             type = TBOOL;
             break;
     }

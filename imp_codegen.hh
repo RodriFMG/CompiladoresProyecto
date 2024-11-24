@@ -36,7 +36,7 @@ public:
   void visit(WhileStatement*);
   void visit(ForStatement*);
   void visit(FCallStatement*);
-  //void visit(DoWhileStatement*);
+  void visit(DoWhileStatement*);
 
   int visit(BinaryExp* e);
   int visit(NumberExp* e);
@@ -53,6 +53,7 @@ private:
   int current_dir;
   int max_stack, mem_locals, mem_globals;
   bool process_global;
+  bool dowhile_op = false;
   int num_params; // nuevo
   void codegen(string label, string instr);
   void codegen(string label, string instr, int arg);

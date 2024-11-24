@@ -26,6 +26,7 @@ class Program;
 class Body;
 class FCallExp;
 class FCallStatement;
+class DoWhileStatement;
 
 // Clase abstracta Visitor
 class Visitor {
@@ -42,6 +43,7 @@ public:
     virtual void visit(ForStatement* s) = 0;
     virtual void visit(WhileStatement* s) = 0;
     virtual void visit(FCallStatement* s) = 0;
+    virtual void visit(DoWhileStatement* s) = 0;
 
     virtual void visit(StmList* sl) = 0;
     virtual void visit(VarDec* v) = 0;
@@ -68,6 +70,7 @@ public:
     void visit(IfStatement* s) override;
     void visit(ForStatement* s) override;
     void visit(WhileStatement* s) override;
+    void visit(DoWhileStatement* s) override;
     void visit(FCallStatement* s) override;
 
     void visit(StmList* sl) override;

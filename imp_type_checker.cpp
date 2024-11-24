@@ -278,6 +278,18 @@ void ImpTypeChecker::visit(WhileStatement* s) {
  return;
 }
 
+void ImpTypeChecker::visit(DoWhileStatement* s) {
+
+    s->stms->accept(this);
+
+    if(!s->exp->accept(this).match(booltype)){
+        cout << "Expresion conditional en IF debe de ser bool" << endl;
+        exit(0);
+    }
+    sp_decr(1);
+
+}
+
 
 
 void ImpTypeChecker::visit(ForStatement* s) {
@@ -321,6 +333,7 @@ ImpType ImpTypeChecker::visit(BinaryExp* e) {
   case DE_OP:
   case DT_OP:
   case EQ_OP:
+  case DIF_OP:
     result = booltype;
     break;
   }

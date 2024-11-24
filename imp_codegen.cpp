@@ -201,7 +201,7 @@ void ImpCodeGen::visit(IfStatement* s) {
 
     string l1 = next_label();
 
-    for(int i = 0; i < s->conditions.size() + 1; ++i) etiquetas.push_back(next_label());
+    for(int i = 0; i < s->conditions.size() ; ++i) etiquetas.push_back(next_label());
 
     list<string>::iterator itEtiquetas;
 
@@ -236,6 +236,22 @@ void ImpCodeGen::visit(WhileStatement* s) {
   codegen(nolabel, "goto", l1);
   codegen(l2, "skip");
 
+}
+
+void ImpCodeGen::visit(DoWhileStatement* s){
+    string l1 = next_label();
+    string l2 = next_label();
+
+    codegen(l1, "skip");
+    s->stms->accept(this);
+
+    dowhile_op = true;
+    s->exp->accept(this);
+    dowhile_op = false;
+
+    codegen(nolabel, "jmpz", l2);
+    codegen(nolabel, "goto", l1);
+    codegen(l2, "skip");
 }
 
 void ImpCodeGen::visit(ForStatement* s) {
@@ -293,11 +309,36 @@ int ImpCodeGen::visit(BinaryExp* e) {
   case MINUS_OP: op = "sub"; break;
   case MUL_OP:  op = "mul"; break;
   case DIV_OP:  op = "div"; break;
-  case LT_OP:  op = "lt"; break;
-  case LE_OP: op = "le"; break;
-  case DT_OP: op = "gt"; break;
-  case DE_OP: op = "ge"; break;
-  case EQ_OP:  op = "eq"; break;
+  case LT_OP: {
+      if(dowhile_op) op = "gt";
+      else op = "lt";
+      break;
+  }
+  case LE_OP: {
+      if(dowhile_op) op = "ge";
+      else op = "le";
+      break;
+  }
+  case DT_OP: {
+      if(dowhile_op) op = "lt";
+      else op = "gt";
+      break;
+  }
+  case DE_OP: {
+      if(dowhile_op) op = "le";
+      else op = "ge";
+      break;
+  }
+  case EQ_OP: {
+      if(dowhile_op) op = "df";
+      else op = "eq";
+      break;
+  }
+  case DIF_OP: {
+      if(dowhile_op) op = "eq";
+      else op = "df";
+      break;
+  }
   default: cout << "binop " << Exp::BinaryToChar(e->op) << " not implemented" << endl;
   }
   codegen(nolabel, op);

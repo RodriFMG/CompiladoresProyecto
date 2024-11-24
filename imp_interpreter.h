@@ -28,6 +28,7 @@ public:
     void visit(PrinteoStatement*);
     void visit(IfStatement*);
     void visit(WhileStatement*);
+    void visit(DoWhileStatement*);
     void visit(ForStatement* e);
     void visit(FCallStatement* e);
     ImpValue visit(BinaryExp* e);

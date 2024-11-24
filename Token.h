@@ -30,7 +30,10 @@ public:
         BOOLEAN,
 
         PROGRAM,
-        PROCEDURE
+        PROCEDURE,
+        REPEAT,
+        UNTIL,
+        DIFERENTES  // <>
     };
 
     //LE <

@@ -12,7 +12,7 @@ using namespace std;
 
 class Instruction {
 public:
-  enum IType { IPUSH=0, IPOP, IDUP, ISWAP, IADD, ISUB, IMUL, IDIV, IGOTO, IEQ, IGT,
+  enum IType { IPUSH=0, IPOP, IDUP, ISWAP, IADD, ISUB, IMUL, IDIV, IGOTO, IEQ, IDIF, IGT,
   IGE, ILT, ILE, ISKIP, ISTORE, ILOAD, IPRINT, IJMPZ, IJMPN, IAND, IOR, INEG, INOT,
   IHALT, ICALL, IMARK, ISTORER, ILOADR, IPUSHA, IENTER, IALLOC, IRETURN, ILOADA, IPRINTN };
   string etiqueta, etiquetaSalto;

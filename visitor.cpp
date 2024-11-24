@@ -56,6 +56,11 @@ int WhileStatement::accept(Visitor *visitor) {
     return 0;
 }
 
+int DoWhileStatement::accept(Visitor *visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
 int StmList::accept(Visitor *visitor) {
     visitor->visit(this);
     return 0;
@@ -221,6 +226,20 @@ void PrintVisitor::visit(WhileStatement *s) {
     s->stms->accept(this);
     printIndent();
     cout <<"end;";
+}
+
+void PrintVisitor::visit(DoWhileStatement* s) {
+
+    cout << "repeat";
+    printIndent();
+    cout << "begin"<<endl;
+    s->stms->accept(this);
+    cout << "end;\n";
+    cout << "until ";
+    s->exp->accept(this);
+
+    cout << ";";
+
 }
 
 void PrintVisitor::visit(FCallStatement* s) {

@@ -17,6 +17,7 @@ public:
     virtual void visit(PrinteoStatement* e) = 0;
     virtual void visit(IfStatement* e) = 0;
     virtual void visit(WhileStatement* e) = 0;
+    virtual void visit(DoWhileStatement* s) = 0;
     virtual void visit(ForStatement* e) = 0;
     virtual void visit(FCallStatement* e) = 0;
     virtual ImpValue visit(BinaryExp* e) = 0;
