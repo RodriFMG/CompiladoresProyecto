@@ -310,22 +310,22 @@ int ImpCodeGen::visit(BinaryExp* e) {
   case MUL_OP:  op = "mul"; break;
   case DIV_OP:  op = "div"; break;
   case LT_OP: {
-      if(dowhile_op) op = "gt";
+      if(dowhile_op) op = "ge";
       else op = "lt";
       break;
   }
   case LE_OP: {
-      if(dowhile_op) op = "ge";
+      if(dowhile_op) op = "gt";
       else op = "le";
       break;
   }
   case DT_OP: {
-      if(dowhile_op) op = "lt";
+      if(dowhile_op) op = "le";
       else op = "gt";
       break;
   }
   case DE_OP: {
-      if(dowhile_op) op = "le";
+      if(dowhile_op) op = "lt";
       else op = "ge";
       break;
   }

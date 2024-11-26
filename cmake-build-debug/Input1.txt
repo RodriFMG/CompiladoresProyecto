@@ -1,17 +1,14 @@
-program EjemploIfElseIfElse;
+program EjemploRepeatUntil;
 
 var
-  numero: Integer;
+  contador: Integer;
 
 begin
-  numero := 13;
+  contador := 1;
 
-  if numero < 15 then begin
-    write(numero);
-  end
-  else if numero > 15 then begin
-    write (numero * 2); end
-  else begin
-    write(numero/2);
-  end;
+  repeat begin
+    writeln(contador);
+    contador := contador + 1;
+    end;
+  until contador > 5;
 end.

@@ -2,35 +2,25 @@ start: skip
 enter 1
 alloc 1
 mark
-pusha LEjemploIfElseIfElse
+pusha LEjemploRepeatUntil
 call
 halt
-LEjemploIfElseIfElse: skip
+LEjemploRepeatUntil: skip
 enter 1
 alloc 0
-push 13
+push 1
+store 1
+L0: skip
+load 1
+print
+load 1
+push 1
+add
 store 1
 load 1
-push 15
-lt
+push 5
+le
 jmpz L1
-load 1
-printn
 goto L0
 L1: skip
-load 1
-push 15
-gt
-jmpz L2
-load 1
-push 2
-mul
-printn
-goto L0
-L2: skip
-load 1
-push 2
-div
-printn
-L0: skip
 return 3
