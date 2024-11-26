@@ -83,20 +83,20 @@ Token *Scanner::NextToken() {
             case '>': {
                 if (current + 1 < input.length() && input[current + 1] == '=') {
                     ++current;
-                    token = new Token(Token::DT, input, first, current - first);
-                } else token = new Token(Token::DE, c);
+                    token = new Token(Token::DE, input, first, current - first);
+                } else token = new Token(Token::DT, c);
                 break;
             }
             case '<': {
                 if (current + 1 < input.length() && input[current + 1] == '=') {
                     ++current;
-                    token = new Token(Token::LT, input, first, current - first);
+                    token = new Token(Token::LE, input, first, current - first);
                 }
                 else if ( current + 1 < input.length() && input[current + 1] == '>' ){
                     ++current;
                     token = new Token(Token::DIFERENTES, input, first, current - first);
                 }
-                else token = new Token(Token::LE, c);
+                else token = new Token(Token::LT, c);
                 break;
             }
             default:

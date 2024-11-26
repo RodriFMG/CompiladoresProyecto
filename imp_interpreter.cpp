@@ -477,11 +477,11 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
 
             break;
         case LT_OP:
-            bv = (iv1 <= iv2) ? 1 : 0;
+            bv = (iv1 < iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case LE_OP:
-            bv = (iv1 < iv2) ? 1 : 0;
+            bv = (iv1 <= iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case EQ_OP:
@@ -489,11 +489,11 @@ ImpValue ImpInterpreter::visit(BinaryExp* e) {
             type = TBOOL;
             break;
         case DE_OP:
-            bv = (iv1 > iv2) ? 1 : 0;
+            bv = (iv1 >= iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case DT_OP:
-            bv = (iv1 >= iv2) ? 1 : 0;
+            bv = (iv1 > iv2) ? 1 : 0;
             type = TBOOL;
             break;
         case DIF_OP:

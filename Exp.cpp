@@ -136,10 +136,10 @@ string Exp::BinaryToChar(BinaryOp op) {
         case MINUS_OP: operacion = "-"; break;
         case MUL_OP: operacion = "*"; break;
         case DIV_OP: operacion = "/"; break;
-        case LE_OP: operacion = "<"; break;
-        case LT_OP: operacion = "<="; break;
-        case DE_OP: operacion = ">"; break;
-        case DT_OP: operacion = ">="; break;
+        case LE_OP: operacion = "<="; break;
+        case LT_OP: operacion = "<"; break;
+        case DE_OP: operacion = ">="; break;
+        case DT_OP: operacion = ">"; break;
         case EQ_OP: operacion = "="; break;
         case DIF_OP: operacion = "<>"; break;
         default: operacion = "$"; break;

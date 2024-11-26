@@ -2,97 +2,35 @@ start: skip
 enter 1
 alloc 1
 mark
-pusha LFuncionRecursiva
+pusha LEjemploIfElseIfElse
 call
 halt
-LA: skip
-enter 4
+LEjemploIfElseIfElse: skip
+enter 1
 alloc 0
-loadr -3
-push 0
-eq
+push 13
+store 1
+load 1
+push 15
+lt
 jmpz L1
-push 1
-storer -4
+load 1
+printn
 goto L0
 L1: skip
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LB
-call
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LC
-call
-add
-storer -4
-L0: skip
-return 4
-LB: skip
-enter 3
-alloc 0
-loadr -3
-push 0
-eq
-jmpz L3
-push 2
-storer -4
-goto L2
-L3: skip
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LA
-call
+load 1
+push 15
+gt
+jmpz L2
+load 1
 push 2
 mul
-storer -4
+printn
+goto L0
 L2: skip
-return 4
-LC: skip
-enter 4
-alloc 0
-loadr -3
-push 0
-eq
-jmpz L5
-push 3
-storer -4
-goto L4
-L5: skip
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LA
-call
-alloc 1
-loadr -3
-push 1
-sub
-mark
-pusha LB
-call
-sub
-storer -4
-L4: skip
-return 4
-LFuncionRecursiva: skip
-enter 12
-alloc 0
-alloc 1
-push 5
-mark
-pusha LA
-call
-store 1
+load 1
+push 2
+div
+printn
+L0: skip
 return 3
