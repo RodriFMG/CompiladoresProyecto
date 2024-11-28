@@ -127,3 +127,4 @@ C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.3313
 C:/Users/RODRIGO/CompilaVeintes/environment.h
 C:/Users/RODRIGO/CompilaVeintes/imp_type_checker.hh
 C:/Users/RODRIGO/CompilaVeintes/imp_codegen.hh
+C:/Users/RODRIGO/CompilaVeintes/SinComentarios.h
