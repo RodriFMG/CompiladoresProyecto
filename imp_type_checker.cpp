@@ -30,6 +30,10 @@ void ImpTypeChecker::visit(Program* p) {
   env.add_level();
   ftable.add_level();
 
+  ImpType funtype;
+  name_program = "L" + p->NameProgram;
+  env.add_var(name_program, funtype);
+
     if(p->FirstFunctions){
         if(p->funDecs != nullptr){
             p->funDecs->accept(this);
@@ -55,6 +59,7 @@ void ImpTypeChecker::visit(Program* p) {
 
 
   p->stmList->accept(this);
+
 
 
   env.remove_level();
@@ -159,27 +164,38 @@ void ImpTypeChecker::add_fundec(FunDec* fd) {
     exit(0);
   }
 
+  if( env.lookup("L"+fd->fname, funtype) ){
+
+      if("L"+fd->fname == name_program){
+          cout << "Error: No se puede colocar el nombre del programa como una función. \n";
+          exit(0);
+      }
+      else{
+          cout << "Error: Se declaro 2 o mas veces la función con el nombre " << fd->fname << ".\n";
+          exit(0);
+      }
+
+  }
+
   env.add_var("L"+fd->fname, funtype);
   return;
 }
 
 void ImpTypeChecker::visit(FunDec* fd) {
   env.add_level();
+
   ImpType funtype = env.lookup("L"+fd->fname);
 
-  // rtype es el tipo de retorno, y el ptype es el tipo de parámetro.
   ImpType rtype, ptype;
 
-  // El últimmo type de la lista de type de la función = type de retorno.
   rtype.set_basic_type(funtype.types.back());
   list<string>::iterator it;
   int i=0;
   for (it = fd->paramNames.begin(); it != fd->paramNames.end(); ++it, ++i) {
-      // Cada parámetro de la función lo meto al env.
     ptype.set_basic_type(funtype.types[i]);
     env.add_var(*it,ptype);
   }
-  // con el rtype, creo una "variable" llamada return, para asegurar el tipo de retorno.
+
   env.add_var(fd->fname, rtype);
 
   fd->body->accept(this);

@@ -346,6 +346,13 @@ int ImpCodeGen::visit(BinaryExp* e) {
 }
 
 int ImpCodeGen::visit(NumberExp* e) {
+
+  if(e->value < 0){
+      codegen(nolabel, "push", -1);
+      codegen(nolabel, "push", abs(e->value));
+      codegen(nolabel, "mul");
+  }
+
   codegen(nolabel,"push",e->value);
   return 0;
 }

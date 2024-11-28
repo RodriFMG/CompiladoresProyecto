@@ -31,6 +31,7 @@ private:
 
   vector<string> fnames; 
   int sp, max_sp;
+  string name_program;
   int dir, max_dir;
   void sp_decr(int n);
   void sp_incr(int n);

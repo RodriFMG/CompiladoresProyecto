@@ -651,6 +651,15 @@ Exp *Parser::ParseFactor() {
         return exp;
 
     }
+    else if(match(Token::MINUS)){
+        if(match(Token::NUM)){
+            return new NumberExp(stoi(previous->TypeText)* -1);
+        }
+        else{
+            cout << "Error, se esperaba un número negativo. (ParseFactor)\n";
+            exit(0);
+        }
+    }
 
     cout << "Error: se esperaba un número o identificador. (ParseFactor)" << current->TypeText <<endl;
     exit(0);

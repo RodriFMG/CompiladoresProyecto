@@ -61,6 +61,7 @@ ostream& operator<<(ostream& os, const Token& tokens) {
         case Token::REPEAT: os << "TOKEN(REPEAT)"; break;
         case Token::UNTIL: os << "TOKEN(UNTIL)"; break;
         case Token::DIFERENTES: os << "TOKEN(DIFERENTES)"; break;
+        case Token::COMENTARIO: os << "TOKEN(COMENTARIO)"; break;
 
         default:
             os << "TOKEN(UNKNOWN)"; break;

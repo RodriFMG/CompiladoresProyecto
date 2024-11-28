@@ -428,8 +428,10 @@ void ImpInterpreter::visit(ForStatement* s) {
 ImpValue ImpInterpreter::visit(BinaryExp* e) {
 
     ImpValue result;
+
     ImpValue v1 = e->left->accept(this);
     ImpValue v2 = e->right->accept(this);
+
     if (v1.type == TBOOL || v2.type == TBOOL) {
         cout << "Error de tipos: operandos en operacion binaria tienen que ser "
                 "enteros"

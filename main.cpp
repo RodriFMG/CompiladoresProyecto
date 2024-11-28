@@ -8,6 +8,7 @@
 #include "imp_type.hh"
 #include "imp_type_checker.hh"
 #include "imp_codegen.hh"
+#include "SinComentarios.h"
 
 int main(int argc, const char* argv[]) {
     if (argc != 2) {
@@ -27,6 +28,9 @@ int main(int argc, const char* argv[]) {
         input += line + '\n';
     }
     infile.close();
+
+    SinComentarios sinComentarios(input.c_str());
+    input = sinComentarios.DeleteComments();
 
     Scanner scanner(input.c_str());
 

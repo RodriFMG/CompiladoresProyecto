@@ -1,26 +1,114 @@
 start: skip
-enter 1
-alloc 1
+enter 3
+alloc 3
 mark
-pusha LEjemploRepeatUntil
+pusha LFibonacciExample
 call
 halt
-LEjemploRepeatUntil: skip
-enter 1
+LFibonacci: skip
+enter 4
 alloc 0
+loadr -3
+push 2
+lt
+jmpz L1
+loadr -3
+storer -4
+goto L0
+L1: skip
+alloc 1
+loadr -3
 push 1
-store 1
+sub
+mark
+pusha LFibonacci
+call
+alloc 1
+loadr -3
+push 2
+sub
+mark
+pusha LFibonacci
+call
+add
+storer -4
 L0: skip
+return 4
+LImprimirFibo: skip
+enter 3
+alloc 0
+loadr -4
+store 1
+L2: skip
 load 1
+loadr -3
+le
+jmpz L3
+alloc 1
+load 1
+mark
+pusha LFibonacci
+call
 print
 load 1
 push 1
 add
 store 1
-load 1
+goto L2
+L3: skip
+return 5
+LFibonacciExample: skip
+enter 10
+alloc 0
+push 10
+store 2
+load 2
+push 2
+mul
+store 3
+load 2
+push 1
+add
+load 3
+eq
+jmpz L5
+push 0
+push 25
+mark
+pusha LImprimirFibo
+call
+goto L4
+L5: skip
+load 2
 push 5
-le
-jmpz L1
-goto L0
-L1: skip
+add
+load 3
+eq
+jmpz L6
+load 2
+load 2
+push 5
+add
+mark
+pusha LImprimirFibo
+call
+goto L4
+L6: skip
+load 2
+load 3
+lt
+jmpz L7
+load 2
+load 3
+mark
+pusha LImprimirFibo
+call
+goto L4
+L7: skip
+push 0
+push 10
+mark
+pusha LImprimirFibo
+call
+L4: skip
 return 3

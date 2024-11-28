@@ -1,14 +1,61 @@
-program EjemploRepeatUntil;
+// jdasjhhdas
+program FibonacciExample;
+
+//Para poder usar variables locales en Pascal, es necesario declararlas dentro
+//de la sección var. Esto solo es posible en procedimientos y funciones.
+// La mejor forma de evaluarles a los chicos variables locales y globales
+// con pascal es con funciones
 
 var
-  contador: Integer;
+  i, a1, a2: Integer;
+
+function Fibonacci(n: Integer): Integer;
+begin
+
+//Para poder usar variables locales en Pascal, es necesario declararlas dentro
+      //de la sección var. Esto solo es posible en procedimientos y funciones.
+      // La mejor forma de evaluarles a los chicos variables locales y globales
+      // con pascal es con funciones
+
+  if n < 2 then begin
+    Fibonacci := n; end
+  else begin
+    Fibonacci := Fibonacci(n - 1) + Fibonacci(n - 2);
+  end;
+end;
+
+procedure ImprimirFibo(Init, Stop : Integer);
+begin
+
+    for i := Init to Stop do begin
+        writeln(Fibonacci(i));
+    end;
+end;
+
 
 begin
-  contador := 1;
 
-  repeat begin
-    writeln(contador);
-    contador := contador + 1;
+    a1 := 10;
+    a2 := a1 * 2;
+
+    if a1 + 1 = a2 then
+    begin
+        ImprimirFibo(0, 25);
+    end
+    else if a1 + 5 = a2 then
+    begin
+        ImprimirFibo(a1, a1 + 5);
+    end
+    else if a1 < a2 then
+    begin
+        ImprimirFibo(a1, a2);
+    end
+    else
+    begin
+        ImprimirFibo(0, 10);
     end;
-  until contador > 5;
+
+
+
 end.
+//pe

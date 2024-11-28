@@ -33,7 +33,8 @@ public:
         PROCEDURE,
         REPEAT,
         UNTIL,
-        DIFERENTES  // <>
+        DIFERENTES,  // <>
+        COMENTARIO
     };
 
     //LE <
