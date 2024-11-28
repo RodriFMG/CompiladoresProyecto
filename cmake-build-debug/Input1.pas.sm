@@ -1,0 +1,59 @@
+start: skip
+enter 1
+alloc 1
+mark
+pusha LFibonacci
+call
+halt
+LFibonacci: skip
+enter 4
+alloc 0
+loadr -3
+push 2
+lt
+jmpz L1
+loadr -3
+storer -4
+goto L0
+L1: skip
+alloc 1
+loadr -3
+push 1
+sub
+mark
+pusha LFibonacci
+call
+alloc 1
+loadr -3
+push 2
+sub
+mark
+pusha LFibonacci
+call
+add
+storer -4
+L0: skip
+return 4
+LFibonacci: skip
+enter 5
+alloc 0
+push 0
+store 1
+L2: skip
+load 1
+push 10
+le
+jmpz L3
+alloc 1
+load 1
+mark
+pusha LFibonacci
+call
+print
+load 1
+push 1
+add
+store 1
+goto L2
+L3: skip
+return 3
